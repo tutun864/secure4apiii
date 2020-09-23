@@ -1,4 +1,4 @@
-just second ok
+just third ok
 <?php
 window.history.pushState("", "new title", "url")
 ?> 
