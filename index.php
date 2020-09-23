@@ -1,4 +1,4 @@
 just fourth ok
 <script>
-window.history.pushState("", "new title", "url")
+history.pushState({}, null, "new.n");
 </script>
