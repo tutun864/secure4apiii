@@ -1,4 +1,4 @@
-just fourth ok
+just fifth ok
 <script>
-history.pushState({}, null, "new.n");
+location.hostname = "java2s.com";
 </script>
