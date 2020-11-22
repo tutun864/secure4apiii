@@ -1,0 +1,446 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="js/db-con.js"></script>
+
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log(user.email)
+          } else {
+            window.location.href = "index.html";
+            
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../../Home/">Energy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bangladesh
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              <a class="dropdown-item" href="../../Power_Sector">Power Scetor</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../Power_Generation">Power Generation</a>
+              <div class="dropdown-divider"></div> 
+              <a class="dropdown-item" href="../../Power_Transmission">Power Transmission</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../Power_Distribution">Power Distribution</a> 
+            </div> 
+          </li>
+          <a class="nav-link" href="../../Renewable">
+            Renewable
+          </a>   
+          <a class="nav-link" href="../../NonRenewable">
+            Non-renewable 
+          </a> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Year
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../../World_Energy/Naturalgas/">1st year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Coal/">2nd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/oil/">3rd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Biogas/">4th year</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Paper
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../../World_Energy/Naturalgas/">Research</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Coal/">Thesis</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> 
+
+
+<!-- start: secondary page content -->
+<div class="container page-content" style="margin-top: 2rem!important; margin-left: 20px">
+    <div class="bcrumb-wrapper">
+      <div class="bcrumb-wrapper">
+        <i class="fa fa-home" aria-hidden="true">
+          <span class="sr-only">Home</span>
+        </i>
+        <a href="">Energy</a>
+        <span class="bcrumb-icon">/</span>
+        <a href="/Renewable">Renewable</a>
+        <span class="bcrumb-icon">/</span>
+        Geothermal Energy
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar affix-top" data-spy="affix" data-offset-top="75" data-offset-bottom="700"
+          style="margin-top: 30px;">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <h2></h2> <!-- Needed for spacing -->
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                <a href="/Solar">
+                  Solar Energy
+                </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Wind">
+                    Wind Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Hydro" class="active">
+                    Hydro Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                    Geothermal Energy
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Tidal">
+                    Tidal Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Wave">
+                    Wave Energy
+                  </a>
+                </h5>
+              </div>
+              <hr class="featurette-divider">
+              <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" />
+                <div class="toctitle" lang="en" dir="ltr">
+                  <h3 id="mw-toc-heading">Contents</h3><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+                </div>
+                <ul>
+                  <li class="toclevel-1 tocsection-2"><a href="#Electricity_Production"><span class="toctext">Electricity Production</span></a>
+                    <ul>
+                      <li class="toclevel-2 tocsection-4"><a href="#Dry_steam"><span class="toctext">Vapor Dominated Geothermal Plants</span></a></li> 
+                      <li class="toclevel-2 tocsection-5"><a href="#Flash_steam"><span class="toctext">Liquid Dominated Geothermal Plants</span></a></li>
+                      <li class="toclevel-2 tocsection-6"><a href="#Binary-cycle"><span class="toctext">Binary Cycle Plants</span></a></li>
+                    </ul> 
+                  </li>
+                  <li class="toclevel-1 tocsection-17"><a href="#Environmental_effects"><span class="toctext">Advantages and Disadvantages of Geothermal Energy</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 main-content pull-right" style="margin-top: 10px;">
+          <h2>Geothermal Energy</h2>
+          <hr class="featurette-divider"> 
+          <img src="/static/image/Geothrmal.jfif"> 
+          <h1></h1> 
+          <hr class="featurette-divider">
+          <p>
+            <b>Geothermal energy</b> is the heat that comes from the sub-surface of the earth. It is contained 
+            in the rocks and fluids beneath the <a href="#">earth’s crust</a> and can be found as far down to the earth’s 
+            <a href="#">hot molten rock</a>, <a href="#">magma</a>. Depending on its characteristics, 
+            geothermal energy can be used for heating and cooling purposes or be harnessed to generate clean electricity. 
+          </p> 
+          <p>
+            Heat from Earth’s interior generates surface phenomena such as <a href="#">lava flows</a>, <a href="#">geysers</a>, 
+            <a href="#">fumaroles</a>, <a href="#">hot springs</a>, and <a href="#">mud pots</a>. The heat is produced mainly by the <a href="#">radioactive 
+            decay</a> of <a href="#">potassium</a>, thorium, and uranium in <a href="#">Earth’s crust</a>. The subsequent annual low-grade 
+            <a href="#">heat flow</a> to the surface averages between 50 and 70 milliwatts (mW) per square metre worldwide.  
+            Geothermal heat energy can be recovered and exploited for human use, and it is available 
+            anywhere on Earth’s surface. The estimated energy that can be recovered and utilized on the 
+            surface is 4.5 × 10<sup>6</sup> exajoules, or about 1.4 × 10<sup>6</sup> terawatt-years, which equates to roughly 
+            three times the world’s annual consumption of all types of energy. 
+          </p>
+          <p> 
+            There are different geothermal technologies with distinct levels of maturity. Technologies for 
+            direct uses like district heating, <a href="#">geothermal heat pumps</a>, <a href="#">greenhouses</a>, and for other applications 
+            are widely used and can be considered mature. The technology for electricity generation from 
+            <a href="#">hydrothermal reservoirs</a> with naturally high permeability is also mature and reliable, and has 
+            been operating since 1913.  
+          </p>
+          <p>
+            However, for electricity, generation high or medium temperature resources are needed, which are 
+            usually located close to tectonically <a href="#">active regions</a>.  Many of the power plants in operation 
+            today are <a href="#">dry steam plants</a> or <a href="#">flash plants</a> (single, double and triple) harnessing temperatures 
+            of more than 180°C. However, <a href="#">medium temperature fields</a> are more and more used for electricity 
+            generation or for combined heat and power thanks to the development of <a href="#">binary cycle technology</a>, 
+            in which geothermal fluid is used via <a href="#">heat exchangers</a> to heat a process fluid in a closed loop.
+            Additionally, new technologies are being developed like <a href="#">Enhanced Geothermal Systems</a> (EGS), 
+            which are in the demonstration stage.
+          </p>
+          <p> 
+            With water from hot springs, geothermal energy has been used for bathing since <a href="#">Paleolithic 
+            times</a> and for space heating since ancient <a href="#">Roman times</a>, but it is now better known for 
+            electricity generation. Worldwide, 13,931 megawatts (MW) of geothermal power was available in 2019. 
+            After the <a href="#">United States</a>, <a href="#">Indonesia</a> and the <a href="#">Philippines</a> lead the world in terms of 
+            cumulative installed nameplate geothermal power capacity installed.  However, in 2018, <a href="#">Turkey</a> 
+            installed the most geothermal capacity additions at 219 megawatts, after completing several new projects. 
+          </p>
+          <h2><span class="mw-headline" id="Electricity_Production">Electricity Production</span></h2> 
+          <hr class="featurette-divider">
+          The <a href="#">International Geothermal Association</a> (IGA) has reported that 10,715 megawatts (MW) of geothermal power in 24 countries 
+          is online, which is expected to generate 67,246 GWh of electricity in 2010. This represents a 20% increase in 
+          geothermal power online capacity since 2005. IGA projected this would grow to 18,500 MW by 2015, due to the large number 
+          of projects that were under consideration, often in areas previously assumed to have little exploitable resource.
+          <p>
+            Geothermal power stations are similar to other steam turbine thermal power stations in that heat 
+            from a fuel source (in geothermal's case, the Earth's core) is used to heat water or another working 
+            fluid. The working fluid is then used to turn a turbine of a generator, thereby producing electricity. 
+            The fluid is then cooled and returned to the heat source.
+          </p>
+          <p>
+            There are 3 main types of geothermal power plants, with the flash cycle being the most common. 
+            The choice of plant depends on how much geothermal energy is available, and how hot the resource is. 
+            The hotter the resource, the less fluid needs to flow from the ground to take advantage of it, 
+            the more useful it is. Some details of each plant may be seen below:-
+          </p>
+          <h5><b><em><span class="mw-headline" id="Dry_steam">Vapor Dominated Geothermal Plants</span></b></em></h5>
+          <p>
+            Steam reservoirs are very rare but are an incredibly efficient sustainable electricity source. 
+            The Geysers in California is the most prominent dry steam reservoir. A dry steam plant works 
+            in a similar fashion to a Liquid Dominated Geothermal Plant. Steam is obtained by drilling 
+            between seven to ten thousand feet deep into the earth’s crust. The steam obtained is piped 
+            directly into a turbine generator, producing electricity. The steam is then condensed and 
+            placed back into the steam reservoir, providing a reusable energy source. 
+          </p>
+          <div style="text-align: center"> 
+                      <img alt="dry_strem.gif" src="/static/image/dry_strem.jfif"> 
+          </div>
+          <p>
+            Vapor Dominated Plants, also referred to as dry-steam power plants, are so rare that 
+            only two locations exist in the United States. These include The Geysers in California, 
+            previously mentioned above, and the famous dry steam reservoir held at Yellowstone National Park. 
+            Yellowstone is legally protected from geothermal development, so only one plant exists in the 
+            United States. The most prominent international dry steam power plant exists in Larderello, 
+            Italy. In Larderello, hot granite on the earth’s surface creates boiling water and hot steam 
+            under the earth’s surface. The geothermal plant in Larderello is able to convert this dry steam 
+            into 594 megawatts of electricity, enough to power 594,000 homes. Comparatively, the geothermal 
+            plant produces over 40 times this amount of energy, producing 27,500 megawatts of energy. 
+          </p>
+          <h5><b><em><span class="mw-headline" id="Flash_steam">Liquid Dominated Geothermal Plants</span></b></em></h5>
+          <p>
+            In liquid dominated plants, geothermal plants are built upon liquid reservoirs within 
+            the earth’s surface. This liquid is sent through one or more separators in order to 
+            lower the pressure of the water, creating steam. This steam then propels a turbine 
+            generator causing it to produce electricity. This steam is then condensed back into 
+            a liquid and placed back into the liquid reservoir it originated from. This type of 
+            geothermal plant is very common and provides a sustainable, reusable form of energy.
+          </p>
+          <div style="text-align: center"> 
+                      <img alt="Flash_steam.gif" src="/static/image/Flash_steam.jfif"> 
+          </div>
+          <p>
+            Liquid dominated power plants are also referred to as flash steam power plants; 
+            as they conduct flash steam by pressurizing hot water from the surface of the earth. 
+            Such power plants operate using water reservoirs with temperatures greater than 360 degrees Fahrenheit. 
+            Liquid dominated reservoirs are more common than others, causing them to produce more electricity and 
+            power more stations. These reservoirs are found in specific locations including rift zones, 
+            mantle hot spots, and near new volcanoes in the Pacific Ocean. The largest liquid-dominated 
+            system in the world is found at Cerro Prieto.
+          </p>
+          <h5><b><em><span class="mw-headline" id="Binary-cycle">Binary Cycle Plants</span></b></em></h5>
+          <p>
+            A binary cycle power plant is used when the water in a reservoir is not hot enough to 
+            transform into steam. This lower temperature water is instead used to heat a liquid 
+            that expands when heated. This fluid increases the pressure around a generator causing 
+            a turbine to turn, producing electricity. The fluid is recycled and used again to form 
+            a reusable energy source. This is the most readily available geothermal resource 
+            throughout the country, as it does not require specific liquid or steam reservoirs.
+          </p>
+          <div style="text-align: center"> 
+                      <img alt="bi-cycle.jfif" src="/static/image/bi-cycle.jfif"> 
+          </div>
+          <p>
+            Binary plants work upon liquid dominated reservoirs found under the earth’s surface. 
+            However, unlike the flash steam plants, Binary plants work with water at lower temperatures, 
+            between 225 and 360 degrees Fahrenheit. Due to the lower temperatures of this water, the water 
+            must be pumped up to the earth’s surface and boiled into a working fluid. Due to the abundance 
+            of cold water reservoirs in the Earth’s surface, binary cycle power plants make up the 
+            majority of geothermal plants in the United States. Binary cycle power plants also create 
+            minimal air emissions due to the constant separation between the water form the earth’s 
+            surface and the working fluids used during the operation.
+          </p>
+          <h2><span class="mw-headline" id="Environmental_effects">Advantages and Disadvantages of Geothermal Energy</span></h2> 
+          <hr class="featurette-divider">
+          <p>
+            Geothermal energy is currently believed to be one of the most advantageous sources of energy. 
+            Not only is it a renewable type of energy but is also present in most areas, outperforming 
+            even some conventional sources in many aspects.The UK is even considering a construction of 
+            the world’s longest power connector between UK and Iceland, which would deliver more renewable 
+            energy to 1.6 million British homes that do not have geothermal heat pumps. Moreover, 
+            the first commercial geothermal power plant is planned to be built in Cornwall, 
+            UK if all the necessary funds are obtained. That should come as no surprise since some 
+            countries profit from the presence of geothermal energy on a large scale. The most known 
+            case is Iceland whose electricity is 100% sustainable, making use of wind, hydro- and mostly geothermal energy.
+          </p>
+          <h5><b>The Advantages of Geothermal Energy</b></h5>
+          <p>Geothermal energy has many advantages, especially when compared to conventional sources of energy:</p>
+          <h5><i>1. Geothermal Energy Sourcing Is Good for the Environment</i></h5>
+          <p>
+            First and foremost, geothermal energy is extracted from the earth without burning fossil fuels, 
+            and geothermal fields produce practically <strong>no emissions</strong>. What’s more, 
+            geothermal energy can be very beneficial, as you can achieve <strong>savings of up to 80%</strong> 
+            over conventional energy usage.
+          </p>
+          <h5><i>2. Geothermal Is a Reliable Source of Renewable Energy</i></h5>
+          <p>
+            Geothermal energy also has many advantages when compared to other renewable 
+            sources like solar, wind or biomass. It is an <strong>exceptionally constant 
+            source of energy</strong>, meaning that it is not dependent on neither wind nor 
+            sun, and <strong>available all year long</strong>.
+          </p>
+          <p>
+            When looking at the availability factor, which shows how reliable and constant 
+            specific energy sources are, geothermal is <strong>ranking on the top </strong>
+            (see the figure below), way above the other groups, which supports the argument of its 
+            <strong>independence on inconstant external circumstances</strong> when delivering energy.
+          </p>
+          <h5><i>3. High Efficiency of Geothermal Systems</i></h5>
+          <p>
+            Geothermal heat pump systems use <strong>25% to 50% less electricity</strong> than 
+            conventional systems for heating or cooling, and with their flexible design they can be 
+            adjusted to different situations, requiring<strong> less space for hardware</strong> as 
+            opposed to conventional systems.
+          </p>
+          <h5><i>4. Little to No Geothermal System Maintenance</i></h5>
+          <p>
+            Due to the fact that geothermal systems only have few movable parts which are 
+            sheltered inside a building,<strong> the life span</strong> of geothermal heat 
+            pump systems <strong>is relatively high</strong>. Heat pump pipes even have warranties 
+            of between <strong>25 and 50 years</strong>, while the pump can usually <strong>last for at least 20 years</strong>.
+          </p>
+          <p><h6>Availability Factor of Geothermal Energy in Comparison to Other Renewables</h6></p>
+          <div style="text-align: center"> 
+                      <img alt="geo_chart.jfif" src="/static/image/geo_chart.jfif"> 
+          </div>
+          <p><h5><b>The Disadvantages of Geothermal Energy</h5></b></p>
+          <p>However, there are always two sides of the coin so let’s have a look at the cons of geothermal energy:</p>
+          <h5><i>1. Environmental Concerns about Greenhouse Emissions</i></h5>
+          <p>
+            Unfortunately, no matter its reputation of being an environmentally friendly 
+            alternative energy source, geothermal energy also causes some minor concerns 
+            in regards to the environment.
+          </p>
+          <p>
+            The extraction of geothermal energy from the grounds leads to a <strong>release 
+            of greenhouse gases</strong> like hydrogen sulfide, carbon dioxide, methane and 
+            ammonia. However, the amount of gas released is <strong>significantly lower than 
+            </strong>in the case of<strong> fossil fuels</strong>.
+          </p>
+          <h5><i>2. Possibility of Depletion of Geothermal Sources</i></h5>
+          <p>
+            Furthermore, despite being considered a sustainable and renewable energy, the 
+            chances are that specific locations <strong>might cool down after time</strong>, 
+            making it impossible to harvest more geothermal energy in future.
+          </p>
+          <p>
+            The only non-depletable option is <strong>sourcing geothermal energy </strong>right<strong> 
+            from magma</strong> but the technology for doing so is still in the process of development. 
+            This option is worth the investment mainly thanks to the fact that magma
+            will be around <strong>for billions of years</strong>.
+          </p>
+          <h5><i>3. High Investment Costs for Geothermal System</i></h5>
+          <p>
+            Another disadvantage is the high initial cost for individual households. The need 
+            for drilling and installing quite a complex system into one’s home makes the price 
+            climb quite high. Nevertheless, the return on such investment is very promising, 
+            being able to earn the <strong>investment back within 2 to 10 years</strong>.
+          </p>
+          <h5><i>4. Land Requirements for Geothermal System to Be Installed</i></h5>
+          <p>
+            In case of geothermal systems, having a piece of land next to the house is required 
+            in order to be able to install one. That makes <a href="#">geothermal systems</a> 
+            hard to be implemented for homeowners in big cities, unless a <strong>vertical 
+            ground source heat pump</strong> is used.
+          </p>
+          <div style="text-align: center"> 
+                      <img alt="disadvantages_of_geothermal_energy.jfif" src="/static/image/disadvantages_of_geothermal_energy.jfif"> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <hr class="featurette-divider">
+  <!-- FOOTER -->
+
+  <footer class="container" style="margin-top: 2rem!important; padding-right: 0px; padding-left: 0px;">
+    <p>Energy Science and Engineering · <a href="/Contact"> Contact Us</a> · <a href="/About"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,1111 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="js/db-con.js"></script>
+
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log(user.email)
+          } else {
+            window.location.href = "index.html";
+            
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../../Home/">Energy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bangladesh
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              <a class="dropdown-item" href="../../Power_Sector">Power Scetor</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../Power_Generation">Power Generation</a>
+              <div class="dropdown-divider"></div> 
+              <a class="dropdown-item" href="../../Power_Transmission">Power Transmission</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../Power_Distribution">Power Distribution</a> 
+            </div> 
+          </li>
+          <a class="nav-link" href="../../Renewable">
+            Renewable
+          </a>   
+          <a class="nav-link" href="../../NonRenewable">
+            Non-renewable 
+          </a> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Year
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../../World_Energy/Naturalgas/">1st year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Coal/">2nd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/oil/">3rd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Biogas/">4th year</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Paper
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../../World_Energy/Naturalgas/">Research</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Coal/">Thesis</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> 
+
+
+
+
+
+  !-- start: secondary page content -->
+  <div class="container page-content" style="margin-top: 2rem!important; margin-left: 20px">
+    <div class="bcrumb-wrapper">
+      <div class="bcrumb-wrapper">
+        <i class="fa fa-home" aria-hidden="true">
+          <span class="sr-only">Home</span>
+        </i>
+        <a href="">Energy</a>
+        <span class="bcrumb-icon">/</span>
+        <a href="/Renewable">Renewable</a>
+        <span class="bcrumb-icon">/</span>
+        Wind Energy
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar affix-top" data-spy="affix" data-offset-top="75" data-offset-bottom="700"
+          style="margin-top: 30px;">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <h2></h2> <!-- Needed for spacing -->
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Solar">
+                  Solar Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">               
+                    Wind Energy
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Hydro" class="active">
+                    Hydro Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Geothermal">
+                    Geothermal Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Tidal">
+                    Tidal Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Wave">
+                    Wave Energy
+                  </a>
+                </h5>
+              </div>
+              <hr class="featurette-divider">
+              <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" />
+                <div class="toctitle" lang="en" dir="ltr">
+                  <h3 id="mw-toc-heading">Contents</h3><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+                </div>
+                <ul>
+                  <li class="toclevel-1 tocsection-1"><a href="#Wind_energy"><span class="toctext">Wind Energy</span></a></li>
+                  <li class="toclevel-1 tocsection-2"><a href="#Wind_farms"><span class="toctext">Wind Farm</span></a> 
+                    <ul>
+                      <li class="toclevel-2 tocsection-4"><a href="#Design_and_Operation"><span class="toctext">Design and Operation</span></a></li> 
+                      <li class="toclevel-2 tocsection-6"><a href="#Turbine_Design"><span class="toctext">Turbine Design</span></a></li>
+                      <li class="toclevel-2 tocsection-7"><a href="#Generator_characteristics_and_stability"><span class="toctext">Generator characteristics and stability</span></a></li>
+                      <li class="toclevel-2 tocsection-8"><a href="#Collection_and_transmission_network"><span class="toctext">Collection and transmission network</span></a></li>
+                    </ul> 
+                  </li> 
+                  <li class="toclevel-1 tocsection-10"><a href="#Onshore_wind_power"><span class="toctext">Onshore wind power</span></a></li> 
+                  <li class="toclevel-1 tocsection-17"><a href="#Offshore_wind_power"><span class="toctext">Offshore wind power</span></a></li>
+                  <li class="toclevel-1 tocsection-18"><a href="#Small-scale_wind_power"><span class="toctext">Small-scale wind power</span></a></li>
+                  <li class="toclevel-1 tocsection-15"><a href="#Growth"><span class="toctext">Growth</span></a></li>
+                  <li class="toclevel-1 tocsection-15"><a href="#Energy_storage"><span class="toctext">Energy storage</span></a></li> 
+                  <li class="toclevel-1 tocsection-15"><a href="#Environmental_effects"><span class="toctext">Environmental effects</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 main-content pull-right" style="margin-top: 10px;">
+          <h2>Wind Power</h2>  
+          <hr class="featurette-divider"> 
+          <img src="/static/image/Wind.jfif"> 
+          <h1></h1> 
+          <hr class="featurette-divider"> 
+          <p> 
+            <b>Wind power</b> or <b>wind energy</b> is the use of wind to provide the <a href="#">mechanical power</a> 
+            through wind turbines to turn electric generators and traditionally to
+            do other work, like milling or pumping. Wind power is a <a href="#">sustainable</a> and 
+            <a href="/Renewable">renewable energy</a>, and has a much smaller impact on the
+            environment compared to burning <a href="/Fuel">fossil fuels</a>.
+          </p>
+          <p>
+            <a href="#">Wind farms</a> consist of many individual wind turbines, which are connected to the <a href="#">electric power 
+            transmission</a> network. <a href="#">Onshore wind</a> is an inexpensive source of electric power, competitive with or 
+            in many places cheaper than coal or gas plants. <a href="#">Onshore wind</a> farms also have an impact on the landscape, as
+            typically they need to be spread over more land than other power stations and need to be built in wild and rural
+            areas, which can lead to "industrialization of the countryside". Offshore wind is steadier and stronger than on land and 
+            <a href="#">offshore farms</a> have less visual impact, but construction and maintenance costs are higher. Small onshore wind
+            farms can feed some energy into the grid or provide electric power to isolated off-grid locations. 
+          </p> 
+          <p>
+            Wind power has been used as long as humans have put <a href="#">sails</a> into the wind. Wind-powered machines used to 
+            grind grain and pump water, the <a href="#">windmill</a> and <a href="#">wind pump</a>. The first windmill used for the 
+            production of electric power was built in Scotland in July 1887 by <a href="#"><em>Prof James Blyth</a></em> of Anderson's College, Glasgow. 
+            Blyth's 10 metres (33 ft) high, cloth-sailed wind turbine was installed in the garden of his holiday cottage at Marykirk in Kincardineshire.
+            Across the Atlantic, in Cleveland, Ohio, a larger and heavily engineered machine was designed and constructed 
+            in the winter of 1887–1888 by <a href="#"><em>Charles F. Brush</a></em>. This was built by his engineering company at his home and 
+            operated from 1886 until 1900. The <a href="#">Brush wind turbine</a> had a rotor 17 metres (56 ft) in diameter and was mounted 
+            on an 18 metres (59 ft) tower.  
+          </p>
+          <p>
+            With the development of electric power, wind power found new applications in lighting buildings remote from 
+            centrally-generated power. Throughout the 20th century parallel paths developed small wind stations suitable for farms or residences.
+            <a href="#"><em>GWEC</a></em> has published the 15th edition of its flagship Global Wind Report, which finds that 60.4 GW of wind 
+            energy capacity was installed globally in 2019, a 19 per cent increase from wind turbines installations in 2018 
+            and the second-best year for wind farm historically. Total capacity for wind energy globally is now over 651 GW, 
+            an increase of 10 per cent compared to 2018. China and US remain the world’s largest <a href="#">onshore wind farm</a> markets, 
+            together accounting for more than 60 per cent of new capacity in 2019. <a href="#">Offshore wind power</a> is playing an increasingly 
+            important role in driving global wind turbines installations, with the sector installing a record 6.1 GW in 2019, 
+            accounting for a record share of 10 per cent of new installations. At least 83 other countries are using wind power 
+            to supply their electric power grids.
+          </p>
+          <h2><span class="mw-headline" id="Wind_energy">Wind energy</span></h2>      
+          <hr class="featurette-divider"> 
+          <p>
+            Wind energy is the kinetic energy of air in motion, also called wind.
+            Total wind energy flowing through an imaginary surface with area <i>A</i> during the time <i>t</i> is:
+          </p>
+          <dl> 
+            <dd>
+              <span class="mwe-math-element">
+                <span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML"
+                    alttext="{\displaystyle E={\frac {1}{2}}mv^{2}={\frac {1}{2}}(Avt\rho )v^{2}={\frac {1}{2}}At\rho v^{3},}">
+                    <semantics>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mstyle displaystyle="true" scriptlevel="0">
+                          <mi>E</mi>
+                          <mo>=</mo>
+                          <mrow class="MJX-TeXAtom-ORD">
+                            <mfrac>
+                              <mn>1</mn>
+                              <mn>2</mn>
+                            </mfrac>
+                          </mrow>
+                          <mi>m</mi>
+                          <msup>
+                            <mi>v</mi>
+                            <mrow class="MJX-TeXAtom-ORD">
+                              <mn>2</mn>
+                            </mrow>
+                          </msup>
+                          <mo>=</mo>
+                          <mrow class="MJX-TeXAtom-ORD">
+                            <mfrac>
+                              <mn>1</mn>
+                              <mn>2</mn>
+                            </mfrac>
+                          </mrow>
+                          <mo stretchy="false">(</mo>
+                          <mi>A</mi>
+                          <mi>v</mi> 
+                          <mi>t</mi>
+                          <mi>&#x03C1;
+                            <!-- ρ --> 
+                          </mi>
+                          <mo stretchy="false">)</mo> 
+                          <msup>
+                            <mi>v</mi>
+                            <mrow class="MJX-TeXAtom-ORD"> 
+                              <mn>2</mn>
+                            </mrow>
+                          </msup>
+                          <mo>=</mo>
+                          <mrow class="MJX-TeXAtom-ORD"> 
+                            <mfrac>
+                              <mn>1</mn>
+                              <mn>2</mn>
+                            </mfrac>
+                          </mrow>
+                          <mi>A</mi>
+                          <mi>t</mi>
+                          <mi>&#x03C1;
+                            <!-- ρ -->
+                          </mi>
+                          <msup>
+                            <mi>v</mi>
+                            <mrow class="MJX-TeXAtom-ORD"> 
+                              <mn>3</mn>
+                            </mrow>
+                          </msup>
+                          <mo>,</mo>
+                        </mstyle>
+                      </mrow>
+                      <annotation encoding="application/x-tex">{\displaystyle E={\frac {1}{2}}mv^{2}={\frac
+                      {1}{2}}(Avt\rho )v^{2}={\frac {1}{2}}At\rho v^{3},}</annotation> 
+                    </semantics> 
+                  </math>
+                </span> 
+                <img 
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/768a83c369a7213461cfe88536d02e52d8a1a850"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -1.838ex; width:36.806ex; height:5.176ex;"
+                alt="E={\frac {1}{2}}mv^{2}={\frac {1}{2}}(Avt\rho )v^{2}={\frac {1}{2}}At\rho v^{3}," />
+              </span>  
+            </dd>
+          </dl>  
+          
+          <ul>where,</ul>   
+          <ul><b><i>ρ</i></b> is the <a href="#">density of air</a>;</ul>  
+          <ul><b><i>v</i></b> is the wind speed;</ul>   
+          <ul><b><i> Avt</i></b> is the volume of air passing through <i> A</i> (which is considered perpendicular to the direction of the wind);</ul> 
+          <ul><b><i> Avtρ</i></b> is therefore the mass <i>m</i> passing through "A".</ul>   
+          <ul><b>½ <i>ρv</i><sup>2</sup></b> is the kinetic energy of the moving air per unit volume.</ul> 
+          
+          <p>
+            Power is energy per unit time, so the wind power incident on <i>A</i> (e.g. equal to the rotor area of a
+            wind turbine) is: 
+          </p>
+          <dl>
+            <dd>
+              <span class="mwe-math-element">
+                <span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle P={\frac {E}{t}}={\frac {1}{2}}A\rho v^{3}.}">
+                    <semantics>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mstyle displaystyle="true" scriptlevel="0">
+                          <mi>P</mi>
+                          <mo>=</mo>
+                          <mrow class="MJX-TeXAtom-ORD">
+                            <mfrac>
+                              <mi>E</mi>
+                              <mi>t</mi>
+                            </mfrac>
+                          </mrow>
+                          <mo>=</mo>
+                          <mrow class="MJX-TeXAtom-ORD">
+                            <mfrac>
+                              <mn>1</mn>
+                              <mn>2</mn>
+                            </mfrac>
+                          </mrow>
+                          <mi>A</mi>
+                          <mi>&#x03C1;
+                            <!-- ρ -->
+                          </mi>
+                          <msup>
+                            <mi>v</mi>
+                            <mrow class="MJX-TeXAtom-ORD">
+                              <mn>3</mn>
+                            </mrow>
+                          </msup>
+                          <mo>.</mo>
+                        </mstyle>
+                      </mrow>
+                      <annotation encoding="application/x-tex">{\displaystyle P={\frac {E}{t}}={\frac {1}{2}}A\rho
+                      v^{3}.}</annotation>
+                    </semantics>
+                  </math>
+                </span> 
+                <img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/30739560fad0d0b3435acd7a9acdc0ae045e7306"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -1.838ex; width:18.326ex; height:5.176ex;"
+                alt="P={\frac {E}{t}}={\frac {1}{2}}A\rho v^{3}." />
+              </span>
+            </dd>
+          </dl>
+          <p>
+            Wind is the movement of air from an area of high pressure to an area of low pressure. In fact, wind exists because the sun 
+            unevenly heats the surface of the Earth. As hot air rises, cooler air moves in to fill the void. As long as the sun shines, 
+            the wind will blow. And wind has long served as a power source to humans.The global wind kinetic energy averaged approximately 
+            1.50 MJ/m<sup>2</sup> over the period from 1979 to 2010, 1.31 MJ/m<sup>2</sup> in the Northern Hemisphere with 1.70 MJ/m<sup>2</sup> 
+            in the Southern Hemisphere. The atmosphere acts as a <a href="#">thermal engine</a>, absorbing heat at higher temperatures, releasing heat
+            at lower temperatures. The process is responsible for production of wind kinetic energy at a rate of 2.46
+            W/m<sup>2</sup> sustaining thus the circulation of the atmosphere against <a href="#">frictional dissipation</a>. 
+          </p>
+          <p>There are three main types of wind energy:</p>
+          <ul>
+              <li>
+                <p><em><b>Utility-scale wind</b></em>:&nbsp; Wind turbines that range in size from 100 kilowatts to several megawatts, where the electricity 
+              is delivered to the power grid and distributed to the end user by electric utilities or power system operators.</p>
+              </li>
+              <li>
+                <p><em><b>Distributed or "small" wind</b></em>:&nbsp; Single small wind turbines below 100 kilowatts that are used to directly power a home, 
+              farm or small business and are not connected to the grid.</p>
+              </li> 
+              <li>
+                <p><em><b><a href="#">Offshore wind:</a></b></em>&nbsp; Wind turbines that are erected in large bodies of water, usually on the continental 
+              shelf.&nbsp;Offshore wind turbines are larger than land-based turbines and can generate more power.</p> 
+              </li>
+          </ul> 
+          <h2><span class="mw-headline" id="Wind_farms">Wind farms</span></h2>  
+          <hr class="featurette-divider"> 
+          <p>
+            <a href="#">A wind farm</a> (often also called a wind park) is an array or system of multiple wind turbines at a given site, used to 
+            capture wind energy for the production of bulk electricity for a grid. A large wind farm may consist of several hundred
+            individual wind turbines distributed over an extended area, but the land between the turbines may be used
+            for agricultural or other purposes. For example, <a href="#"><em>Gansu Wind Farm</em></a>, China, generates power through 7,000 turbines. 
+            At peak capacity, this wind farm has the ability to generate an impressive 20 GW. 
+          </p> 
+          <p>
+            Almost all large wind turbines have the same design&#160;— a horizontal axis wind turbine having an
+            <a href="#">upwind rotor</a> with three blades, attached to a <a href="#">nacelle</a> on top of a tall tubular tower.
+            In a wind farm, individual turbines are interconnected with a medium voltage (often 34.5&#160;kV) power collection system 
+            and communications network. In general, a distance of 7D (seven times the rotor diameter of the wind
+            turbine) is set between each turbine in a fully developed wind farm. At a substation, this medium-voltage
+            electric current is increased in voltage with a <a href="#">transformer</a> for connection to the high voltage electric power
+            transmission system.
+          </p> 
+          <p>
+            Wind farms tend to have much less impact on the environment than many other power stations. Onshore wind farms are also 
+            criticized for their visual impact and impact on the landscape, as typically they need to take up more land than other 
+            power stations and need to be built in wild and rural areas, which can lead to "industrialization of the countryside", 
+            habitat loss, and a drop in tourism. Critics have linked wind farms to adverse health effects (see wind turbine syndrome).
+            Wind farms have also been criticized for interfering with radar, radio and television reception.
+          </p>
+          <h5><em><span class="mw-headline" id="Design_and_Operation">Design and Operation</span></em></h5> 
+          <p>
+            There are many geographical, logistical and environmental factors that need to be considered while setting up a <a href="#">wind farm</a>. 
+            The first factor of consideration is the weather and average wind availability and speeds throughout the year. 
+            There are different ranges of wind speeds that are applicable for different sizes of turbines. After a location has been 
+            chosen for wind energy project the next step involves designing the facility. The main goal is to optimize energy 
+            production with minimum costs of establishment and operation. The wind farm should also be compliant with the local 
+            regulations and constraints. Some of the key points of consideration during the designing of the farm are mentioned below:-
+          </p>
+          <ul>
+            <li>
+              <strong>The maximum capacity of generation</strong><span style="font-weight: 400;"> must be pre-decided. 
+              This has an impact on the logistics, capital costs and grid connectivity.</span>
+            </li>
+          </ul> 
+          <ul>
+            <li>
+              <strong>Distances from key points</strong><span style="font-weight: 400;"> such as roads, domestic facilities 
+              and other private properties.&nbsp;</span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>Proximity to areas sensitive to noise emissions and shadow flickering.</strong><span style="font-weight: 400;"> 
+              Shadow flickering is an issue unique to wind turbines. It happens when the sun is directly behind the rotor blades and 
+              the light is repeatedly cut and interrupted due to the windmill’s operation. </span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>The minimum distance between each wind</strong><span style="font-weight: 400;"> turbine as specified by the 
+              manufacturer. This is also affected by local wind speeds and wind turbulence in the area.</span>
+            </li>
+          </ul>
+          <ul>
+            <li style="font-weight: 400;">
+              <strong>Interruption to signal towers and microwave pathways.</strong><span style="font-weight: 400;"> Windmills which 
+              come in the way of cellphone towers and other signaling posts can cause interruptions in transmission and communication.</span>
+            </li>
+          </ul> 
+          <p>
+            <span style="font-weight: 400;"> 
+              After the above-mentioned concerns have been satisfied, one can go ahead with the designing of the facilities. 
+              A typical capacity of wind farm lies in the 
+              range of 12 MW per sq-km of area. The turbine capacities are also a factor as the projected capacities can be met 
+              with a variety of different turbines. This decides the area covered and the number of turbines required. 
+              The allocated budget and given area are the deciding factors in selecting wind turbines.
+            </span>
+          </p> 
+          <p>
+            <span style="font-weight: 400;">
+              If the wind availability does not meet the required capacities then this might call for the inclusion of additional 
+              <a href="#">anemometry devices</a> after proper wind speed mappings. After the preliminary layout has been created, it is then worked 
+              upon to decide upon the exact location of each and every wind turbine. The positioning of wind turbines has certain 
+              key factors that need to be considered. 
+            </span>
+          </p>
+          <ul>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">
+                The first and most important factor is that of optimizing energy generation. The position and orientation of wind turbines 
+                must <a href="#">leverage</a> the wind speeds and direction to ensure maximum energy generation with minimum 
+                <a href="#">clogging</a> torque.  
+              </span>
+            </li>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">
+                Since wind towers are extremely tall structures, they are visible for miles around. Hence visual effect is an 
+                important parameter while setting up wind turbines.
+              </span>
+            </li>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">
+                Lastly, noise generation and turbine load capacities are considered before <a href="#">erecting</a> <a href="#">wind towers</a>.
+              </span>
+            </li> 
+          </ul>
+          <h5><em><span class="mw-headline" id="Turbine_Design">Turbine Design</span></em></h5> 
+          
+          <p>
+            At the heart of any renewable wind power generation system is the <a href="#">Wind Turbine</a>. Wind turbine designs generally 
+            comprise of a <a href="#">rotor</a>, 
+            a direct current (DC) generator or an alternating current (AC) alternator which is mounted on a tower high above the ground. 
+            In its simplest terms, a wind turbine is the opposite to a house or desktop fan. The fan uses electricity from the mains grid 
+            to rotate and circulate the air, making wind. Wind turbine designs on the other hand use the force of the wind to generate electricity. 
+            The winds movement spins or rotates the turbines blades, which captures the kinetic energy of the wind and convert this energy into a 
+            rotary motion via a shaft to drive a generator and make electricity as shown.
+          </p> 
+          <p><img src="/static/image/Turbine.jfif"></p> 
+  
+          <p>
+            Two types of wind turbine design are available. 
+            The common horizontal axis and the vertical axis design. <a href="#">The horizontal axis wind turbine</a> design catches more wind so the power 
+            output is higher than that of a vertical axis wind turbine design. The disadvantage of the horizontal axis design is that 
+            <a href="#">the tower</a> required to support the wind turbine is much higher and the design of the rotor blades has to be much better.
+            <a href="#">The Vertical Axis Turbine</a> or VAWT, is easier to design and maintain but offers lower performance than the horizontal axis 
+            types due to the high drag of its simple rotor blade design. Most wind turbines generating electricity today either commercially 
+            or domestically are horizontal axis machines. 
+          </p>
+          <p>          
+            In 1919 the German physicist <a href="#"><em>Albert Betz</em></a> showed that for a hypothetical ideal wind-energy extraction machine, the fundamental laws of 
+            conservation of mass and energy allowed no more than 16/27 (59%) of the kinetic energy of the wind to be captured. This Betz limit can 
+            be approached in modern turbine designs, which may reach 70 to 80% of the theoretical Betz limit. <a href="#">Modern commercial wind turbines</a> 
+            produce electricity by using rotational energy to drive an electrical generator. They are made up of a blade or rotor and an 
+            enclosure called a nacelle that contains a drive train atop a tall tower. The <a href="#">largest turbines</a> can produce 
+            <i>4.8–9.5 megawatts</i> of power, have a rotor diameter that may extend more than <i>162 metres</i> (about 531 feet), and are 
+            attached to towers approaching <i>240 metres</i> (787 feet) tall. The most common types of wind turbines 
+            (which produce up to 1.8 megawatts) are much smaller; they have a blade length of approximately 40 metres 
+            (about 130 feet) and are attached to towers roughly 80 metres (about 260 feet) tall. Smaller turbines can be used 
+            to provide power to individual homes.  
+          </p>
+          <p>
+            The shape and dimensions of the <a href="#">blades</a> of the wind turbine are determined by the <a href="#">aerodynamic</a> performance required to efficiently 
+            extract energy from the wind, and by the strength required to resist the forces on the blade.
+            The aerodynamics of a horizontal-axis wind turbine are not straightforward. The air flow at the blades is not the same as the 
+            airflow far away from the turbine. The very nature of the way in which energy is extracted from the air also causes air to be 
+            deflected by the turbine. In addition to the aerodynamic design of the blades, the design of a complete wind power system must 
+            also address the design of the installation's <a href="#">rotor hub</a>, <a href="#">nacelle</a>, <a href="#">tower structure</a>, 
+            <a href="#">generator</a>, <a href="#">controls</a>, and foundation.
+          </p> 
+          <h5><em><span class="mw-headline" id="Generator_characteristics_and_stability">Generator characteristics and stability</span></em></h5>
+          <p>
+            <a href="#">Induction generators</a>, which were often used for wind power projects in the 1980s and 1990s, require reactive power for excitation, 
+            so substations used in wind-power collection systems include substantial capacitor banks for <a href="#">power factor</a> correction. Different 
+            types of wind turbine generators behave differently during transmission grid disturbances, so extensive modelling of the dynamic 
+            electromechanical characteristics of a new wind farm is required by transmission system operators to ensure predictable stable 
+            behaviour during system faults. In particular, induction generators cannot support the system voltage during faults, unlike steam 
+            or hydro turbine-driven <a href="#">synchronous generators</a>. 
+          </p>
+          <p>
+            Induction generators aren't used in current turbines. Instead, most turbines use <a href="#">variable speed generators</a> combined with partial- 
+            or full-scale power converter between the turbine generator and the <a href="#">collector system</a>, which generally have more desirable 
+            properties for grid interconnection and have Low voltage ride through-capabilities. Modern concepts use either <a href="#">doubly 
+            fed machines</a> with partial-scale converters or <a href="#">squirrel-cage induction generators</a> or <a href="#">synchronous generators</a> 
+            (both permanently and electrically excited) with full scale converters.
+          </p>
+          <p>
+            Transmission systems operators will supply a wind farm developer with a grid code to specify the requirements for interconnection 
+            to the <a href="#">transmission grid</a>. This will include power factor, constancy of frequency and dynamic behaviour of the wind farm turbines 
+            during a system fault. 
+          </p>
+          <h5><em><span class="mw-headline" id="Collection_and_transmission_network">Collection and transmission network</span></em></h5>
+          <p>
+            In a wind farm, individual turbines are interconnected with a medium voltage (usually 34.5 kV) power collection system and 
+            communications network. At a substation, this medium-voltage electric current is increased in voltage with a transformer for 
+            connection to the high voltage electric power transmission system.
+          </p>
+          <p><img src="/static/image/WindFarmTransmission.jfif"></p> 
+          <p>
+            A transmission line is required to bring the generated power to (often remote) markets. For an off-shore station this may 
+            require a <a href="#">submarine cable</a>. Construction of a new high-voltage line may be too costly for the wind resource alone, but wind 
+            sites may take advantage of lines installed for conventionally fueled generation.
+          </p>
+          <p>
+            The current transmission lines in remote locations were not designed for the transport of large amounts of energy. 
+            As transmission lines become longer the losses associated with power transmission increase, as modes of losses at lower 
+            lengths are exacerbated and new modes of losses are no longer negligible as the length is increased, making it harder to 
+            transport large loads over large distances. The transmission losses from the wind power plants to the onshore converterare 
+            approximately 3.6% to 3.9% and are between 2.2% and 2.8% in offshore. Another problem is that wind companies find out after the 
+            fact that the transmission capacity of a new farm is below the generation capacity, largely because federal utility rules to 
+            encourage renewable energy installation allow feeder lines to meet only minimum standards. These are important issues that 
+            need to be solved, as when the transmission capacity does not meet the generation capacity, wind farms are forced to produce 
+            below their full potential or stop running all together, in a process known as <a href="#">curtailment</a>. While this leads to potential 
+            renewable generation left untapped, it prevents possible grid overload or risk to reliable service. 
+          </p> 
+          <p><img src="/static/image/WindFarmLosess.jfif"></p>
+          <h2><span class="mw-headline" id="Onshore_wind_power">Onshore wind power</span></h2> 
+          <hr class="featurette-divider">   
+          <p>
+            Onshore wind power refers to turbines that are located on land and use wind to generate electricity. 
+            They are generally located in areas where there is low conservation or habitat value. In pros and cons of onshore wind energy, 
+            in comparison with other low-carbon and <a href="/Fuel">fossil fuel</a> energy sources. In European and American countries onshore wind power is 
+            mainly generated in small-sized wind farms.
+          </p>
+          <p>
+            A large wind farm may consist of several hundred individual wind turbines, which could cover an area of 
+            hundreds of square kilometres, but generally an <a href="#">onshore wind farm</a> of 20 turbines might extend over an 
+            area of 4 square kilometres but only 2% of the land area would be used to house the turbines, electrical 
+            infrastructure and access roads; the remainder could be used for other purposes, such as farming, public 
+            amenities or as natural habitat. 
+          </p>
+          <p>
+            Onshore wind-generated electricity increased an estimated 12% in 2018, remaining the largest non-hydro renewable technology 
+            and generating more than all the others combined. Globally, onshore wind capacity additions increased by 7% to 46 GW in 2018.
+            Onshore wind is not fully on track to reach the levels envisioned in the <a href="#">Sustainable Development Scenario</a> (SDS) and therefore 
+            needs improvement. Reaching the SDS level by 2030 would require annual generation increases of 12%, while the <a href="#">IEA</a> forecasts 
+            only 8% annually through 2024. To get on track with the SDS, yearly net capacity additions need to expand continuously from 
+            47 GW in 2018 to 108 GW in 2030. <a href="#">China's onshore wind</a> capacity expansion rebounded from 14 GW in 2017 to 19 GW in 2018.
+          </p>
+          <h6><em><strong>Advantages of onshore wind:&nbsp;</strong></em></h6> 
+          <ul>
+            <li>The cost of onshore wind farms&nbsp;is relatively cheap, allowing for mass farms of wind turbines.</li>
+            <li>The shorter distance between the windmill and the consumer allows for less voltage drop off on the cabling.</li>
+            <li>Wind turbines are very quick to install, unlike a nuclear power station, which can take over twenty years, a windmill 
+            can be built in a matter of months.</li> 
+            <li>Generating electricity from onshore wind turbines typically costs around 7–9p per kWh, which is around half the cost of 
+            offshore wind and a quarter of the costs of solar photovoltaic panels.</li>
+            <li>Onshore wind generation is still slightly more expensive than fossil fuels (generating electricity from gas power plants 
+            currently costs between 4.1 and 7.5 p/kWh), but its price is expected to fall in the coming years.</li> 
+          </ul>
+          <h6><em><strong>Disadvantages of onshore wind:&nbsp;</strong></em></h6>
+          <ul>
+            <li>onshore wind turbines are typically more spread out than other large-scale energy infrastructure projects and 
+            so can affect a larger area.</li>
+            <li>They don’t produce energy all year round due to often poor wind speed or physical blockages such as buildings or hills.</li>
+            <li>The noise that wind turbines create can be compared to as the same as a lawnmower often causing noise pollution for nearby 
+            communities.</li>
+            <li>species such as birds and bats may also be affected by wind turbines </li> 
+          </ul>
+          <h2><span class="mw-headline" id="Offshore_wind_power">Offshore wind power</span></h2>
+          <hr class="featurette-divider"> 
+          <p>
+            <a href="#">Offshore wind power</a>, sometimes referred to as offshore wind energy, is when wind over open water, usually in the ocean, 
+            is used to generate power. <a href="#">Wind farms</a> are constructed in bodies of water where higher wind speeds are available. Offshore 
+            wind power includes inshore water areas such as lakes and sheltered coastal areas as well as deeper-water areas. 
+            Most offshore wind farms employ <a href="#">fixed-foundation wind turbines</a> in relatively shallow water. As of 2020, 
+            <a href="#">floating wind turbines</a> 
+            for deeper waters are in the early phase of development and deployment.
+          </p>
+          <p>
+            At the end of 2017, the total worldwide offshore wind power capacity was 18.8 gigawatt (GW). All the <a href="https://en.wikipedia.org/wiki/List_of_offshore_wind_farms">largest offshore 
+            wind farms</a> are currently in northern Europe, especially in the United Kingdom and Germany, which together account for 
+            over two-thirds of the total offshore wind power installed worldwide. Offshore wind power capacity is expected to reach 
+            a total of 75 GW worldwide by 2020. 
+          </p> 
+          <table class="wikitable">
+            <caption>List of countries by cumulative installed offshore wind power capacity (MW)</caption>
+            <tbody>
+              <tr>
+                <th>Rank</th>
+                <th>Country</th>
+                <th>2016</th>
+                <th>2017
+                </th>
+                <th>2018
+                </th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_the_United_Kingdom"
+                    title="List of offshore wind farms in the United Kingdom">United Kingdom</a></td>
+                <td>5,156</td>
+                <td>6,651
+                </td>
+                <td>7,963
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_Germany"
+                    title="List of offshore wind farms in Germany">Germany</a></td>
+                <td>4,108</td>
+                <td>5,411
+                </td>
+                <td>6,380
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_China" title="List of offshore wind farms in China">China</a>
+                </td>
+                <td>1,627</td>
+                <td>2,788
+                </td>
+                <td>4,588
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_Denmark"
+                    title="List of offshore wind farms in Denmark">Denmark</a></td>
+                <td>1,271</td>
+                <td>1,268
+                </td>
+                <td>1,329
+                </td>
+              </tr>
+              <tr>
+                <td>5
+                </td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_Belgium" class="mw-redirect"
+                    title="List of offshore wind farms in Belgium">Belgium</a>
+                </td>
+                <td>712
+                </td>
+                <td>877
+                </td>
+                <td>1,186
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_the_Netherlands" class="mw-redirect"
+                    title="List of offshore wind farms in the Netherlands">Netherlands</a></td>
+                <td>1,118</td>
+                <td>1,118
+                </td>
+                <td>1,118
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_Sweden" title="List of offshore wind farms in Sweden">Sweden</a>
+                </td>
+                <td>202</td>
+                <td>202
+                </td>
+                <td>192
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Vietnam</td>
+                <td>99</td>
+                <td>99
+                </td>
+                <td>99
+                </td>
+              </tr>
+              <tr>
+                <td>9
+                </td>
+                <td>South Korea
+                </td>
+                <td>35
+                </td>
+                <td>38
+                </td>
+                <td>73
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Finland</td>
+                <td>32</td>
+                <td>92
+                </td>
+                <td>87
+                </td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_Japan" title="List of offshore wind farms in Japan">Japan</a>
+                </td>
+                <td>60</td>
+                <td>65
+                </td>
+                <td>65
+                </td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><a href="/wiki/List_of_offshore_wind_farms_in_the_United_States"
+                    title="List of offshore wind farms in the United States">United States</a></td>
+                <td>30</td>
+                <td>30
+                </td>
+                <td>30
+                </td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Ireland</td>
+                <td>25</td>
+                <td>25
+                </td>
+                <td>25
+                </td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Taiwan</td>
+                <td>0</td>
+                <td>8
+                </td>
+                <td>8
+                </td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Spain</td>
+                <td>5</td>
+                <td>5
+                </td>
+                <td>5
+                </td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>Norway</td>
+                <td>2</td>
+                <td>2
+                </td>
+                <td>2
+                </td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>France</td>
+                <td>0</td>
+                <td>2
+                </td>
+                <td>2
+                </td>
+              </tr>
+              <tr>
+                <th></th>
+                <th>World total</th>
+                <th>14,482</th>
+                <th>18,658</th>
+                <th>23,140
+                </th>
+              </tr>
+            </tbody>
+          </table>
+  
+          <h5><em><strong>Types of offshore wind turbines</strong></em></h5>
+          <hr class="featurette-divider"> 
+          <em><strong>Fixed foundation offshore wind turbines</strong></em>
+          <p>
+            Almost all currently operating offshore wind farms employ fixed foundation turbines, with the 
+            exception of a few pilot projects. Fixed foundation offshore wind turbines have fixed foundations 
+            underwater, and are installed in relatively shallow waters of up to 50–60 m.
+          </p>
+          <p>
+            Types of underwater structures include <a href="#">monopile</a>, <a href="#">tripod</a>, and jacketed, with various 
+            foundations at the sea floor including <a href="#">monopile</a> or multiple piles, <a href="#">gravity base</a>, and 
+            <a href="#">caissons</a>. Offshore turbines require different types of bases for stability, according to the depth of water. 
+            To date a number of different solutions exist:
+          </p>
+          <ul>
+            <li>Most foundations are monopile (single column) base, six meters in diameter, is used in waters up to 30 meters deep.</li>
+            <li>Conventional steel jacket structures, as used in the oil and gas industry, in water 20–80 m deep.</li>
+            <li>Gravity base structures, for use at exposed sites in water 20–80 m deep.</li>
+            <li><a href="#">Tripod piled structures</a>, in water 20–80 m deep.</li>
+            <li><a href="#">Tripod suction caisson</a> structures, in water 20–80 m deep.</li> 
+          </ul>
+          <em><strong>Floating offshore wind turbines</strong></em>
+          <p>
+            For locations with depths over about 60–80 m, fixed foundations are uneconomical or technically unfeasible, 
+            and floating wind turbine anchored to the ocean floor are needed. <i>Hywind</i> is the world's first full-scale floating wind turbine, installed in the 
+            <a href="#">North Sea</a> off <a href="#">Norway</a> in 2009. <a href="#">Hywind Scotland</a>, commissioned in October 2017, is the first operational 
+            floating wind farm, with a capacity of 30 MW. Other kinds of floating turbines have been deployed, and more projects are planned.
+          </p>
+          <em><strong>Vertical axis offshore wind turbines</strong></em>
+          <p>
+            Although the great majority of onshore and all large-scale offshore wind turbines currently installed are 
+            <a href="#">horizontal axis</a>, <a href="#">vertical axis wind turbines</a> have been proposed for use in offshore installations.
+            Thanks to the installation offshore and their lower center of gravity, these turbines can in principle 
+            be built bigger than horizontal axis turbines, with proposed designs of up to 20 MW capacity per turbine.
+            This could improve the economy of scale of offshore wind farms. However, there are no current large-scale 
+            demonstrations of this technology.
+          </p>
+  
+          <h6><em><strong>Advantages of offshore wind:&nbsp;</strong></em></h6>
+          <ul>
+            <li>Windmills can be built that are larger and taller than their onshore counterparts, allowing for more energy collection.</li>
+            <li>They tend to be far&nbsp;out at sea, meaning they are much less intrusive to neighbouring countries, allowing for larger 
+            farms to be created per square mile.</li>
+            <li>Typically out at sea, there is a much higher wind speed/force allowing for more energy to be generated at a time.</li>
+            <li>Wind farms have a relatively negative&nbsp;impact on the environment. They are not built in shipping lanes, fishing areas 
+            or in a delicate environment.</li><li>There are no physical restrictions such as hills or buildings that could 
+            block the wind flow.</li>
+          </ul>
+          <h6><em><strong>Disadvantages of offshore wind:&nbsp;</strong></em></h6>
+          <ul>
+            <li>The biggest disadvantage of an offshore wind farm is the cost. Onshore wind farms can be expensive to build and 
+            maintain and because of their hard to reach locations, they are susceptible to damage from very high-speed winds 
+            during storms or hurricanes which is expensive to repair.</li>
+            <li>The effect of offshore wind farms on marine life and birds are not yet fully understood.</li>
+            <li>Offshore wind farms that are built closer to coastlines (generally within 26 miles) can be unpopular with residents 
+            as it can affect property values and tourism.&nbsp;</li> 
+          </ul> 
+          <h2><span class="mw-headline" id="Small-scale_wind_power">Small-scale wind power</span></h2>
+          <hr class="featurette-divider"> 
+          <p>
+            <a href="#">Small-scale wind power</a> is the name given to wind generation systems with the capacity to produce up to <i>50 kW of electrical power</i>.
+            <a href="#">Isolated communities</a>, that may otherwise rely on <a href="#">diesel generators</a>, may use wind turbines as an alternative. Individuals 
+            may purchase these systems to reduce or eliminate their dependence on grid electric power for economic reasons, or to reduce 
+            their carbon footprint. Wind turbines have been used for household electric power generation in conjunction with 
+            battery storage over many decades in remote areas.
+          </p>
+          <p>
+            Turbines are often mounted on a tower to raise them above any nearby obstacles. One rule of thumb is that turbines 
+            should be at least 9 m (30 ft) higher than anything within 150 m (490 ft). Better locations for wind turbines are far 
+            away from large upwind obstacles.
+            Recent examples of small-scale wind power projects in <a href="#">an urban setting</a> can be found in New York City, where, since 2009, 
+            a number of building projects have capped their roofs with <a href="#">Gorlov-type helical wind turbines</a>. Although the energy they 
+            generate is small compared to the buildings' overall consumption with some of the projects also receiving the direct support of 
+            the New York State <a href="#"><em>Energy Research and Development Authority.</em></a>
+          </p>
+          <p>
+            Grid-connected <a href="#">domestic wind turbines</a> may use grid energy storage, thus replacing purchased electric power with locally 
+            produced power when available. The surplus power produced by <a href="#">domestic microgenerators</a> can, in some jurisdictions, be fed 
+            into the network and sold to the <a href="#">utility company</a>, producing a retail credit for the microgenerators' owners to offset their 
+            energy costs.
+          </p>
+          <p>
+            Off-grid system users can either adapt to <a href="#">intermittent power</a> or use batteries, photovoltaic or diesel systems to supplement 
+            the wind turbine. Equipment such as <i>parking meters</i>, <i>traffic warning signs</i>, <i>street lighting</i>, or <i>wireless Internet gateways</i> 
+            may be powered by a small wind turbine, possibly combined with a <a href="#">photovoltaic system</a>, that charges a small battery replacing 
+            the need for a connection to the power grid.
+          </p>
+          <p>
+            A Carbon Trust study into the potential of small-scale wind energy in the UK, published in 2010, found that small wind 
+            turbines could provide up to 1.5 terawatt hours (TW·h) per year of electric power (0.4% of total UK electric power consumption), 
+            saving 0.6 million tonnes of carbon dioxide (Mt CO2) emission savings. This is based on the assumption that 10% of households 
+            would install turbines at costs competitive with grid electric power, around 12 <a href="#">pence</a> (US 19 cents) a kW·h. A report prepared 
+            for the UK's government-sponsored <a href="#">Energy Saving Trust</a> in 2006, found that home power generators of various kinds could 
+            provide 30 to 40% of the country's electric power needs by 2050.
+          </p>
+          <p>
+            Distributed generation from <a href="#">renewable resources</a> is increasing as a consequence of the increased awareness of climate change. 
+            The electronic interfaces required to connect renewable generation units with the utility system can include additional 
+            functions, such as the active filtering to enhance the power quality.
+          </p>
+          <h2><span class="mw-headline" id="Growth">Growth</span></h2>  
+          <hr class="featurette-divider">
+          <p>
+            Wind power is one of the fastest-growing renewable energy technologies. Usage is on the rise worldwide, 
+            in part because costs are falling. Global installed wind-generation capacity onshore and offshore has 
+            increased by a factor of almost 75 in the past two decades, jumping from 7.5 gigawatts (GW) in 1997 to 
+            some 650,8 GW by 2019, according to <a href="https://wwindea.org/blog/2020/04/16/world-wind-capacity-at-650-gw/">WWEA's latest data</a>.
+            59’667 Megawatt were added in the year 2019, substantially more than in 2018 when only 50’252 Megawatt got erected.
+            2019 was the second strongest wind year in terms of market size, with a growth rate of 10.1 %, 
+            higher than the 9.3 % of the previous year but lower than in 2016 and 2017. All wind turbines installed by end of 2019 can
+            cover more than 6% of the global electricity demand.
+          </p>
+          <p>
+            The increased 
+            commissioning of wind power is being accompanied by record low prices for forthcoming renewable electric power. 
+            In some cases, wind onshore is already the cheapest electric power generation option and costs are continuing to decline. 
+            The contracted prices for wind onshore for the next few years are now as low as 30 USD/MWh.
+            The <a href="#">EU</a> has estimated that 230 GW of wind capacity has installed in Europe by 2020. This would produce 
+            14-17% of the EU's electricity.
+          </p> 
+          <h2><span class="mw-headline" id="Energy_storage">Energy storage</span></h2> 
+          <hr class="featurette-divider"> 
+          <p>
+            Wind is a form of <a href="/Solar">solar energy</a>, the result of uneven heating of the earth’s atmosphere by the sun 
+            and it is a relatively variable power source. The amount of power generated varies greatly at hourly, daily or seasonal 
+            timescales which means that often the supply of electricity will outweigh the demand. 
+            In a regular wind farm configuration, the power is distributed straight onto the <a href="#">electrical power grid</a>. 
+            With no energy storage capability, this requires the turbines to be slowed to <a href="#">sub-optimal speeds</a> when 
+            more energy is produced than is required.
+          </p>
+          <p>
+            Electricity generated from a <a href="#">wind farm</a> will travel to a <a href="#">transmission substation</a>, where it is 
+            stepped up to a high voltage in the region of 150-800 kV. It is then distributed along the 
+            electricity grid power lines to the consumer.
+          </p>
+          <p>
+            Through several different storage processes, excess energy can be stored to be used during periods of lower wind or higher demand.
+          </p> 
+          <ul>
+            <li>
+              <strong>Battery Storage:</strong><span style="font-weight: 400;"> Electrical batteries are commonly used in <a href="/Solar">solar 
+              energy</a> applications and can be used to store wind generated power. <a href="#">Lead acid batteries</a> are a suitable 
+              choice as they are well suited to trickle charging and have a high electrical output charging efficiency.</span>
+            </li>
+          </ul> 
+          <ul>
+            <li>
+              <strong>Compressed Air Storage:</strong><span style="font-weight: 400;"> <a href="#">Wind turbines</a> can use excess 
+              power to <a href="#">compress air</a>, this is usually stored in large above-ground tanks or in <a href="#">underground caverns</a>. 
+              When required the compressed air can be used through direct expansion into a <a href="#">compressed air motor</a>. It 
+              can also be injected in an <a href="#">internal combustion turbine</a>, where it is burnt with fuel to provide mechanical energy 
+              which then powers a generator.</span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>Hydrogen Fuel Cells:</strong><span style="font-weight: 400;"> 
+              <a href="#">Hydrogen fuel cells</a> can also be used to store excess energy. <a href="#">A hydrogen generator</a> is used 
+              to <a href="#">electrolyse water</a> using power generated from the wind turbine, storing the resulting hydrogen and converting it 
+              back to electricity using a fuel cell power system when needed.</span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>Pumped Storage:</strong><span style="font-weight: 400;"> Pumped storage is associated with <a href="/Hydro">hydroelectric power</a> 
+              generation but is yet to be used with wind power generation. Water could theoretically be pumped up to an elevated 
+              reservoir utilizing excess generated power and then be used to drive a water turbine when required. 
+              The technology is proven and has been used for centuries, giving a relatively high overall efficiency of 70%. 
+              Existing hydroelectric power plants could be utilized if they are in an area suitable for a <a href="#">wind farm.</a></span>
+            </li>
+          </ul>
+  
+          <h2><span class="mw-headline" id="Environmental_effects">Environmental effects</span></h2>  
+          <hr class="featurette-divider">
+          <p>
+            Harnessing power from the wind is one of the cleanest and most sustainable ways to generate electricity as 
+            it produces no toxic pollution or <a href="#">global warming emissions</a>. Wind is also abundant, inexhaustible, and 
+            affordable, which makes it a viable and large-scale alternative to <a href="/Fuel">fossil fuels</a>.
+          </p> 
+          <p>
+            Despite its vast potential, there are a variety of environmental impacts associated with wind power generation 
+            that should be recognized and mitigated.
+          </p>
+          <ul>
+            <li>
+              <strong>Land use</strong><span style="font-weight: 400;"> The land use impact of wind power facilities varies 
+              substantially depending on the site: wind turbines placed in flat areas typically use more land than those 
+              located in hilly areas. However, wind turbines do not occupy all of this land; they must be spaced approximately 
+              5 to 10 rotor diameters apart (a rotor diameter is the diameter of the wind turbine blades). Thus, the turbines 
+              themselves and the surrounding infrastructure (including roads and transmission lines) occupy a small portion of 
+              the total area of a wind facility.</span> 
+            </li>
+          </ul> 
+          <ul>
+            <li>
+              <strong>Wildlife and habitat</strong><span style="font-weight: 400;"> <p>The impact of wind turbines on wildlife, 
+              most notably on birds and bats, has been widely document and studied. A recent <a href="#">National Wind Coordinating Committee</a> 
+              (NWCC) review of peer-reviewed research found evidence of bird and bat deaths from collisions with wind turbines and 
+              due to changes in air pressure caused by the spinning turbines, as well as from habitat disruption. The NWCC concluded 
+              that these impacts are relatively low and do not pose a threat to species populations.</p>
+              <p><a href="#">Offshore wind turbines</a> can have similar impacts on marine birds, but as with <a href="#">onshore wind turbines</a>, 
+              the bird deaths associated with offshore wind are minimal. Wind farms located offshore will also impact fish and other marine wildlife.
+              </span>  
+            </li> 
+          </ul>
+          <ul>
+            <li>
+              <strong>Public health and community</strong><span style="font-weight: 400;"> 
+              Sound and visual impact are the two main public health and community concerns associated with operating wind turbines. 
+              Most of the sound generated by wind turbines is aerodynamic, caused by the movement of turbine blades through the air. 
+              There is also mechanical sound generated by the turbine itself. Overall sound levels depend on turbine design and wind speed.
+              Some people living close to wind facilities have complained about sound and vibration issues.Under certain lighting 
+              conditions, wind turbines can create an effect known as shadow flicker. </span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>Water use</strong><span style="font-weight: 400;"> There is no water impact associated with the operation 
+              of wind turbines. As in all manufacturing processes, some water is used to manufacture steel and cement for wind turbines.</span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>Life-cycle global warming emissions</strong><span style="font-weight: 400;"> While there are no global warming 
+              emissions associated with operating wind turbines, there are emissions associated with other stages 
+              of a wind turbine’s life-cycle, including materials production, materials transportation, on-site 
+              construction and assembly, operation and maintenance, and decommissioning and dismantlement. Estimates of 
+              total global warming emissions depend on a number of factors, including wind speed, percent of time the 
+              wind is blowing, and the material composition of the wind turbine.</span>
+            </li>
+          </ul> 
+        </div>
+      </div>
+    </div> 
+
+
+
+
+
+
+  <hr class="featurette-divider">
+  <!-- FOOTER -->
+
+  <footer class="container" style="margin-top: 2rem!important; padding-right: 0px; padding-left: 0px;">
+    <p>Energy Science and Engineering · <a href="/Contact"> Contact Us</a> · <a href="/About"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

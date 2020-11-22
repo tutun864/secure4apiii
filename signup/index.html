@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is title</title>
+
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+        <script src="../js/db-con.js"></script>
+        <link rel="stylesheet" href="../css/signup.css">
+        <link rel="stylesheet" href="../css/loader.css">
+
+
+        <script>
+            window.onload = function(){
+      
+              firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    window.location.href = "home";
+                }else{
+                    document.getElementById('body').classList.remove("displaynone");
+                    document.getElementById('loader').classList.add("displaynone");
+
+                }
+              });
+            }
+          </script>
+    </head>
+
+    <body scroll="no">
+        <section id="body" class="displaynone">
+            <div class="background" id="background">
+                    <div class="form_top" id="form_top">
+                        <h1>Sign Up</h1>
+                        <p>You must log in to continue in this website</p>
+                    </div>
+                    <div class="form_input">
+                        <label for="name_inp"> Name: </label>
+                        <input name="name_inp" id="name_inp" type="text">
+
+                        <label for="email_inp"> Email: </label>
+                        <input name="email_inp" id="email_inp" type="email">
+
+                        <label for="pass_inp"> Password: </label>
+                        <input name="pass_inp" id="pass_inp" type="password">
+                        <p>
+                            Already have an account? <a href="../"> Log In</a>
+                        </p>
+                        <button class="submit_btn" id="submit_btn" onclick="Signup()"> Submit </button>
+
+                    </div>
+                    <p id="error_handler" class="error_handler"></p>
+                
+            </div>
+        </section>
+
+        
+        <section id="loader" class="loader">
+            <div class="loader_icon">
+
+            </div>
+            <br>
+            <br>
+            please wait while loading...
+        </section>
+    </body>
+
+<script src="../js/signup.js"></script>
+</html>

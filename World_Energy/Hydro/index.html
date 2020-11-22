@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="js/db-con.js"></script>
+
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log(user.email)
+          } else {
+            window.location.href = "index.html";
+            
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../../Home/">Energy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bangladesh
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              <a class="dropdown-item" href="../../Power_Sector">Power Scetor</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../Power_Generation">Power Generation</a>
+              <div class="dropdown-divider"></div> 
+              <a class="dropdown-item" href="../../Power_Transmission">Power Transmission</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../Power_Distribution">Power Distribution</a> 
+            </div> 
+          </li>
+          <a class="nav-link" href="../../Renewable">
+            Renewable
+          </a>   
+          <a class="nav-link" href="../../NonRenewable">
+            Non-renewable 
+          </a> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Year
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../../World_Energy/Naturalgas/">1st year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Coal/">2nd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/oil/">3rd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Biogas/">4th year</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Paper
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../../World_Energy/Naturalgas/">Research</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../../World_Energy/Coal/">Thesis</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> 
+
+
+
+
+<!-- start: secondary page content -->
+<div class="container page-content" style="margin-top: 2rem!important; margin-left: 20px">
+    <div class="bcrumb-wrapper">
+      <div class="bcrumb-wrapper">
+        <i class="fa fa-home" aria-hidden="true">
+          <span class="sr-only">Home</span>
+        </i>
+        <a href="">Energy</a>
+        <span class="bcrumb-icon">/</span>
+        <a href="/Renewable">Renewable</a>
+        <span class="bcrumb-icon">/</span>
+        Hydro Electricity
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar affix-top" data-spy="affix" data-offset-top="75" data-offset-bottom="700"
+          style="margin-top: 30px;">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <h2></h2> <!-- Needed for spacing -->
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Solar" class="active">
+                    Solar Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Wind">
+                    Wind Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                    Hydro Energy 
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Geothermal">
+                    Geothermal Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Tidal">
+                    Tidal Energy
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Wave">
+                    Wave Energy
+                  </a>
+                </h5>
+              </div>
+              <hr class="featurette-divider">
+              <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" />
+                <div class="toctitle" lang="en" dir="ltr">
+                  <h3 id="mw-toc-heading">Contents</h3><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+                </div>
+                <ul>
+                  <li class="toclevel-1 tocsection-1"><a href="#Potential"><span class="toctext">Potential</span></a></li>
+                  <li class="toclevel-1 tocsection-2"><a href="#Generating_methods"><span class="toctext">Generating methods</span></a>
+                    <ul>
+                      <li class="toclevel-2 tocsection-4"><a href="#Conventional_(dams)"><span class="toctext">Conventional (dams)</span></a></li>
+                      <li class="toclevel-2 tocsection-5"><a href="#Pumped_storage"><span class="toctext">Pumped-storage</span></a></li>
+                      <li class="toclevel-2 tocsection-6"><a href="#Run_of_the_river"><span class="toctext">Run-of-the-river</span></a></li>
+                      <li class="toclevel-2 tocsection-7"><a href="#Tide_power"><span class="toctext">Tide power</span></a></li>
+                    </ul> 
+                  </li>
+                  <li class="toclevel-1 tocsection-10"><a href="#Types_based_on_sizes"><span class="toctext">Types based on sizes</span></a>
+                    <ul>
+                      <li class="toclevel-2 tocsection-11"><a href="#Large_facilities"><span class="toctext">Large facilities</span></a></li>
+                      <li class="toclevel-2 tocsection-12"><a href="#Small"> <span class="toctext">Small</span></a></li>
+                      <li class="toclevel-2 tocsection-12"><a href="#Micro"> <span class="toctext">Micro</span></a></li>
+                      <li class="toclevel-2 tocsection-12"><a href="#Pico"> <span class="toctext">Pico</span></a></li>
+                      <li class="toclevel-2 tocsection-12"><a href="#Underground"> <span class="toctext">Underground</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="toclevel-1 tocsection-15"><a href="#Water_turbines"><span class="toctext">Water Turbines</span></a>
+                    <ul>
+                      <li class="toclevel-2 tocsection-11"><a href="#Turbine_Power_Output"><span class="toctext">Turbine Power Output</span></a></li>
+                      <li class="toclevel-2 tocsection-12"><a href="#Turbine_Types"> <span class="toctext">Turbine Types</span></a></li>  
+                    </ul>
+                  </li>
+                  <li class="toclevel-1 tocsection-15"><a href="#Advantages"><span class="toctext">Advantages</span></a></li>
+                  <li class="toclevel-1 tocsection-17"><a href="#Disadvantages"><span class="toctext">Disadvantages</span></a></li>
+                  <li class="toclevel-1 tocsection-18"><a href="#World_hydroelectric_capacity"><span class="toctext">World hydroelectric capacity</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 main-content pull-right" style="margin-top: 10px;">
+        <h2>Hydro Electricity</h2>
+        <hr class="featurette-divider"> 
+        <img src="/static/image/H2.jfif"> 
+        <h1></h1> 
+        <hr class="featurette-divider">
+        <p>
+          Hydro or water energy is the conversion of hydropower into electricity. Hydropower refers to the 
+          force of water flow that turns turbines and powers generators, which then store the electricity 
+          into <a href="#"> power grids </a> for mass consumption. The hydropower process is a clean 
+          <a href="/Renewable"> renewable energy </a> resource because the water cycle occurs naturally. 
+        </p>  
+        <p> 
+          Hydropower is an abundant, low cost source of power (where applicable), despite high upfront buidling costs. 
+          It is also a flexible and reliable source of electricity compared to other renewable options, as it 
+          may be stored for use at a later time. <a href="#">Dammed reservoirs</a> can also help with flood control, be a reliable 
+          water supply, and may be used for recreational purposes. However, there are many concerns with hydropower, 
+          particularly large dam facilities. Damming a river has a significant impact on the regional ecosystem, 
+          by flooding upstream landscapes, distrupting habitats for wildlife, blocking fish passages, and often displacing local communities.
+        </p>
+        <p>
+          Historically, one of the first uses of hydro power was for <a href="#">mechanical milling</a>, such as <a href="#">grinding grains</a>. 
+          Today, modern hydro plants produce electricity using turbines and generators, where mechanical energy is 
+          created when moving water spins rotors on a turbine.  This turbine is connected to an electromagnetic 
+          generator, which produce electricity when the turbine spins.  
+        </p>
+        <p> 
+          Electricity generation from hydropower projects achieved a record 4,200 terawatt hours (TWh) in 2018, 
+          the highest ever contribution from a renewable energy source, as worldwide installed hydropower capacity 
+          climbed to 1,292 GW, according to <a href="https://www.hydropower.org/statusreport">International Hydropower Association</a>.
+  
+          Hydropower is produced in 150 countries, with the Asia-Pacific region generating 1,534 TWh of global 
+          hydropower in 2018. China is the largest hydroelectricity producer, with 1,232,900 GWh of production in 2018, 
+          representing 19.4% of domestic electricity use.
+  
+          The cost of hydroelectricity is relatively low, making it a competitive source of renewable electricity. 
+          The hydro station consumes no water, unlike coal or gas plants. The typical cost of electricity from a 
+          hydro station larger than 10 megawatts is 3 to 5 U.S. cents per kilowatt hour. 
+        </p>
+        <h2><span class="mw-headline" id="Potential">Potential</span></h2> 
+        <hr class="featurette-divider">
+        <p>A simple formula for approximating electric power production at a hydroelectric station is:</p>  
+        <p>
+          <span class="mwe-math-element">
+            <span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;">
+              <math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle P=-\eta \ ({\dot {m}}g\ \Delta h)=-\eta \ ((\rho {\dot {V}})\ g\ \Delta h)}">
+                <semantics>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mstyle displaystyle="true" scriptlevel="0">
+                      <mi>P</mi>
+                      <mo>=</mo>
+                      <mo>−
+                        <!-- − -->
+                      </mo>
+                      <mi>η
+                        <!-- η -->
+                      </mi>
+                      <mtext>&nbsp;</mtext>
+                      <mo stretchy="false">(</mo>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mrow class="MJX-TeXAtom-ORD">
+                          <mover>
+                            <mi>m</mi>
+                            <mo>˙
+                              <!-- ˙ -->
+                            </mo>
+                          </mover>
+                        </mrow>
+                      </mrow>
+                      <mi>g</mi>
+                      <mtext>&nbsp;</mtext>
+                      <mi mathvariant="normal">Δ
+                        <!-- Δ -->
+                      </mi>
+                      <mi>h</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>=</mo>
+                      <mo>−
+                        <!-- − -->
+                      </mo>
+                      <mi>η
+                        <!-- η -->
+                      </mi>
+                      <mtext>&nbsp;</mtext>
+                      <mo stretchy="false">(</mo>
+                      <mo stretchy="false">(</mo>
+                      <mi>ρ
+                        <!-- ρ -->
+                      </mi>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mrow class="MJX-TeXAtom-ORD">
+                          <mover>
+                            <mi>V</mi>
+                            <mo>˙
+                              <!-- ˙ -->
+                            </mo>
+                          </mover>
+                        </mrow>
+                      </mrow>
+                      <mo stretchy="false">)</mo>
+                      <mtext>&nbsp;</mtext>
+                      <mi>g</mi>
+                      <mtext>&nbsp;</mtext>
+                      <mi mathvariant="normal">Δ 
+                        <!-- Δ -->
+                      </mi>
+                      <mi>h</mi>
+                      <mo stretchy="false">)</mo>
+                    </mstyle>
+                  </mrow>
+                  <annotation encoding="application/x-tex">{\displaystyle P=-\eta \ ({\dot {m}}g\ \Delta h)=-\eta \ ((\rho {\dot
+                    {V}})\ g\ \Delta h)}
+                  </annotation>
+                </semantics>
+              </math>
+            </span>
+            <img
+              src="https://wikimedia.org/api/rest_v1/media/math/render/svg/67cb5e17f3f3661239cd28cd1196a4e4d43538fb"
+              class="mwe-math-fallback-image-inline" aria-hidden="true"
+              style="vertical-align: -0.838ex; width:36.04ex; height:3.176ex;"
+              alt="{\displaystyle P=-\eta \ ({\dot {m}}g\ \Delta h)=-\eta \ ((\rho {\dot {V}})\ g\ \Delta h)}">
+          </span> 
+        </p>
+        <p>Where: </p>
+        <ul>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle P}">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mi>P</mi>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle P}</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b4dc73bf40314945ff376bd363916a738548d40a"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.338ex; width:1.745ex; height:2.176ex;" alt="P"></span> is <a
+              href="/wiki/Power_(physics)" title="Power (physics)">power</a> (in <a href="/wiki/Watt" title="Watt">watts</a>)
+          </li>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \eta }">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mi>η
+                          <!-- η -->
+                        </mi>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle \eta }</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e4d701857cf5fbec133eebaf94deadf722537f64"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.838ex; width:1.169ex; height:2.176ex;" alt="\eta "></span> (<a
+              href="/wiki/Eta_(Greek_letter)" class="mw-redirect" title="Eta (Greek letter)">eta</a>) is the coefficient of
+            efficiency (a unitless, scalar coefficient, ranging from 0 for completely inefficient to 1 for completely
+            efficient).</li>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \rho }">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mi>ρ
+                          <!-- ρ -->
+                        </mi>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle \rho }</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f7d439671d1289b6a816e6af7a304be40608d64"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.838ex; width:1.202ex; height:2.176ex;" alt="\rho "></span> (<a
+              href="/wiki/Rho_(Greek_letter)" class="mw-redirect" title="Rho (Greek letter)">rho</a>) is the <a
+              href="/wiki/Density" title="Density">density</a> of water (~1000&nbsp;<a href="/wiki/Kilogram"
+              title="Kilogram">kg</a>/<a href="/wiki/Cubic_meter" class="mw-redirect" title="Cubic meter">m<sup>3</sup></a>)
+          </li>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\dot {V}}}">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mrow class="MJX-TeXAtom-ORD">
+                          <mrow class="MJX-TeXAtom-ORD">
+                            <mover>
+                              <mi>V</mi>
+                              <mo>˙
+                                <!-- ˙ -->
+                              </mo>
+                            </mover>
+                          </mrow>
+                        </mrow>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle {\dot {V}}}</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/49ef9fa9f410331b94e4578bab90e9edda5c919b"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.338ex; width:1.787ex; height:2.676ex;" alt="{\dot {V}}"></span> is the <a
+              href="/wiki/Volumetric_flow_rate" title="Volumetric flow rate">volumetric flow rate</a> (in m<sup>3</sup>/s)</li>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\dot {m}}}">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mrow class="MJX-TeXAtom-ORD">
+                          <mrow class="MJX-TeXAtom-ORD">
+                            <mover>
+                              <mi>m</mi>
+                              <mo>˙
+                                <!-- ˙ -->
+                              </mo>
+                            </mover>
+                          </mrow>
+                        </mrow>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle {\dot {m}}}</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ad59b9876301e8fb75b9ddbf08de594b87251d3b"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.338ex; width:2.04ex; height:2.176ex;" alt="{\dot {m}}"></span> is the <a
+              href="/wiki/Mass_flow_rate" title="Mass flow rate">mass flow rate</a> (in kg/s)</li>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \Delta h}">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mi mathvariant="normal">Δ
+                          <!-- Δ -->
+                        </mi>
+                        <mi>h</mi>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle \Delta h}</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/af7b7e75abcd97007405341555a3958cc020265e"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.338ex; width:3.275ex; height:2.176ex;" alt="\Delta h"></span> (<a
+              href="/wiki/Delta_(Greek_letter)" class="mw-redirect" title="Delta (Greek letter)">Delta</a> h) is the change in
+            height (in <a href="/wiki/Meter" class="mw-redirect" title="Meter">meters</a>)</li>
+          <li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y"
+                style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle g}">
+                  <semantics>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mstyle displaystyle="true" scriptlevel="0">
+                        <mi>g</mi>
+                      </mstyle>
+                    </mrow>
+                    <annotation encoding="application/x-tex">{\displaystyle g}</annotation>
+                  </semantics>
+                </math></span><img
+                src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d3556280e66fe2c0d0140df20935a6f057381d77"
+                class="mwe-math-fallback-image-inline" aria-hidden="true"
+                style="vertical-align: -0.671ex; width:1.116ex; height:2.009ex;" alt="g"></span> is <a
+              href="/wiki/Standard_gravity" title="Standard gravity">acceleration due to gravity</a> (9.8&nbsp;m/s<sup>2</sup>)
+          </li>
+        </ul>
+        <p>
+          Efficiency is often higher (that is, closer to 1) with larger and more modern turbines. 
+          Annual electric energy production depends on the available water supply. In some installations, 
+          the <a href="#">water flow rate</a> can vary by a factor of 10:1 over the course of a year. Technically feasible 
+          hydropower potential estimated at nearly 15 000 TW h/yr still exists in the world today.
+        </p>
+        <p>
+          The technical potential for hydropower development around the world is much greater than the actual 
+          production: the percent of potential hydropower capacity that has not been developed is 71% in <a href="#">Europe</a>, 
+          75% in <a href="#">North America</a>, 79% in <a href="#">South America</a>, 95% in <a href="#">Africa</a>, 95% in the 
+          <a href="#">Middle East</a>, and 82% in <a href="#">Asia-Pacific</a>. 
+          Some countries have highly developed their hydropower potential and have very little 
+          room for growth: Switzerland produces 88% of its potential and Mexico 80%. 
+        </p>
+        <h2><span class="mw-headline" id="Generating_methods">Generating methods</span></h2> 
+        <hr class="featurette-divider">
+        <p>
+          Most hydroelectric power plants have a reservoir of water, a gate or valve to control how much water flows 
+          out of the reservoir, and an outlet or place where the water ends up after flowing downward. 
+          Water gains potential energy just before it spills over the top of a dam or flows down a hill. 
+          The potential energy is converted into kinetic energy as water flows downhill. The water can be 
+          used to turn the blades of a turbine to generate electricity, which is distributed to the power plant’s customers.
+        </p>
+        <p>There are three main types of hydro plants.</p>
+        <ol style="margin-left: 40px;">
+          <li>
+            <strong>Conventional (dams) facilities</strong> are the most common technology which uses a dam to create a large
+            reservoir of water. Electricity is made when water
+            passes through turbines in the dam.
+          </li>
+          <li>
+            <strong>Pumped storage facilities</strong> are similar&nbsp;but have a second reservoir below the dam. Water can
+            be pumped from the lower&nbsp;reservoir to the upper reservoir,&nbsp;storing 
+            energy for use at a later time.
+          </li>
+          <li>
+            <strong>Run-of-river facilities</strong> rely more on natural water flow rates, diverting just a portion of river
+            water through turbines, sometimes without the use of a dam
+            or reservoirs. Since run-of-river hydro is subject to natural 
+            water variability,&nbsp;it is more intermittent than dammed
+            hydro.&nbsp;
+          </li> 
+        </ol>
+        <h5><b><em><span class="mw-headline" id="Conventional_(dams)">Conventional (dams)</span></b></em></h5> 
+        <p>
+          A hydroelectric dam installation uses the potential energy of the water retained in the dam to drive 
+          a water turbine which in turn drives an electric generator. The available energy therefore depends 
+          on the head of the water above the turbine and the volume of water flowing through it. Turbines are 
+          usually reaction types whose blades are fully submerged in the water flow.
+        </p>
+        <p>
+                      Most conventional hydroelectric plants include four major components (see graphic below):
+        </p> 
+        <ol>
+                  <li>
+                      <strong>Dam.</strong> Raises the water level of the river to create falling water. 
+            Also controls the flow of water. The reservoir that is formed is, in effect, stored energy.
+          </li>
+                  <li>
+                      <strong>Turbine.</strong> The force of falling water pushing against the turbine's blades 
+            causes the turbine to spin. A water turbine is much like a windmill, except the energy is 
+            provided by falling water instead of wind. The turbine converts the kinetic energy of falling 
+            water into mechanical energy.
+          </li>
+                  <li>
+                      <strong><a href="#">Generator</a>.</strong> Connected to the turbine by shafts and possibly 
+            gears so when the turbine spins it causes the generator to spin also. Converts the 
+            mechanical energy from the turbine into electric energy. Generators in hydropower plants 
+            work just like the generators in other types of power plants.
+          </li>
+                  <li>
+                      <strong>Transmission lines</strong>. Conduct electricity from the hydropower plant to homes and business.
+                    <div style="text-align: center">
+                        <img alt="hydroplant-animate.gif" height="338" src="/static/image/hydroplant-animate.jfif" 
+              title="hydroplant-animate.gif" width="451"> 
+            </div>
+                  </li>
+              </ol>
+        <h5><b><em><span class="mw-headline" id="Pumped_storage">Pumped-storage</span></b></em></h5> 
+        <p>
+          Gravity is a powerful, inescapable force that surrounds us at all times – and it also underpins 
+          one of the most established energy storage technologies, pumped hydro-power. Currently the most 
+          common type of energy storage is pumped hydroelectric facilities, and we have employed this 
+          utility-scale gravity storage technology for the better part of the last century in the United States and around the world.
+        </p>
+        <p>
+          A <a href="#">hydroelectric dam</a> relies on water flowing through a turbine to create electricity to be 
+          used on the grid. In order to store energy for use at a later time, there are a number of 
+          different projects that use pumps to elevate water into a retained pool behind a dam – 
+          creating an on-demand energy source that can be <a href="#">unleashed</a> rapidly. When more energy is 
+          needed on the grid, water from that pool is run through turbines to produce electricity.
+          China currently has 31 Pumped storage schemes under construction.
+          In June 2018 the Australian federal government announced that 14 sites had been identified in 
+          Tasmania for pumped storage hydro, with the potential of adding 4.8GW to the national grid if
+          a second interconnector beneath Bass Strait was constructed.
+        </p>
+        <h6><b><em><span class="mw-headline" id="Operation">Workind process</span></b></em></h6> 
+        <p>
+          Pumped hydroelectric storage facilities store energy in the form of water in an upper reservoir, 
+          pumped from another reservoir at a lower elevation. During periods of high electricity demand, 
+          power is generated by releasing the stored water through turbines in the same manner as a 
+          conventional hydropower station. During periods of low demand (usually nights or weekends when 
+          electricity is also lower cost), the upper reservoir is recharged by using lower-cost electricity 
+          from the grid to pump the water back to the upper reservoir. 
+        </p>
+        <p>
+        <div style="text-align: center">
+                  <img alt="hydroplant-animate.gif" height="338" src="/static/image/Pumped-Storage_Plant.jfif" 
+          title="hydroplant-animate.gif" width="451"> 
+        </div>
+        </p> 
+        <p>
+          Reversible pump-turbine/motor-generator assemblies can act as both pumps and turbines. 
+          Pumped storage stations are unlike traditional hydroelectric stations in that they are a 
+          net consumer of electricity, due to hydraulic and electrical losses incurred in the cycle of 
+          pumping from lower to upper reservoirs. However, these plants are typically highly efficient 
+          (round-trip efficiencies reaching greater than 80%), and can prove very beneficial in terms of 
+          balancing load within the overall power system. Pumped-storage facilities can be very economical 
+          due to peak and off-peak price differentials and their potential to provide critical ancillary grid services.
+        </p>
+        <h5><b><em><span class="mw-headline" id="Run_of_the_river">Run-of-the-river</span></b></em></h5> 
+        <p>
+          Run-of-the-river hydroelectric systems are hydroelectric systems that harvest the energy from 
+          flowing water to generate electricity in the absence of a large dam and reservoir—which is how 
+          they differ from conventional (dams) hydroelectric facilities. A small dam may be used to 
+          ensure enough water goes in the <a href="#">penstock</a>, and possibly some storage (for same day use) The 
+          primary difference between this type of hydroelectric generation compared to others is that 
+          run-of-the-river primarily uses the natural flow rate of water to generate power—instead of 
+          the power of water falling a large distance. However, water may still experience some vertical 
+          drop in a run-of-the-river system from the natural landscape or small dam. Another main difference 
+          between traditional hydropower is that run-of-the-river hydro is used in areas where there is 
+          little to no water storage, such as in a river. 
+          The <a href="https://en.wikipedia.org/wiki/List_of_run-of-the-river_hydroelectric_power_stations">largest Run-of-the-river</a>
+          is <a href="https://en.wikipedia.org/wiki/Jirau_Dam">Jirau Dam</a>, installed capacity 3750 MW, in Brazil. 
+        </p>
+        <h6><b><em><span class="mw-headline" id="Operation">Operation</span></b></em></h6> 
+        <p>
+          For a run-of-the-river system to be possible in a given location, there needs to be two specific 
+          geographical features. The first is there must be a reasonably substantial flow rate, either 
+          from rainfall or a melting snowpack. In addition, there must be enough of a tilt to the river 
+          to speed the water up significantly. Therefore, run-of-the-river systems are best implemented 
+          in bodies of water with a fairly constant flow rate. If they are built in locations where flow rate 
+          is fairly low for a period of time and then peaks dramatically, there will be a large amount of 
+          "wasted" water during the peak flow periods as the excess water falls through the <a href="#">spillways</a>. 
+          This is because these systems are built to accommodate the lowest flow rate—thus, not be 
+          able to handle significantly larger flow rates.
+        </p>
+        <p><div style="text-align: center"><img src="/static/image/run-of-river-hydropower.jfif"></div></p> 
+        <p>
+          In run-of-the-river systems, running water from a river is guided down a channel or 
+          <a href="#">penstock</a>. There can be some change in altitude at this point (from a small dam or the natural landscape) 
+          so there may still be some contribution from "falling water." The diverted water is 
+          brought to an electricity generating house. In this house, the running water drives a 
+          <a href="#Water_turbines">turbine</a>, running a <a href="#">generator</a> 
+          and generating electricity. After being used, water is fed to the river downstream. 
+        </p>
+        <p>
+          Although run-of-the-river systems rely primarily on the flow rate of rivers to 
+          generate electricity and not a significant amount of water storage, some a 
+          <a href="#Small">small-scale</a> dam or <a href="#">weir</a> to ensure enough water 
+          enters the system itself. <a href="#">Pondage</a> (a small amount of water stored behind the dam) 
+          is occasionally used, making them generally more reliable as they compensate for 
+          any discrepancies in water flow. This stored water isn't like a reservoir because 
+          it stores enough for "same day use" not future uses.
+        </p>
+        <h2><span class="mw-headline" id="Types_based_on_sizes">Types based on sizes</span></h2> 
+        <hr class="featurette-divider">
+        <h5><b><em><span class="mw-headline" id="Large_facilities">Large facilities</span></b></em></h5> 
+        <p>
+          Large-scale hydroelectric power stations are more commonly seen as the largest power producing facilities 
+          in the world, with some hydroelectric facilities capable of generating more than double the installed 
+          capacities of the current <a href="#">largest nuclear power stations</a>. 
+        </p>
+        <p>
+          Although no official definition exists for the capacity range of large hydroelectric power stations, 
+          facilities from over a few hundred <a href="#">megawatts</a> are generally considered large hydroelectric facilities.
+        </p>
+        <p>
+          Currently, only four facilities over 10 GW (10,000 MW) are in operation worldwide, see table below.  
+        </p>
+        <div style="text-align: center">
+        <p> 
+        <table class="wikitable" style="
+          background-color: #f8f9fa;
+          color: #222;
+          margin-left: 10px;
+          border: 1px solid #a2a9b1;">      
+          <tbody>
+            <tr>
+              <th>Rank</th>
+              <th width="150">Station</th>
+              <th width="150">Country</th> 
+              <th>Capacity (MW)</th>
+            </tr> 
+            <tr>
+              <td align="center">1.</td>
+              <td><a href="/wiki/Three_Gorges_Dam">Three Gorges Dam</a></td>
+              <td>China</td>
+              <td align="center">22,500</td> 
+            </tr>
+            <tr>
+              <td align="center">2.</td>
+              <td><a href="/wiki/Itaipu_Dam">Itaipu Dam</a></td>
+              <td>
+                Brazil,
+                Paraguay 
+              </td>
+              <td align="center">14,000</td>
+            </tr>
+            <tr>
+              <td align="center">3.</td>
+              <td><a href="/wiki/Xiluodu_Dam">Xiluodu Dam</a></td>
+              <td>China</td>
+              <td align="center">13,860</td>
+            </tr>
+            <tr>
+              <td align="center">4.</td>
+              <td><a href="/wiki/Guri_Dam">Guri Dam</a></td> 
+              <td>Venezuela</td>
+              <td align="center">10,200</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </div> 
+        <h5><b><em><span class="mw-headline" id="Small">Small</span></b></em></h5> 
+        <p>
+          Small hydro is the development of hydroelectric power on a scale serving a small community or industrial plant. 
+          The definition of a small hydro project varies but a generating capacity of up to 10 megawatts (MW) is generally 
+          accepted as the upper limit of what can be termed small hydro. This may be stretched to 25 MW and 30 MW in 
+          <a href="#">Canada</a> and the <a href="#">United States</a>. Small-scale hydroelectricity production grew 
+          by 29% from 2005 to 2008, raising the total world small-hydro capacity to 85 GW. 
+          Over 70% of this was in <a href="#">China</a> (65 GW), followed by <a href="#">Japan</a> 
+          (3.5 GW), the United States (3 GW), and <a href="#">India</a> 
+          (2 GW).
+        </p>
+        <p>
+          Small hydro stations may be connected to conventional electrical distribution networks as a source of 
+          low-cost renewable energy. Alternatively, small hydro projects may be built in isolated areas that 
+          would be uneconomic to serve from a network, or in areas where there is no national electrical distribution network. 
+          Since small hydro projects usually have minimal reservoirs and civil construction work, they are seen as 
+          having a relatively low environmental impact compared to large hydro. This decreased environmental 
+          impact depends strongly on the balance between stream flow and power production.
+        </p>
+        <h5><b><em><span class="mw-headline" id="Micro">Micro</span></b></em></h5>
+        <p>
+          Micro hydro is a term used for <a href="#">hydroelectric power</a> installations that typically produce up to 
+          100 kW of power. These installations can provide power to an isolated 
+          home or small community, or are sometimes connected to electric power networks. There are many of these 
+          installations around the world, particularly in developing nations as they can provide an economical source 
+          of energy without purchase of fuel. Micro hydro systems complement <a href="#">photovoltaic</a> solar energy 
+          systems because in many areas, water flow, and thus available hydro power, is highest in the winter 
+          when solar energy is at a minimum.
+        </p>
+        <h5><b><em><span class="mw-headline" id="Pico">Pico</span></b></em></h5> 
+        <p>
+          Pico hydro is a term used for hydroelectric power generation of under 5 kW . 
+          It is useful in small, remote communities that require only a small amount of electricity. For example, 
+          to power one or two fluorescent light bulbs and a TV or radio for a few homes. Even smaller turbines of 
+          200-300W may power a single home in a developing country with a drop of only 1&nbsp;m (3&nbsp;ft). 
+          A Pico-hydro setup is typically <a href="#">run-of-the-river</a>, meaning that dams are not used, 
+          but rather pipes divert some of the flow, drop this down a gradient, and through the turbine before returning it to the stream.
+        </p>
+        <h5><b><em><span class="mw-headline" id="Underground">Underground</span></b></em></h5>
+        <p>
+          An <a href="#">underground power station</a> is generally used at large facilities and makes use of a 
+          large natural height difference between two waterways, such as a waterfall or mountain lake. 
+          A tunnel is constructed to take water from the high reservoir to the generating hall built in a cavern 
+          near the lowest point of the water tunnel and a horizontal tailrace taking water away to the lower outlet waterway.
+        </p>
+        <h2><span class="mw-headline" id="Water_turbines">Water Turbines</span></h2> 
+        <hr class="featurette-divider">
+        <p>
+          Like <a href="#">steam turbines</a>, water turbines may depend on the 
+          impulse of the working fluid on the turbine blades or the reaction between the working fluid and the 
+          blades to turn the turbine shaft which in turn drives the generator. Several different families of 
+          turbines have been developed to optimise performance for particular water supply conditions.
+        </p>
+        <h5><b><em><span class="mw-headline" id="Turbine_Power_Output">Turbine Power Output</span></b></em></h5>
+        <p>
+          In general, the turbine converts the kinetic energy of the working fluid, in this case water, 
+          into rotational motion of the turbine shaft.
+        </p>
+        <p>
+          Swiss mathematician <a href="history.htm#euler">Leonhard Euler</a> showed in 1754 that the torque 
+          on the shaft is equal to the change in angular momentum of the water flow as it is deflected 
+          by the turbine blades and the power generated is equal to the torque on the shaft multiplied 
+          by the rotational speed of the shaft. See following diagram. 
+        </p>
+        <p align="center"><img src="/static/image/Turbine_output.jfif" alt="Euler's Turbine Equation for Waterwheels and Jet Engines" width="450" height="316"></p>
+        <p>
+          Note that this result does not depend on the turbine configuration or what happens inside 
+          the turbine. All that matters is the change in angular momentum of the fluid between the turbine's input and output. 
+        </p>
+        <h5><b><em><span class="mw-headline" id="Turbine_Types">Turbine Types</span></b></em></h5> 
+        <p>The most appropriate turbine to use depends on the rate of water flow and the head or pressure of water.</p>
+        <ul>
+          <li><em><b>Impulse Turbines</b></em></li>  
+          <p>
+            Impulse turbines require tangential water flow on one side of the turbine runner (rotor) and must therefore operate
+            when only partly submerged. They are best suited to applications with a high head but a low volume flow rate such as
+            fast flowing shallow water courses though it is used in a wide range of situations with heads from as low as 15
+            metres up to almost 2000 metres. 
+          </p>
+          <li><em><b>Pelton Turbine</b></em></li>  
+          <p>
+            The Pelton turbine is an example of an impulse turbine.High pressure heads give rise to very
+            fast water jets impinging in the blades resulting in very high rotational speeds of the turbine. The split
+            bucket pairs divide the water flow ensuring balanced axial forces on the turbine runner.
+          </p> 
+          <p><img src="/static/image/pelton_turbine.jfif" alt="Pelton Impulse Turbine"></p>  
+          <p>
+            Pelton wheels are ideal for low power installations with outputs of 10kW or less but they have
+            also been used in installations with power outputs of up to 200 MW.
+            Efficiencies up to 95% are possible. 
+          </p>
+          <li><em><b>Reaction Turbines</b></em></li>
+          <p>
+            Reaction turbines are designed to operate with the turbine runner fully submerged or enclosed in a casing to
+            contain the water pressure. They are suitable for lower heads of water of 500 metres or less and they are the most
+            commonly used high power turbines. 
+          </p>
+          <li><em><b>Francis Turbine</b></em></li>
+          <p>
+            The Francis turbine is an example of a reaction turbine. Water flow enters in a radial
+            direction towards the axis and exits in the direction of the axis.
+          </p>
+          <p><img src="/static/image/francis_turbine.jfif" alt="Francis Turbine"></p> 
+          <p>
+            Large scale turbines used in dams are capable of delivering over 500 MW of power from a
+            head of water of around 100 metres with efficiencies of up to 95%  
+          </p>
+          <li><em><b>Propeller and Kaplan Turbines </b></em></li> 
+          <p><img src="/static/image/kaplan_turbine.jfif" alt="Kaplan Variable Pitch Propeller Turbine"></p> 
+          <p>
+            The propeller turbine, is another example of a reaction turbine. Designed to work fully
+            submerged, it is similar in form to a ship's propeller and is the most suitable design for low head water
+            sources with a high flow rate such as those in slow running rivers. Designs are optimised for a particular
+            flow rate and efficiencies drop of rapidly if the flow rate falls below the design rating. The Kaplan
+            version has variable pitch vanes to enable it to work efficiently over a range of flow rates.
+          </p>
+        </ul> 
+        <h2><span class="mw-headline" id="Advantages">Advantages</span></h2>
+        <hr class="featurette-divider"> 
+        <h5><b><em>Flexibility</b></em></h5>  
+        <p>
+          Hydropower is a flexible source of electricity since stations can be ramped up and down very 
+          quickly to adapt to changing energy demands. Hydro turbines have a start-up time of the order of a few minutes.
+          It takes around 60 to 90 seconds to bring a unit from cold start-up to full load; this is much 
+          shorter than for gas turbines or steam plants. Power generation can also be decreased quickly when 
+          there is a surplus power generation. Hence the limited capacity of hydropower units is not generally 
+          used to produce base power except for vacating the flood pool or meeting downstream needs. Instead, it 
+          can serve as backup for non-hydro generators.
+        </p>
+        <h5><b><em>Low cost/high value power</b></em></h5>  
+        <p>
+          The major advantage of conventional hydroelectric dams with reservoirs is their ability to 
+          store water at low cost for <a href="#">dispatch later</a> as high value clean electricity. 
+          The average cost of electricity from a hydro station larger than 10 megawatts is 3 to 5 U.S. 
+          cents per kilowatt-hour. When used as peak power to meet demand, hydroelectricity has a higher 
+          value than base power and a much higher value compared to <a href="#">intermittent energy sources</a>. 
+        </p>
+        <p>
+          Hydroelectric stations have long economic lives, with some plants still in service after 50–100 years.
+          Operating labor cost is also usually low, as plants are automated and have few personnel on site during normal operation.
+        </p>
+        <p>
+          Where a dam serves multiple purposes, a hydroelectric station may be added with relatively low construction cost, 
+          providing a useful revenue stream to offset the costs of dam operation. It has been calculated 
+          that the sale of electricity from the <a href="#">Three Gorges Dam</a> will cover the construction 
+          costs after 5 to 8 years of full generation. However, some data shows that in most countries large 
+          hydropower dams will be too costly and take too long to build to deliver a positive risk adjusted return, 
+          unless appropriate risk management measures are put in place.
+        </p>
+        <h5><b><em>Suitability for industrial applications</b></em></h5>
+        <p>
+          While many hydroelectric projects supply public electricity networks, some are created to serve specific 
+          industrial enterprises. Dedicated hydroelectric projects are often built to provide the substantial 
+          amounts of electricity needed for <a href="#">aluminium</a> electrolytic plants, for example. 
+          The <a href="#">Grand Coulee Dam</a> switched to support <a href="#">Alcoa</a> aluminium in 
+          Bellingham, Washington, United States for American <a href="#">World War II</a> airplanes before 
+          it was allowed to provide irrigation and power to citizens (in addition to aluminium power) after the war. 
+          In <a href="#">Suriname</a>, the <a href="#">Brokopondo Reservoir</a> was constructed to provide 
+          electricity for the <a href="#">Alcoa</a> aluminium industry. <a href="#">New Zealand</a>'s 
+          <a href="#">Manapouri Power Station</a> was constructed to supply electricity to the 
+          <a href="#">aluminium</a> <a href="#">smelter</a> at <a href="#">Tiwai Point</a>. 
+        </p>
+        <h5><b><em>Reduced CO<sub>2</sub> emissions</b></em></h5>
+        <p>
+          Since hydroelectric dams do not use fuel, power generation does not produce <a href="#">carbon dioxide</a>. 
+          While carbon dioxide is initially produced during construction of the project, and some methane is 
+          given off annually by reservoirs, hydro generally has the lowest <a href="#">lifecycle greenhouse gas emissions</a> 
+          for power generation. Compared to fossil fuels generating an equivalent amount of electricity, 
+          hydro displaced three billion tonnes of CO<sub>2</sub> emissions in 2011.
+          According to a comparative study by the <a href="#">Paul Scherrer Institute</a> and the 
+          <a href="#">University of Stuttgart</a>, hydroelectricity in Europe produces the least amount of 
+          <a href="#">greenhouse gases</a> and <a href="#">externality</a> of any energy source.
+          Coming in second place was <a href="#"></a>wind</a>, third was <a href="#">nuclear energy</a>, and fourth was 
+          <a href="#">solar</a> <a href="#">photovoltaic</a>. The low greenhouse gas impact of hydroelectricity 
+          is found especially in <a href="#">temperate climates</a>. Greater greenhouse gas emission impacts 
+          are found in the tropical regions because the reservoirs of power stations in tropical regions 
+          produce a larger amount of methane than those in temperate areas.
+        </p>
+        <p>
+          Like other non-fossil fuel sources, hydropower also has no emissions of sulfur dioxide, nitrogen oxides, or other particulates.
+        </p>
+        <h5><b><em>Other uses of the reservoir</b></em></h5>
+        <p>
+          Reservoirs created by hydroelectric schemes often provide facilities for <a href="#">water sports</a>, 
+          and become tourist attractions themselves. In some countries, <a href="#">aquaculture</a> in reservoirs is common. 
+          Multi-use dams installed for <a href="#">irrigation</a> support agriculture with a relatively constant water supply. 
+          Large hydro dams can control floods, which would otherwise affect people living downstream of the project.
+        </p>
+        <h2><span class="mw-headline" id="Disadvantages">Disadvantages</span></h2>
+        <hr class="featurette-divider"> 
+        <h5><b><em>Ecosystem damage and loss of land</b></em></h5> 
+        <p>
+          Large reservoirs associated with traditional hydroelectric power stations result in submersion of 
+          extensive areas upstream of the dams, sometimes destroying biologically rich and productive lowland 
+          and riverine valley forests, marshland and grasslands. Damming interrupts the flow of rivers and can
+          harm local ecosystems, and building large dams and reservoirs often involves displacing people and wildlife. 
+          The loss of land is often exacerbated by <a href="#">habitat fragmentation</a> of surrounding areas caused by the reservoir.
+        </p>
+        <p>
+          Hydroelectric projects can be disruptive to surrounding aquatic <a href="#">ecosystems</a> both upstream 
+          and downstream of the plant site. Generation of hydroelectric power changes the downstream river environment. 
+          Water exiting a turbine usually contains very little suspended sediment, which can lead to scouring of 
+          river beds and loss of riverbanks. Since turbine gates are often opened intermittently, rapid or even daily 
+          fluctuations in river flow are observed.
+        </p>
+        <h5><b><em>Water loss by evaporation</b></em></h5>
+        <p>
+          A 2011 study by the <a href="#" >National Renewable Energy Laboratory</a> concluded that hydroelectric 
+          plants in the U.S. consumed between 5.39 to 68.14 cubic metres per megawatt-hour (1,425 to 18,000 US 
+          gallons per megawatt-hour) of electricity generated, through evaporation losses in the reservoir. 
+          The median loss was 17.00&nbsp;m<sup>3</sup>/MWh (4,491&nbsp;US&nbsp;gal/MWh), which is higher than 
+          the loss for generation technologies that use cooling towers, including concentrating solar power 
+          at 3.27&nbsp;m<sup>3</sup>/MWh (865&nbsp;US&nbsp;gal/MWh) for CSP trough and 2.98&nbsp;m<sup>3</sup>/MWh 
+          (786&nbsp;US&nbsp;gal/MWh) for CSP tower, coal at 2.60&nbsp;m<sup>3</sup>/MWh (687&nbsp;US&nbsp;gal/MWh), 
+          nuclear at 2.54&nbsp;m<sup>3</sup>/MWh (672&nbsp;US&nbsp;gal/MWh), and natural gas at 0.75&nbsp;m<sup>3</sup>/MWh 
+          (198&nbsp;US&nbsp;gal/MWh). Where there are multiple uses of reservoirs such as water supply, recreation, 
+          and flood control, all reservoir evaporation is attributed to power production.
+        </p>
+        <h5><b><em>Siltation and flow shortage</b></em></h5>
+        <p>
+          When water flows it has the ability to transport particles heavier than itself downstream. 
+          This has a negative effect on dams and subsequently their power stations, particularly those 
+          on rivers or within catchment areas with high siltation. <a href="#" >Siltation</a> can fill 
+          a reservoir and reduce its capacity to control floods along with causing additional horizontal 
+          pressure on the upstream portion of the dam. Eventually, some reservoirs can become full of 
+          sediment and useless or over-top during a flood and fail.
+        </p>
+        <p>
+          Changes in the amount of river flow will correlate with the amount of energy produced by a dam. 
+          Lower river flows will reduce the amount of live storage in a reservoir therefore reducing the 
+          amount of water that can be used for hydroelectricity. The result of diminished river flow can be 
+          power shortages in areas that depend heavily on hydroelectric power. The risk of flow shortage may 
+          increase as a result of climate change. One study from the <a href="#">Colorado River</a> in the 
+          United States suggest that modest climate changes, such as an increase in temperature in 2 degree Celsius 
+          resulting in a 10% decline in precipitation, might reduce river run-off by up to 40%. <a href="#">Brazil</a> 
+          in particular is vulnerable due to its heavy reliance on hydroelectricity, as increasing temperatures, 
+          lower water flow and alterations in the rainfall regime, could reduce total energy production by 7% 
+          annually by the end of the centur.
+        </p>
+        <h5><b><em>Methane emissions (from reservoirs)</b></em></h5>
+        <p>
+          Lower positive impacts are found in the tropical regions, as it has been noted that the reservoirs of 
+          power plants in tropical regions produce substantial amounts of <a href="#">methane</a>. This is due to 
+          plant material in flooded areas decaying in an <a href="#">anaerobic</a> environment and forming methane, 
+          a greenhouse gas. According to the <a href="#">World Commission on Dams</a> report, where the reservoir is 
+          large compared to the generating capacity (less than 100 watts per square metre of surface area) and no 
+          clearing of the forests in the area was undertaken prior to impoundment of the reservoir, greenhouse gas 
+          emissions from the reservoir may be higher than those of a conventional oil-fired thermal generation plant.
+        </p>
+        <p>
+          In <a href="#">boreal</a> reservoirs of Canada and Northern Europe, however, greenhouse gas emissions are 
+          typically only 2% to 8% of any kind of conventional fossil-fuel thermal generation. A new class of underwater 
+          logging operation that targets drowned forests can mitigate the effect of forest decay.
+        </p>
+        <h5><b><em>Relocation</b></em></h5>
+        <p>
+          Another disadvantage of hydroelectric dams is the need to relocate the people living where the 
+          reservoirs are planned. In 2000, the World Commission on Dams estimated that dams had physically 
+          displaced 40-80 million people worldwide.
+        </p>
+        <h5><b><em>Failure risks</b></em></h5>
+        <p>
+          Because large conventional dammed-hydro facilities hold back large volumes of water, a failure due to poor 
+          construction, natural disasters or sabotage can be catastrophic to downriver settlements and infrastructure.
+        </p>
+        <p>
+          During Typhoon Nina in 1975 <a href="#">Banqiao Dam</a> failed in Southern China when more than 
+          a year's worth of rain fell within 24 hours. The resulting flood resulted in the deaths of 26,000 people, 
+          and another 145,000 from epidemics. Millions were left homeless.
+        </p>
+        <p>
+          The creation of a dam in a geologically inappropriate location may cause disasters such as 1963 
+          disaster at <a href="#">Vajont Dam</a> in Italy, where almost 2,000 people died.
+        </p>
+        <p>
+          The <a href="#">Malpasset Dam</a> failure in <a href="#">Fréjus</a> on the <a href="#">French Riviera</a> 
+          (Côte d'Azur), southern France, collapsed on December 2, 1959, killing 423 people in the resulting flood.
+        </p>
+        <p>
+          Smaller dams and <a href="#">micro hydro</a> facilities create less risk, but can form continuing 
+          hazards even after being decommissioned. For example, the small earthen embankment 
+          <a href="#">Kelly Barnes Dam</a> failed in 1977, twenty years after its power station 
+          was decommissioned, causing 39 deaths.
+        </p>
+        <h2><span class="mw-headline" id="World_hydroelectric_capacity">World hydroelectric capacity</span></h2>
+        <p>
+          The ranking of hydroelectric capacity is either by actual annual energy production 
+          or by installed capacity power rating. In 2015 hydropower generated 16.6% of the worlds 
+          total electricity and 70% of all renewable electricity.
+          Hydropower is produced in 150 countries, with the Asia-Pacific region generated 32 
+          percent of global hydropower in 2010. The world largest hydropower producer is China 
+          with 352.3GW of installed capacity, representing around 21 percent of 
+          domestic electricity use. Brazil (3866MW), Pakistan (2487MW), Turkey (1085MW), Angola (668MW), 
+          Tajikistan (605MW), Ecuador (556MW), India (535MW), Norway (419MW) and Canada (401 W). and 
+          several other countries have a majority of the internal electric energy 
+          production from hydroelectric power. <a href="#">Paraguay</a> produces 100% of its electricity from 
+          hydroelectric dams and exports 90% of its production to Brazil and to Argentina. <a href="#">Norway</a> 
+          produces 96% of its electricity from hydroelectric sources.
+        </p>
+        <p>
+          A hydroelectric station rarely operates at its full power rating over a full year; 
+          the ratio between annual average power and installed capacity rating is the <a href="#">capacity factor</a>. 
+          The installed capacity is the sum of all generator nameplate power ratings.
+        </p>
+        <p>
+        <div style="text-align: center">
+                  <img alt="hydroplant-animate.gif" height="338" src="/static/image/2019_total_installed_hydropower_capacity.jfif" 
+          title="hydroplant-animate.gif" width="451"> 
+        </div>
+        </p> 
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  <hr class="featurette-divider">
+  <!-- FOOTER -->
+
+  <footer class="container" style="margin-top: 2rem!important; padding-right: 0px; padding-left: 0px;">
+    <p>Energy Science and Engineering · <a href="/Contact"> Contact Us</a> · <a href="/About"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
