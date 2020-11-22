@@ -1,0 +1,414 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+
+    <!--Firevase SDK -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="../js/db-con.js"></script>
+
+    <!--Validiating if logged in-->
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log("logged in as: "+user.email)
+          } else {
+            window.location.href = "../";
+            
+          }
+        });
+      }
+    </script>
+
+    <script>
+      alert('this website is under construction. All features, function, image or button will may not work properly. ')
+    </script>
+
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .header{
+        width: 100%;
+        height:100px;
+      }
+      .header-inner{
+        height: 100%;
+      }
+
+      .first_image{
+        width: 250px;
+        background-image: url(../static/image/ESE.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .second_image{
+        background-image: url(../static/image/Header_img.png);
+        width:calc(100% - 250px) ;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        align-items: center;
+      }
+      .second_image img{
+        margin-left: 20px;
+        margin-top: 5px;
+        width: 70%;
+        max-width: 655px;
+        min-width: 362px;
+      }
+      .header-inner{
+        display: flex;
+      }
+
+    </style>
+
+  </head>
+
+
+<body>
+
+<div class="header"> 
+  <div class="header-inner">
+
+    <div class="header-text first_image" >
+    </div>      
+    
+    <div class="header-text second_image"> 
+      <img src="https://www.ese.iitb.ac.in/sites/all/themes/eseiitb/images/header-text.png" alt=""> 
+    </div>
+
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="../Home/">Energy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Bangladesh
+          </a> 
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+            <a class="dropdown-item" href="../Power_Sector">Power Scetor</a> 
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../Power_Generation">Power Generation</a>
+            <div class="dropdown-divider"></div> 
+            <a class="dropdown-item" href="../Power_Transmission">Power Transmission</a> 
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../Power_Distribution">Power Distribution</a> 
+          </div> 
+        </li>
+        <a class="nav-link" href="../Renewable">
+          Renewable
+        </a>   
+        <a class="nav-link" href="../NonRenewable">
+          Non-renewable 
+        </a> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Year
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../World_Energy/Naturalgas/">1st year</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../World_Energy/Coal/">2nd year</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../World_Energy/oil/">3rd year</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../World_Energy/Biogas/">4th year</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Paper
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../World_Energy/Naturalgas/">Research</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../World_Energy/Coal/">Thesis</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> 
+
+
+
+
+<div class="container-fluid" style="margin-top: 0rem!important; padding-right: 0px; padding-left: 0px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="2" class=""></li> 
+      <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="5" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="6" class=""></li> 
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/image/S9.jfif" class="d-block w-100" alt="..." style="height: 500px; width: 1600px;">   
+          <div class="carousel-caption text-left"> 
+            <h1>Solar Energy</h1> 
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="../World_Energy/solar/" role="button">Learn more</a></p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/image/1.jfif" class="d-block w-100" alt="...">   
+          <div class="carousel-caption">
+            <h1>Nuclear Energy</h1>
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="#" role="button">Learn more</a></p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/image/W7.jfif" class="d-block w-100" alt="...">   
+          <div class="carousel-caption text-right">
+            <h1>Wind Energy</h1>
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="../World_Energy/Wind/" role="button">Learn more</a></p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/image/H3.jfif" class="d-block w-100" alt="...">   
+          <div class="carousel-caption text-right">
+            <h1>Hydro Power</h1>
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="../World_Energy/Hydro/" role="button">Learn more</a></p>
+          </div>
+      </div>
+      <div class="carousel-item">   
+        <img src="../static/image/N4.jfif" class="d-block w-100" alt="...">   
+          <div class="carousel-caption text-right">
+            <h1>Natural Gas</h1>
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="#" role="button">Learn more</a></p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/image/w1.jfif" class="d-block w-100" alt="...">   
+          <div class="carousel-caption text-right">
+            <h1>Fuel</h1>
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="../World_Energy/Fuel/" role="button">Learn more</a></p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/image/P2.jfif" class="d-block w-100" alt="...">   
+          <div class="carousel-caption text-right">
+            <h1>Petroleum</h1>
+            <p>Bangladesh</p> 
+            <p><a class="btn btn-lg btn-info" href="../World_Energy/Petroleum/" role="button">Learn more</a></p>
+          </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a> 
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<!-- Three columns of text below the carousel -->
+    <div class="container my-10">
+      <h1 class="my-4 text-left">World Energy Scenario</h1>  
+      <hr class="featurette-divider"> 
+      <div class="row"> 
+        <div class="col-md-4"> 
+          <img src="../static/image/S2.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Solar Energy</h2>
+          <p>                
+            <b>Solar energy</b> is radiant light and heat from the Sun that is harnessed using a range of ever-evolving technologies such 
+            as <a href="#">solar heating</a>, <a href="#">photovoltaics</a>, solar thermal energy, solar architecture, molten salt power
+            plants and artificial photosynthesis......
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/solar/" role="button">View details »</a></p> 
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4"> 
+          <img src="../static/image/N1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Nuclear Energy</h2>
+          <p>
+            Nuclear energy is released from the nucleus of atoms through the processes of <a href="#"> 
+            fission </a> or <a href="#"> fusion </a>. Nuclear energy is the energy held in the nucleus of an 
+            atom.All of today’s nuclear plants use  fission to generate electricity. The fuel most commonly 
+            used for fission is <a href="#"> uranium</a>..... 
+          </p>
+          <p><a class="btn btn-success" href="#" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/W2.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Wind Energy</h2>
+          <p>
+            <b>Wind power</b> or <b>wind energy</b> is the use of wind to provide the <a href="#">mechanical power</a> 
+            through wind turbines to turn electric generators and traditionally to
+            do other work, like milling or pumping. Wind power is a <a href="#">sustainable</a> and 
+            <a href="/Renewable">renewable energy</a>, and has a.....
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Wind/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/G2.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Geothermal</h2>
+          <p>
+            Geothermal energy is the heat that comes from the sub-surface of the earth. It is contained 
+            in the rocks and fluids beneath the <a href="#">earth’s crust</a> and can be found as far down to the earth’s 
+            <a href="#">hot molten rock</a>, <a href="#">magma</a>. Depending on its characteristics, 
+            geothermal energy can be used.....
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Geothermal/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+          <img src="../static/image/H1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Hydro Power</h2>
+          <p>
+            Hydro or water energy is the conversion of hydropower into electricity. Hydropower refers to the 
+            force of water flow that turns turbines and powers generators, which then store the electricity 
+            into <a href="#"> power grids </a> for mass consumption. The hydropower process is a clean 
+            <a href="/Renewable"> renewable energy </a> resource.....
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Hydro/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/T1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Tidal Energy</h2>
+          <p>
+            There are a number of ways in which tidal power can be harnessed. Tidal barrage power systems take 
+            advantage of differences between high tides and low tides by using a “barrage,” or type of dam, to 
+            block receding water during ebb periods.Tidal stream power systems take advantage of ocean currents 
+            to drive turbines, particularly in areas around islands or coasts where these currents are fast.
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Tidal/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/Wa1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Wave Energy</h2>
+          <p>
+            Wave energy is produced when electricity generators are placed on the surface of the ocean. The 
+            energy provided is most often used in desalination plants, power plants and water pumps. 
+            Energy output is determined by wave height, wave speed, wavelength, and water density.
+          </p> 
+          <p><a class="btn btn-success" href="../World_Energy/Wave/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/N3.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Natural Gas</h2>
+          <p>
+            A combustible mixture of gaseous hydrocarbons that accumulates in porous sedimentary rocks, 
+            especially those yielding petroleum, consisting usually of over 80 percent methane together with 
+            minor amounts of ethane, propane, butane, nitrogen, and, sometimes, helium: used as a fuel and to 
+            make carbon black, acetylene, and synthesis gas. 
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Naturalgas/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/C1.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Coal</h2>
+          <p>
+            Coal, one of the most important primary fossil fuels, a solid carbon-rich material that is usually 
+            brown or black and most often occurs in stratified sedimentary deposits. Coal is defined as having 
+            more than 50 percent by weight (or 70 percent by volume) carbonaceous matter produced by the 
+            compaction and hardening of altered plant remains—namely, peat deposits. 
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Coal/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/F1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Fossil Fuel</h2>
+          <p>
+            Fossil fuel is a general term for buried combustible geologic deposits of organic materials, 
+            formed from decayed plants and animals that have been converted to crude oil, coal, natural gas, 
+            or heavy oils by exposure to heat and pressure in the earth's crust over hundreds of millions of 
+            years.
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Fuel/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/O2.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Oil</h2>
+          <p>
+            In general, oil is a liquid that is made up of organic molecules. However, the world oil in the 
+            context of the energy sector is the liquid fossil fuel that is extracted from the ground.Oil formed 
+            millions of years ago when living organic matter died and was buried before it could be decomposed 
+            in the presence of air.
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/oil/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/B1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Biogas</h2>
+          <p>
+            Biogas, naturally occurring gas that is generated by the breakdown of organic matter by anaerobic 
+            bacteria and is used in energy production. Biogas differs from natural gas in that it is a 
+            renewable energy source produced biologically through anaerobic digestion rather than a fossil fuel 
+            produced by geological processes.
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Biogas/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="../static/image/P1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
+          <h2>Petroleum</h2>
+          <p>
+            Petroleum is a naturally occurring liquid found beneath the earth’s surface that can be refined 
+            into fuel. Petroleum is a fossil fuel, meaning that it has been created by the decomposition of 
+            organic matter over millions of years. Petroleum is formed when large quantities of dead organisms
+          </p>
+          <p><a class="btn btn-success" href="../World_Energy/Petroleum/" role="button">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div>  
+
+<hr class="featurette-divider">
+
+<!-- FOOTER -->
+
+  <footer class="container-fluid" style="margin-top: 2rem!important; padding-right: 50px; padding-left: 50px;">  
+    <p>Energy Science and Engineering · <a href="../Contact/"> Contact Us</a> · <a href="../About/"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p> 
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
