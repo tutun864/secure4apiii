@@ -1,0 +1,1157 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="js/db-con.js"></script>
+
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log(user.email)
+          } else {
+            window.location.href = "index.html";
+            
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../Home/">Energy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bangladesh
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              <a class="dropdown-item" href="../Power_Sector">Power Scetor</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../Power_Generation">Power Generation</a>
+              <div class="dropdown-divider"></div> 
+              <a class="dropdown-item" href="../Power_Transmission">Power Transmission</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../Power_Distribution">Power Distribution</a> 
+            </div> 
+          </li>
+          <a class="nav-link" href="../Renewable">
+            Renewable
+          </a>   
+          <a class="nav-link" href="../NonRenewable">
+            Non-renewable 
+          </a> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Year
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../World_Energy/Naturalgas/">1st year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Coal/">2nd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/oil/">3rd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Biogas/">4th year</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Paper
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../World_Energy/Naturalgas/">Research</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Coal/">Thesis</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> 
+
+
+
+
+<!-- start: secondary page content -->
+<div class="container page-content" style="margin-top: 2rem!important; margin-left: 20px">
+    <div class="bcrumb-wrapper">
+      <div class="bcrumb-wrapper">
+        <i class="fa fa-home" aria-hidden="true">
+          <span class="sr-only">Home</span>
+        </i>
+        <a href="">Energy</a>
+        <span class="bcrumb-icon">/</span>
+        <a href="../Renewable">Bangladesh</a>
+        <span class="bcrumb-icon">/</span>
+        Power Generation
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar affix-top" data-spy="affix" data-offset-top="75" data-offset-bottom="700"
+          style="margin-top: 30px;">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <h2></h2> <!-- Needed for spacing -->
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Power_Scetor">
+                      Power Scetor
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                    Power Generation
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Power_Transmission" class="active">
+                    Power Transmission
+                  </a>
+                </h5>
+              </div>
+              <h2></h2>
+              <hr class="featurette-divider">
+              <div class="panel-heading">
+                <h5 class="panel-title">
+                  <a href="/Power_Distribution">
+                    Power Distribution
+                  </a>
+                </h5>
+              </div>
+              <hr class="featurette-divider">
+              <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" />
+                <div class="toctitle" lang="en" dir="ltr">
+                  <h3 id="mw-toc-heading">Contents</h3><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+                </div>
+                <ul>
+                  <li class="toclevel-1 tocsection-1"><a href="#Potential"><span class="toctext">Potential</span></a></li>
+                  <li class="toclevel-1 tocsection-2"><a href="#Thermal_energy"><span class="toctext">Thermal energy</span></a>
+                    <ul>
+                      <li class="toclevel-2 tocsection-4"><a href="#Water_heating"><span class="toctext">Water heating</span></a></li> 
+                      <li class="toclevel-2 tocsection-6"><a href="#Cooking"><span class="toctext">Cooking</span></a></li>
+                      <li class="toclevel-2 tocsection-7"><a href="#Process_heat"><span class="toctext">Process heat</span></a></li>
+                      <li class="toclevel-2 tocsection-8"><a href="#Water_treatment"><span class="toctext">Water treatment</span></a></li>
+                      <li class="toclevel-2 tocsection-9"><a href="#Molten_salt_technology"> <span class="toctext">Molten salt technology</span></a></li>
+                    </ul> 
+                  </li>
+                  <li class="toclevel-1 tocsection-10"><a href="#Electricity_production"><span class="toctext">Electricity production</span></a>
+                    <ul>
+                      <li class="toclevel-2 tocsection-11"><a href="#Photovoltaics"><span class="toctext">Photovoltaics</span></a></li>
+                      <li class="toclevel-2 tocsection-12"><a href="#Concentrated_solar_power"> <span class="toctext">Concentrated solar power</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="toclevel-1 tocsection-17"><a href="#Energy_storage_methods"><span class="toctext">Energy storage methods</span></a></li>
+                  <li class="toclevel-1 tocsection-18"><a href="#Development,_deployment_and_economics"><span class="toctext">Development, deployment and economics</span></a></li>
+                  <li class="toclevel-1 tocsection-15"><a href="#Advantages"><span class="toctext">Advantages</span></a></li>
+                  <li class="toclevel-1 tocsection-15"><a href="#Limitations"><span class="toctext">Limitations</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 main-content pull-right" style="margin-top: 10px;">
+          <h2>Solar Energy</h2>
+          <hr class="featurette-divider"> 
+            <img src="/static/image/S8.jfif"> 
+                <h1></h1> 
+                <hr class="featurette-divider">
+                <p>
+                  <b>Solar energy</b> is radiant light and heat from the Sun that is harnessed using a range of ever-evolving technologies such 
+                  as <a href="#">solar heating</a>, <a href="#Photovoltaics">photovoltaics</a>, <a href="#">solar thermal energy</a>, solar architecture, molten salt power
+                  plants and artificial photosynthesis 
+                </p> 
+                <p>
+                  Solar Energy is produced by the Sunlight is a non-vanishing renewable source of energy which is free from ecofriendly. 
+                  Every hour enough sunlight energy reaches the earth to meet the world’s energy demand for a whole year. In today’s
+                  generation we needed Electricity every hour. This Solar Energy is generated by as per applications like industrial, commercial,
+                  and residential. It cans easily energy drawn from direct sunlight. So it is very efficiency and free environment pollution for
+                  surrounding. 
+                </p>
+                <p> 
+                  Nowadays, due to the decreasing amount of <a href="/Renewable">renewable energy</a> resources, the last ten years become more important for per watt cost
+                  of solar energy device. It is definitely set to become economical in the coming years and growing as better technology in terms of
+                  both cost and applications. Everyday earth receives sunlight above (1366W approx.) This is an unlimited source of energy which is
+                  available at no cost. The major benefit of solar energy over other conventional power generators is that the sunlight can be directly
+                  converted into solar energy with the use of smallest photovoltaic (PV) solar cells. There have been a large amount of research
+                  activities to combine the Sun’s energy process by developing solar cells/panels/module with high converting form. The most
+                  advantages of solar energy is that it is free reachable to common people and available in large quantities of supply compared to that
+                  of the price of various <a href="/Fuel">fossil fuels</a> and <a href="/Oil">oils</a> in the past ten years. Moreover, solar energy requires considerably lower manpower
+                  expenses over conventional energy production technology.
+                </p>
+                <h2><span class="mw-headline" id="Potential">Potential</span></h2> 
+                <hr class="featurette-divider">
+                <p>
+                  Amount of energy in the form of heat and radiations called solar energy. It is radiant light and heat from sun that is
+                  natural source of energy using a range of ever changing and developing of technology such as solar thermal energy, solar
+                  architecture, solar heating, molten salt power plant and artificial photosynthesis. The large magnitude of solar power available
+                  makes highly appealing source of electricity.
+                  The Earth receives 174 <a href="https://www.aqua-calc.com/what-is/power/petawatt">petawatts</a> (PW) of incoming solar radiation 
+                  (<a href="https://energyeducation.ca/encyclopedia/Insolation">insolation</a>) at the upper atmosphere. Approximately 30% is 
+                  reflected back to space while the rest is absorbed by clouds, oceans and land masses. 
+                  <img src="/static/image/Potential.png"> 
+                </p> 
+                <p>
+                  The total solar energy absorbed by Earth's atmosphere, oceans and land masses is approximately 3,850,000<a href="#">exajoules</a> (EJ) per year.
+                  In 2002, this was more energy in one hour than the world used in one year. Photosynthesis captures approximately 3,000 EJ per
+                  year. The amount of solar energy reaching the surface of the planet is so vast that in one year it is about twice as 
+                  much as will ever be obtained from all of the Earth's non-renewable resources of coal, oil, natural gas, and mined uranium 
+                  combined. In 2000, the United Nations Development Programme, UN Department of Economic and Social Affairs, and <a href="#">World Energy 
+                  Council</a> published an estimate of the potential solar energy that could be used by humans each year that took into account 
+                  factors such as insolation, cloud cover, and the land that is usable by humans. The estimate found that solar energy has a global
+                  potential of 1,600 to 49,800 exajoules (4.4×10<sup>14</sup> to 1.4×10<sup>16</sup> kWh) per year.
+                </p>
+                <p>
+                  Solar technologies are characterized as either passive or active depending on the way they capture,
+                  convert and distribute sunlight and enable solar energy to be harnessed at different levels around the
+                  world, mostly depending on the distance from the equator. Although solar energy refers primarily to the
+                  use of solar radiation for practical ends, all renewable energies, other than <a href="/Geothermal" title="Geothermal power">
+                  Geothermal power</a> and <a href="/Tidal" title="Tidal power">Tidal power</a>, derive their energy either directly or
+                  indirectly from the Sun.
+                </p>   
+                <p>
+                  Active solar techniques use photovoltaics, concentrated solar power, <a href="#">solar thermal collectors</a>, pumps, and fans 
+                  to convert sunlight into useful outputs. Passive solar techniques include selecting materials with favorable thermal properties,
+                  designing spaces that naturally circulate air, and referencing the position of a building to the Sun. Active solar technologies 
+                  increase the supply of energy and are considered supply side technologies, while passive solar technologies reduce the need for 
+                  alternate resources and are generally considered demand-side technologies.
+                </p>
+                <h2><span class="mw-headline" id="Thermal_energy">Thermal energy</span></h2>
+                <hr class="featurette-divider">
+                <div role="note" class="hatnote navigation-not-searchable"> Main article: <i><a href="#">Solar thermal energy</a></i></div>
+                <p>
+                  Solar thermal technologies can be used for water heating, space heating, space cooling and process heat
+                  generation, water treatment, Cooking etc. 
+                </p>
+                <h6><em><b><span class="mw-headline" id="Water_heating">Water heating</span></b></em></h6> 
+                <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="#">Solar hot water</a></i></div>
+                <p> 
+                  Solar hot water systems use sunlight to heat water. In middle geographical latitudes (between 40 degrees north and 40 degrees 
+                  south), 60 to 70% of the domestic hot water use, with water temperatures up to 60°C (140°F), can be provided by solar heating 
+                  systems. The most common types of solar water heaters are <a href="#">evacuated tube collectors</a> (44%) and 
+                  <a href="#">glazed flat plate collectors</a> (34%) generally used for domestic hot water; and <a href="#">unglazed
+                  plastic collectors</a> (21%) used mainly to heat swimming pools. <a href="#">Israel</a> and <a href="#">Cyprus</a> are the per 
+                  capita leaders in the use of solar hot water systems with over 90% of homes using them. In the United States, Canada, and 
+                  Australia, heating swimming pools is the dominant application of solar hot water with an installed capacity of 18 GW<sub>th</sub> 
+                  as of 2005.
+                </p>
+                <img src="/static/image/WH1.gif">
+                <p></p> 
+                <h6><em><b><span class="mw-headline" id="Cooking">Cooking</span></em></b></h6>
+                <div role="note" class="hatnote navigation-not-searchable">Main article: <i><a href="#">Solar cooker</a></i></div> 
+                <p>
+                  Solar cookers use sunlight for cooking, drying, and <a href="#">pasteurization</a>. They can be grouped into three broad 
+                  categories: <a href="#">box cookers</a>, <a href="#">panel cookers</a>, and <a href="#">reflector cookers</a>. The simplest solar cooker is the box cooker first built by 
+                  <a href="#">Horace de Saussure</a> in 1767. A basic box cooker consists of an insulated container with a transparent lid. It can 
+                  be used effectively with partially overcast skies and will typically reach temperatures of 90–150°C (194–302°F). Panel cookers 
+                  use a reflective panel to direct sunlight onto an insulated container and reach temperatures comparable to box cookers. 
+                  Reflector cookers use various concentrating geometries (dish, trough, <a href="#">Fresnel mirrors</a>) to focus light on a cooking container. 
+                  These cookers reach temperatures of 315°C (599°F) and above but require direct light to function properly and must be 
+                  repositioned to track the Sun. 
+                </p>
+                <p>
+                </p>
+                <img src="/static/image/BCooker1.png">
+                <img src="/static/image/PCooker.jpg">
+                <p>
+                  Fig:-Box Cooking Process                            Fig:- Parabolic Cooking Process
+                </p>
+                <h6><em><b><span class="mw-headline" id="Process_heat">Process heat</span></em></b></h6>
+                <p>
+                  Solar concentrating technologies such as parabolic dish, trough and Scheffler reflectors can provide
+                  process heat for commercial and industrial applications. The first commercial system was the <a href="#">Solar Total Energy
+                  Project</a> (STEP) in Shenandoah, Georgia, US where a field of 114 parabolic dishes provided 50% of the process heating, air 
+                  conditioning and electrical requirements for a clothing factory. <a href="#">Clothes lines</a>, 
+                  <a href="#">clotheshorses</a>, and clothes racks dry clothes through evaporation by wind and sunlight without consuming 
+                  electricity or gas. A 860 m<sup>2</sup> 
+                  (9,300 sqft) collector in <a href="#">Costa Rica</a> used for drying coffee beans and a 1,300 m<sup>2</sup>
+                  (14,000 sqft) collector in <a href="#">Coimbatore</a>, India, used for drying marigolds.
+                </p> 
+                <h6><em><b><span class="mw-headline" id="Molten_salt_technology">Molten salt technology</span></em></b></h6>  
+                <p>
+                  Molten salt can be employed as a <a href="#">thermal energy storage</a> method to retain thermal energy collected by
+                  a solar tower or <a href="#">solar trough</a> of a concentrated solar power plant so that it can be used to
+                  generate electricity in bad weather or at night. It was demonstrated in the Solar Two project from 1995–1999. The system is 
+                  predicted to have an annual efficiency of 99%, a reference to the energy retained by storing heat before turning it
+                  into electricity, versus converting heat directly into electricity. The molten salt mixtures vary. The
+                  most extended mixture contains <a href="#">sodium nitrate</a>, <a href="#">potassium nitrate</a> and <a href="#">calcium nitrate</a>. 
+                  It is non-flammable and non-toxic, and has already been used in the chemical and metals industries as a heat-transport fluid.
+                  Hence, experience with such systems exists in non-solar applications.
+                </p>
+                <p> 
+                <img src="/static/image/MS1.jpg">              
+                </p>
+                <p>
+                  The salt melts at 131&#160;°C (268&#160;°F). It is kept liquid at 288&#160;°C (550&#160;°F) in an
+                  insulated "cold" storage tank. The liquid salt is pumped through panels in a solar collector where the
+                  focused irradiance heats it to 566&#160;°C (1,051&#160;°F). It is then sent to a hot storage tank. This
+                  is so well insulated that the thermal energy can be usefully stored for up to a week.
+                </p>
+                <p>
+                  When electricity is needed, the hot salt is pumped to a conventional steam-generator to produce <a href="#">superheated steam</a> 
+                  for a turbine/generator as used in any conventional coal, oil, or nuclear power plant. A 100-megawatt turbine would need a tank
+                  about 9.1 metres (30&#160;ft) tall and 24 metres (79&#160;ft) in diameter to drive it for four hours by
+                  this design.               
+                </p>
+                <p>
+                  <img src="/static/image/MS2.jpg">  
+                  
+                </p>
+                <p>
+                  Several <a href="#">parabolic trough</a> power plants in Spain and <a href="#">solar power tower</a> developer 
+                  <a href="#">SolarReserve</a> use this thermal energy storage concept. The <a href="#" >Solana Generating Station</a> in the U.S. 
+                  has six hours of storage by molten salt. The María Elena plant is a 400&#160;MW thermo-solar complex in the northern 
+                  <a href="#">Chilean</a> region of <a href="#">Antofagasta</a> employing molten salt technology.
+                </p>
+                <h2><span class="mw-headline" id="Electricity_production">Electricity production</span></h2>
+                <hr class="featurette-divider">
+                <p>
+                  Solar power is the conversion of sunlight into electricity. Solar power plants use one of two technologies to convert the solar power into 
+                  electricity. The two technologies are:- 
+                </p>
+                <ul> 
+                  <li>
+                    <em>Photovoltaic(PV) system</em> use solar panels, either on rooftops or the ground-mounted solar farms, converting
+                    sunlight directly into electric power.
+                  </li>
+                  <li>
+                    <em>Concentrated solar power</em> (CSP, also known as "concentrated solar thermal") plants use <a href="#">solar thermal energy</a> to make
+                    steam, that is there after converted into electricity by a turbine.
+                  </li> 
+                </ul>               
+                <p>
+                  Solar power is anticipated to become the world's largest source of electricity by 2050, with solar
+                  photovoltaics and concentrated solar power contributing 16 and 11 percent(Toatal 27% ) to the global overall
+                  consumption, respectively.In 2017, after another year of rapid growth, solar
+                  generated 2% of global power.
+                </p>   
+                <h4 style="text-align:center;white-space:pre-wrap;">1.<span class="mw-headline" id="Photovoltaics">Photovoltaics</span></h4> 
+                <p><img src="/static/image/Photovoltaics.jfif"></p>  
+                  <p>
+                    Photovoltaics (often shortened as PV) gets its name from the process of converting light (Photons) to electricity(voltage),
+                    which is called the <em><a href="#">Photovoltaic effect</a></em>. This phenomenon was first <a href="#">exploited</a> in 
+                    1954 by scientists at Bell Laboratories who created a working solar cell made from silicon that generated an electric current 
+                    when exposed to sunlight. Solar cells were soon being used to power space satellites and smaller items such as calculator and watches.
+                    Today, electricity from solar cell has become cost competitive in many regions and photovoltaic system are being deployed at large scales 
+                    to help power the electric grid. There are various tyoes of solar cells. Some are :-
+  
+                    <div class="sqs-block-content" id="yui_3_17_2_1_1587391922873_1063">
+                      <p style="white-space:pre-wrap;" class=""> 
+                        <strong>1.</strong> <b><i>Silicon Solar Cells</i></b>:- The vast majority of today's solar cells are made from silicon and often both reasonable prices and good efficiency. These cells are usually assembled into larger modules that can be installed on the roofs of residential or commercial buildings or developed on ground-mounted racks to create huge, utility scale systems.
+                      </p>
+                      <p><img src="/static/image/SiliconCell.jfif"></p>
+                    </div>
+  
+                    <div class="sqs-block-content" id="yui_3_17_2_1_1587391922873_1063"> 
+                      <p style="white-space:pre-wrap;" class="">  
+                        <strong>2.</strong> <b><i>Thin-Flim Solar Cells</i></b>:- The Thin-Flim Solar cells are made from very thin layers(few micrometers) of semiconductor materials, such as cadmium telluride or copper indium gallium diselenide. Thin-film solar cells can be flexible and  lightweight, making them ideal for portable applications—such as in a soldier’s backpack—or for use in other products like windows that generate electricity from the sun.
+                      </p>
+                      <p><img src="/static/image/ThinSolarCell.jfif"></p> 
+                    </div>
+  
+                    <div class="sqs-block-content" id="yui_3_17_2_1_1587391922873_1063"> 
+                      <p style="white-space:pre-wrap;" class=""> 
+                        <strong>3.</strong> <b><i>III-V Solar Cells</i></b>:-  III-V solar cells are mainly constructed from elements in Group III—e.g., gallium and indium—and Group V—e.g., arsenic and antimony—of the periodic table. These solar cells are generally much more expensive to manufacture than other technologies. But they convert sunlight into electricity at much higher efficiencies. Because of this, these solar cells are often used on satellites, unmanned aerial vehicles, and other applications that require a high ratio of power-to-weight. 
+                      </p>
+                      <p><img src="/static/image/III-vSolarCell1.jfif"></p>  
+                    </div> 
+  
+                    <div class="sqs-block-content" id="yui_3_17_2_1_1587391922873_1063"> 
+                      <p style="white-space:pre-wrap;" class=""> 
+                        <strong>4.</strong> <b><i>Next-Generation Solar Cells</i></b>:- Solar cell researchers at NREL and elsewhere are also pursuing many new photovoltaic technologies—such as solar cells made from organic materials, quantum dots, and hybrid organic-inorganic materials (also known as perovskites). These next-generation technologies may offer lower costs, greater ease of manufacture, or other benefits. Further research will see if these promises can be realized.
+                      </p>
+                      <p><img src="/static/image/NextGenerationSolarCell.jfif"></p> 
+                    </div>  
+                  </p>
+                  <p>  
+                <h6 style="text-align:center;white-space:pre-wrap;"><b><em>Efficiency</h6></b></em>
+                <p>The electrical efficiency of a PV cell is a <a href="#">physical property</a> which represents how much electrical power a cell can produce for a given <a href="#">Solar irradiance</a>. The basic expression for maximum efficiency of a photovoltaic cell is given by the ratio of output power to the incident solar power (radiation flux times area)
+                </p>
+                <dl><dd><span class="mwe-math-element">
+                  <span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \eta ={\frac {P_{max}}{E\cdot A_{cell}}}.}">
+                      <semantics>
+                        <mrow class="MJX-TeXAtom-ORD">
+                          <mstyle displaystyle="true" scriptlevel="0">
+                            <mi>&#x03B7;<!-- η --></mi>
+                            <mo>=</mo>
+                            <mrow class="MJX-TeXAtom-ORD">
+                              <mfrac>
+                                <msub>
+                                  <mi>P</mi>
+                                  <mrow class="MJX-TeXAtom-ORD">
+                                    <mi>m</mi>
+                                    <mi>a</mi>
+                                    <mi>x</mi>
+                                  </mrow>
+                                </msub>
+                                <mrow>
+                                  <mi>E</mi>
+                                  <mo>&#x22C5;<!-- ⋅ --></mo>
+                                  <msub>
+                                    <mi>A</mi>
+                                    <mrow class="MJX-TeXAtom-ORD">
+                                      <mi>c</mi>
+                                      <mi>e</mi>
+                                      <mi>l</mi>
+                                      <mi>l</mi>
+                                    </mrow>
+                                  </msub>
+                                </mrow>
+                              </mfrac>
+                            </mrow>
+                            <mo>.</mo>
+                          </mstyle>
+                        </mrow>
+                        <annotation encoding="application/x-tex">{\displaystyle \eta ={\frac {P_{max}}{E\cdot A_{cell}}}.}</annotation>
+                      </semantics>
+                    </math>
+                  </span>  
+                  <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a9fe1371b38c912bf2d41e2f91dd8723ac84e299" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.338ex; width:13.639ex; height:5.676ex;" alt="{\displaystyle \eta ={\frac {P_{max}}{E\cdot A_{cell}}}.}"/></span><sup id="cite_ref-24" class="reference"><a href="#cite_note-24"></a></sup>
+                </dd></dl>
+                <p>
+                  The most efficient type of solar cell to date is a <a href="#">multi-junction concentrator solar cell</a> with an efficiency of 
+                  46.0% produced by <a href="#">Fraunhofer ISE</a> in December 2014. The highest efficiencies achieved without concentration 
+                  include a material by <a href="#">Sharp Corporation</a> at 35.8% using a proprietary <a href="#">triple-junction</a> 
+                  manufacturing technology in 2009, and <a href="#">Boeing Spectrolab</a> (40.7% also using a triple-layer design). 
+                  The US-based specialty <a href="#">gallium arsenide</a> (GaAs) PV manufacturer <a href="#">Alta Devices</a> produces 
+                  commercial cells with 26% efficiency claiming to have "the world's most efficient solar" single-junction cell 
+                  dedicated to flexible and lightweight applications. For Silicon solar cell, the US company <a href="#">SunPower</a> 
+                  remains the leader with a certified module efficiency of 22.8%, well above the market average of 15–18%. 
+                  However, competitor companies are catching up like the South Korean conglomerate <a href="#" >LG</a> 
+                  (21.7% efficiency) or the Norwegian <a href="#">REC Group</a> (21.7% efficiency). 
+                  <a href="#">Perovskite cells</a> are also rapidly (as of 2019) progressing, with top efficiencies increasing 
+                  from 13% to 23.7% for non stabilized cells and up to 28% for perovskite/Si tandem monolithic cells between 2012 and 2018.
+                </p>
+                <p>
+                  There is an ongoing effort to increase the conversion efficiency of PV cells and modules, primarily 
+                  for competitive advantage. In order to increase the efficiency of solar cells, it is important to choose a 
+                  semiconductor material with an appropriate <a href="#">band gap</a> that matches the solar spectrum. 
+                  This will enhance the electrical and optical properties. Improving the method of charge collection is 
+                  also useful for increasing the efficiency.
+                </p>
+                <p>
+                  One of the major causes for the decreased performance of cells is overheating. The efficiency of a solar cell 
+                  declines by about 0.5% for every 1 degree Celsius increase in temperature. This means that a 100 degree increase 
+                  in surface temperature could decrease the efficiency of a solar cell by about half. Self-cooling solar cells are 
+                  one solution to this problem. Rather than using energy to cool the surface, pyramid and cone shapes can be formed 
+                  from <a href="#">silica</a>, and attached to the surface of a solar panel. Doing so allows visible light to reach 
+                  the <a href="#">solar cells</a>, but reflects infrared rays (which carry heat).
+                </p>
+                  <p> 
+                    <h5><b><em>Photovoltaic system:-</h5></b></em> 
+                    <p><img src="/static/image/PhotovoltaicsSystem.jfif"></p>
+                    <p>
+                      A photovoltaic system, also PV system or solar power system, is a power system designed to supply 
+                      usable solar power by means of photovoltaics. It consists of an arrangement of several components, 
+                      including solar panels to absorb and convert sunlight into electricity, a solar inverter to convert 
+                      the output from direct(DC) to alternating current(AC), as well as mounting, cabling, and other electrical 
+                      metarials to set up a working system.  
+                      As PV systems convert light directly into electricity, they are not to be confused with other solar technologies, 
+                      such as concentrated solar power or solar thermal, used for heating and cooling.
+                    </p>
+                    <p>
+                      <h6><b><em>Grid system:-</h6></b></em> 
+                      <p>
+                        All solar power systems work on the same basic principles. Solar panels first convert solar 
+                        energy or sunlight into DC power using what is known as the photovoltaic (PV) effect. 
+                        The DC power can then be stored in a battery or converted by a solar inverter into AC power 
+                        which can be used to run home appliances. Depending on the type of system, excess solar energy 
+                        can also be fed into the electricity grid to provide credits and further reduce electricity costs.
+                      </p> 
+                      <p><h6 style="text-align:center;white-space:pre-wrap;"><strong>The three main types of solar power systems</strong></h6></p>
+                      <p style="margin-left:40px;white-space:pre-wrap;" class=""><strong>1. On-grid </strong>- also known as a grid-tie or grid-feed solar system</p>
+                      <p style="margin-left:40px;white-space:pre-wrap;" class=""><strong>2. Off-grid </strong>- also known as a stand-alone power system (SAPS)</p>
+                      <p style="margin-left:40px;white-space:pre-wrap;" class=""><strong>3. Hybrid</strong> - solar plus battery storage with grid-connection</p>
+                       
+                      
+                      <p style="margin-left:40px;white-space:pre-wrap;" class=""> 
+                        <h6><b><em>1. On-Grid System</h6></b></em> 
+                        On-grid or grid-tie solar systems are by far the most common and widely used by homes and businesses. 
+                        These systems do not need batteries and use common solar inverters and are connected to the public electricity grid. 
+                        Any excess solar power that you generate is exported to the electricity grid and you usually get paid 
+                        a feed-in-tariff (FiT) or credits for the energy you export. Unlike hybrid systems, on-grid solar systems 
+                        are not able to function or generate electricity during a blackout due to safety reasons. 
+                        Since blackouts usually occur when the electricity grid is damaged; If the solar inverter was 
+                        still feeding electricity into a damaged grid it would risk the safety of the people repairing 
+                        the fault/s in the network. Most hybrid solar systems with battery storage are able to automatically 
+                        isolate from the grid (known as islanding) and continue to supply some power during a blackout.
+                        Batteries are able to be added to on-grid systems at a later stage if required. The Tesla Powerwall 2 is a 
+                        popular AC battery system which can be added to an existing solar system. 
+                        <p><img src="/static/image/OnGRID.jfif"></p>
+                        <p>
+                          <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1566304082550_23199">
+                            <div class="sqs-block-content" id="yui_3_17_2_1_1587391922873_1321">
+                              <p class="" style="white-space:pre-wrap;">In an on-grid system, this is what happens after electricity reaches the switchboard:</p>
+                              <ul data-rte-list="default" id="yui_3_17_2_1_1587391922873_1320">
+                                <li id="yui_3_17_2_1_1587391922873_1319">
+                                  <p class="" style="white-space:pre-wrap;" id="yui_3_17_2_1_1587391922873_1318"><strong><em>The meter</em>.</strong> Excess solar energy runs through the meter, which calculates how much power you are either exporting or importing (purchasing).</p>
+                                </li>
+                                <li>
+                                  <p class="" style="white-space:pre-wrap;"><strong><em>Metering systems</em></strong> work differently in many states and countries around the world. In this description I am assuming that the meter is only measuring the electricity being exported to the grid, as is the case in most of Australia. In some states, meters measure all solar electricity produced by your system, and therefore your electricity will run through your meter <em>before</em> reaching the switchboard and not after it. In some areas (currently in California), the meter measures both production and export, and the consumer is charged (or credited) for net electricity used over a month or year period. I will explain more about metering in a later blog.</p>
+                                </li>
+                                <li>
+                                  <p class="" style="white-space:pre-wrap;"><strong><em>The electricity grid</em></strong>. Electricity that is sent to the grid from your solar system can then be used by other consumers on the grid (your neighbours). When your solar system is not operating, or you are using more electricity than your system is producing, you will start importing or consuming electricity from the grid.</p>
+                                </li>
+                              </ul>
+                            </div> 
+                          </div>  
+                        </p> 
+                      </p>
+                      <p style="margin-left:40px;white-space:pre-wrap;" class=""> 
+                        <h6><b><em>2. Off-Grid System</h6></b></em> 
+                        An off-grid system is not connected to the electricity grid and therefore requires battery storage. Off-grid solar systems must be designed appropriately so that they will generate enough power throughout the year and have enough battery capacity to meet the home’s requirements, even in the depths of winter when there is generally much less sunlight. 
+                        The high cost of batteries and off-grid inverters means off-grid systems are much more expensive than on-grid systems and so are usually only needed in more remote areas that are far from the electricity grid. However battery costs are reducing rapidly, so there is now a growing market for off-grid solar battery systems even in cities and towns.
+                        There are different types of off-grid systems which we will go into more detail later, but for now I will keep it simple. This description is for an AC coupled system, in a DC coupled system power is first sent to the battery bank, then sent to your appliances. To understand more about building and setting up an efficient off-grid home see our sister site go off-grid/hybrid
+                        <p><img src="/static/image/OffGrid.jfif"></p>
+                        <p>  
+                          <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1584447499412_24135">
+                            <div class="sqs-block-content">
+                              <ul data-rte-list="default">
+                                <li>
+                                  <p class="" style="white-space:pre-wrap;"><strong><em>The battery bank</em></strong>. In an off-grid system there is no public electricity grid. Once solar power is used by the appliances in your property, any excess power will be sent to your battery bank. Once the battery is full it will stop receiving power from the solar system. When your solar system is not working (night time or cloudy days), your appliances will draw power from the batteries.</p>
+                                </li>
+                                <li> 
+                                  <p class="" style="white-space:pre-wrap;"><strong><em>Backup Generator</em></strong>. For times of the year when the batteries are low on charge and the weather is very cloudy you will generally need a backup power source, such as a backup generator or gen-set. The size of the gen-set (measured in kVA) should to be adequate to supply your house and charge the batteries at the same time.</p>
+                                </li>
+                              </ul> 
+                            </div>
+                          </div>
+                        </p> 
+                      </p>
+                      <p style="margin-left:40px;white-space:pre-wrap;" class=""> 
+                        <h6><b><em>3. Hybrid System</h6></b></em>
+                        Modern hybrid systems combine solar and battery storage in one and are now available in many different forms and configurations. Due to the decreasing cost of battery storage, systems that are already connected to the electricity grid can start taking advantage of battery storage as well. This means being able to store solar energy that is generated during the day and using it at night. When the stored energy is depleted, the grid is there as a back up, allowing consumers to have the best of both worlds. Hybrid systems are also able to charge the batteries using cheap off-peak electricity (usually after midnight to 6am).
+                        <p><img src="/static/image/HybridSystem.jfif"></p>
+                        <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_2_1491981345082_25849">
+                          <div class="sqs-block-content" id="yui_3_17_2_1_1587391922873_1086">
+                            <p class="" style="white-space:pre-wrap;">There are also different ways to design hybrid systems but we will keep it simple for now. To learn more about the different hybrid and off-grid power systems refer to <strong>our detailed </strong><a href="https://www.cleanenergyreviews.info/blog/home-solar-battery-systems" target="_blank">guide to home solar battery systems</a><strong>.</strong></p>
+                            <ul data-rte-list="default">
+                              <li>
+                                <p class="" style="white-space:pre-wrap;"><strong><em>The battery bank</em>.</strong> In a hybrid system once the solar power is used by the appliances in your property, any excess power will be sent to the <a href="http://www.cleanenergyreviews.info/blog/2014/9/7/clean-energy-storage-types-batteries" target="_blank">battery bank</a>. Once the battery bank is fully charged, it will stop receiving power from the solar system. The energy from the battery can then be discharged and used to power your home, usually during the peak evening period when the cost of electricity is typically at it’s highest.</p>
+                              </li>
+                              <li>
+                                <p class="" style="white-space:pre-wrap;"><strong><em>The meter and electricity grid</em>.</strong> Depending on how your hybrid system is set up and whether your utility allows it, once your batteries are fully charged excess solar power not required by your appliances can be exported to the grid via your meter. When your solar system is not in use, and if you have drained the usable power in your batteries your appliances will then start drawing power from the grid.</p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div> 
+                      </p> 
+                    </p>
+                  </p>
+                  <p>
+                    <h6 style="text-align:center;white-space:pre-wrap;"><b><em>Main Components Of A Solar System</h6></b></em> 
+                    <p class="" style="white-space:pre-wrap;">
+                      <b><em>Solar Panels:-</em></b> Most modern solar panels are made up of many silicon based photovoltaic or PV cells which generate <a href="#">direct current<a> (DC) electricity from solar energy. The individual PV cells are linked together within the solar panel and connected to <a href="#">adjacent panels</a> using DC cables. Note: It is light energy or irradiance, not heat, which produces electricity in photovoltaic cells. Solar panels also known as solar modules are installed together in ‘strings’ to create a what is known as a <a href="#">solar array</a>. The amount of solar energy generated depends on a number of factors including the orientation and <a href="#">tilt angle</a> of the solar panels, efficiency of the solar panel, plus any losses due to shading, dirt and even ambient temperature. There are many different solar panel manufacturers on the market so it worth knowing which are the best solar panels and why. Solar panels can generate energy during cloudy and overcast weather but the amount of energy depends on the 'thickness' and height of the clouds, which determines how much dispersed light can pass through. The amount of light energy is known as solar irradiation and usually averaged over the whole day using the term <a href="#">Peak Sun Hours</a> (PSH). The amount of PSH or average sunlight hours can vary greatly throughout the year depending on the location.
+                    </p>
+                    <p class="" style="white-space:pre-wrap;"> 
+                      <b><em>Solar Inverter:-</b></em> Solar panels generate DC electricity which needs to be converted to alternating current (AC) electricity for use in our homes and businesses which is primary the role of the <a href="#">solar inverter</a>. In a ‘string’ inverter system, solar panels are linked together in series and the DC electricity is brought to a single inverter which converts the DC power to AC power. In a micro inverter system, each panel has it’s own micro inverter attached to the rear side of the panel. The panel still produces DC, but is converted to AC on the roof and is fed straight to the electrical switchboard. There are also more advanced string inverter systems which use small power optimisers attached to back of each solar panel. Power optimisers are able to monitor and control each panel individually and ensure every panel is operating at maximum efficiency under all conditions.
+                    <p><img src="/static/image/Inverter.jfif"></p> 
+                    </p>
+                    <p class="" style="white-space:pre-wrap;">
+                      <b><em>Batteries:-</b></em> Batteries used for solar energy storage are available in two main types, <a href="#">lead-acid</a> (AGM and Gel) and <a href="#">lithium-Ion</a>. There are several other types available such as <a href="#">redox flow batteries</a> and sodium-ion but we will focus on the most common two. Most modern energy storage systems use rechargeable <a href="#">lithium-ion batteries</a> and are available in many shapes and sizes which can be configured in several ways. Battery capacity is measured is either Amp hours (Ah) for lead-acid, or kilowatt hours (kWh) for lithium-ion. However, not all of the capacity is available for use, lithium-ion based batteries can typically supply up to 90% of their available capacity per day, while lead-acid batteries should only supply 30 to 40% of their total capacity per day to increase battery life. Lead-acid batteries can be discharged fully, but this should only be done in emergency backup situations. Off-grid solar systems require specialised off-grid inverters and battery systems large enough to store energy for 2 or more days. Hybrid grid-connected systems use lower cost hybrid (battery) inverters, and only require a battery large enough to supply energy for 5 to 10 hours depending on the application.
+                    </p>
+                    <p class="" style="white-space:pre-wrap;">
+                      <b><em>Electricity Switchboard:-</em></b> In a common grid-tie solar system, AC electricity from the solar inverter is sent to the switchboard where it is drawn into the various circuits and appliances in your home. This is known as Net metering, where any excess electricity generated by the solar system is sent the electricity grid through an energy meter or stored a battery storage system if you have a hybrid system. Some countries however, use ‘<a href="#">Gross metering</a>’ where all solar energy is exported to the electricity grid. Hybrid systems can both export excess electricity and store excess energy in a battery. Some Hybrid inverters maybe also be connected to a dedicated backup switchboard which enables some ‘essential circuits’ or critical loads to be powered during a grid outage or blackout.
+                    </p>
+                  </p>
+                <h6 style="text-align:center;white-space:pre-wrap;"><b><em>Growth</em></b></h6>              
+                <p>
+                  Solar photovoltaics is growing rapidly and worldwide installed capacity reached about 515 
+                  gigawatts (GW) by 2018. The total power output of the world's PV capacity in a calendar year is now beyond 500 TWh of electricity. 
+                  This represents 2% of worldwide electricity demand. More than 100 <a href="#">countries</a> use solar PV. 
+                  China is followed by the United States and Japan, while installations in Germany, once the world's largest producer, 
+                  have been slowing down.
+                </p>
+                <p>
+                  In 2017 a study in Science estimated that by 2030 global PV installed capacities will be between 3,000 and 10,000 GW.
+                  The EPIA/<a href="#">Greenpeace</a> Solar Generation Paradigm Shift Scenario (formerly called Advanced Scenario) 
+                  from 2010 shows that by the year 2030, 1,845&#160;GW of PV systems could be generating approximately 2,646&#160;TWh/year 
+                  of electricity around the world. Combined with energy use efficiency improvements, this would represent the electricity 
+                  needs of more than 9% of the world's population. By 2050, over 20% of all electricity could be provided by photovoltaics.
+                </p>
+                <p>
+                  <span id="Top_10_ranking_of_worldwide_photovoltaic_installation"></span>
+                </p> 
+                <h6 style="text-align:center;white-space:pre-wrap;"><b>Top 10 PV countries in 2019 (GW)</b></h6>
+                <table style="max-width: 600px; margin: 1px auto;">
+                  <tbody>
+                    <tr style="background-color: none;">
+                      <td align="center">
+                        <table class="wikitable sortable" style="text-align:right; margin: 18px auto 1px auto;">
+                          <tbody>
+                            <tr>
+                              <th style="background-color:#cfb">Nation</th>
+                              <th style="background-color:#cfb" data-sort-type="number">Total Capacity(GW)</th> 
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td align="left"> <a href="#">Japan</a></td>
+                              <td>56.00</td> 
+                            </tr>
+                            <tr>
+                              <td>2</td> 
+                              <td align="left">
+                               <a href="#">Germany</a></td> 
+                              <td>47.72</td> 
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td align="left"> <a href="#">India</a></td> 
+                              <td>34.40</td> 
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td align="left"> <a href="#">United States</a></td>
+                              <td>25.62</td> 
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td align="left"> <a href="#">China</a></td> 
+                              <td>22.79</td>
+                            </tr>                      
+                            <tr>
+                              <td>6</td>
+                              <td align="left"></span> <a href="#">Italy</a></td>
+                              <td>20.10</td> 
+                            </tr>
+                            <tr>
+                              <td>7</td>
+                              <td align="left"> <a href="#">Australia</a></td>
+                              <td>13.90</td>
+                            </tr>
+                            <tr>
+                              <td>8</td>
+                              <td align="left"> <a href="#">United Kingdom</a></td> 
+                              <td>11.38</td>
+                            </tr>
+                            <tr>
+                              <td>9</td>
+                              <td align="left"> <a href="#">France</a></td>
+                              <td>9.46</td> 
+                            </tr>
+                            <tr>
+                              <td>10</td>
+                              <td align="left"> <a href="#">Spain</a></td>
+                              <td>7.01</td>
+                            </tr>                                                 
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="font-size: 85%; padding: 5px 0 0 20px;">
+                        <p>
+                          Data: <a href="#">IEA</a> 
+                          <br/><i>Also see <a href="#">Solar power by country</a> for a complete and continuously updated list</i>
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p> 
+                <h6 style="text-align:center;white-space:pre-wrap;"><b><em><span class="mw-headline" id="Photovoltaic_systems">Applications</span></em></b></h6>
+                <p>
+                  A photovoltaic system, or solar PV system is a power system designed to supply usable solar power by means of
+                  photovoltaics. It consists of an arrangement of several components, including solar panels to absorb and directly
+                  convert sunlight into electricity, a solar inverter to change the electric current from DC to AC and other electrical 
+                  accessories. PV systems range from small, <a href="#">roof-top mounted</a> or <a href="#">building-integrated</a>
+                  systems with capacities from a few to several tens of kilowatts, to large utility-scale power stations of hundreds of megawatts. Nowadays, most PV systems are 
+                  <a href="#">grid-connected</a>, while <a href="#">stand-alone</a> systems only account for a small portion of the market.
+                </p>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Rooftop and building integrated systems</dt>
+                    </dl>
+                  </li>
+                </ul> 
+                <p><img src="/static/image/RoofTop.jfif"></p>
+                <dl>
+                  <dd> 
+                    <p>Integrated Solar is the inclusion of solar power technology as a part of orginal construction rather than as a separate 
+                    module that is added later. Integrated solar is most commonly seen in buildings, where it is sometimes referred to as 
+                    building-integrated photovoltaic (BIPV). Examples of BIPV include windows and roofs with integrated solar, as well as 
+                    glass awning with built in photovoltaic cells. Glass awning installations can provide as much as 18% of building's electricity.
+                    <a href="#">Building-integrated photovoltaics</a> (BIPV) are increasingly incorporated into the roof or walls of new domestic 
+                    and industrial buildings as a principal source of electrical power.</p>
+                    <p>Roof tiles with integrated PV cells are sometimes used as well. Provided there is an open gap in which air can circulate,
+                    rooftop mounted solar panels can provide a passive cooling effect on buildings during the day and also keep
+                    accumulated heat in at night. Typically, residential <a href="#">rooftop systems</a> have small capacities of
+                    around 5–10 kW, while commercial rooftop systems often amount to several hundreds of kilowatts.</p> 
+                  </dd> 
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Concentrator photovoltaics</dt>    
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/ConcentratorPhotovoltaics.jfif"></p>
+                <dl>
+                  <dd>
+                    <p><a href="#" >Concentrator photovoltaics</a> (CPV) is a photovoltaic technology that uses lenses or curved mirrors to focus 
+                    sunlight onto small, high quality multi-junction and high efficiency solar cells. Also CPV system sometimes use a cooling system
+                    and solar trackers to increase the efficiency. Which the conventional photovoltaic system doesn't have.</p>
+                    <p>In the early 2000s, scientists started applying multi-junction solar cells for concentrator solar applications. But it was 
+                    designed for <a href="#">space science</a>. In multi-junction concentrator solar cells composed of 3 solar cells but scientists are now on work
+                    with 4 and 5 junction solar cells to achieve higher efficiencies. It was also announced that by the year 2020, we will bw able 
+                    to use almost 50 percent efficiency of multi-junction solar cells in CPV system.</p> 
+                  </dd> 
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Photovoltaic thermal hybrid solar collector</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/ThermalHybrid.jfif"></p> 
+                <dl>
+                  <dd>
+                    <a href="#">Photovoltaic hybrid solar thermal collectors</a> are PV panels and thermal PV collectors combined. This hybrid solar panels
+                    generate electricity in one hand and hot water on the other. PVT-panels and PVT-collectors are two different types of 
+                    hybrid solar collectors.These systems combine a solar PV cell, which converts sunlight into electricity, with a 
+                    <a href="#">solar thermal collector</a>, which captures the remaining energy and removes waste heat from the PV module. 
+                    The capture of both electricity and heat allow these devices to have higher <a href="#">exergy</a> and thus be more 
+                    overall energy efficient than solar PV or solar thermal alone.  
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>photovoltaic Power stations</dt>
+                    </dl>
+                  </li>
+                </ul>              
+                <p><img src="/static/image/KamuthiSolarParkLargest.jfif"></p>
+                <dl>
+                  <dd>
+                    A photovoltaic power station, also known as a solar park or solar farm, is a large-scale photovoltaic system designed
+                    for the supply of <a href="#">merchant power</a> into the electric grid. They are differentiated from most building 
+                    mounted and other decentralised solar power applications because the supply power at the utility level, rather than 
+                    to the local users. The generic expression <a href="#">utility-scale solar</a> is sometimes used to describe this type of project.
+                    As of 2018, the world's largest operating photovoltaic power stations surpass 1 gigawatts. As at the end of 2018, about 
+                    7300 plants with a combined capacity of almost 180 GW<sub>AC</sub> were solar farms larger than 4 MW<sub>AC</sub> (utility scale).
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Rural electrification</dt> 
+                    </dl>
+                  </li>
+                </ul>
+                <dl>
+                  <dd>
+                    <p><a href="#">Rural electrification</a> is the process of bringing electric power to rural and remote area. Rural communities are suffering from 
+                    colossal market failures as the national grids fall short to their demand electricity. Renewable <a href="#">off-grid</a>
+                    enterprises have emerged in many areas to meet the demand for electricity in rural communities.</p>
+                    <p> Many micro-grid companies have set out to provide electricity to the millions who lacjk access to power in rural communities.
+                    Like <a href="#">Gram Oorja</a>, in India currently has installed capacity of 45.7 KW and serves 230 households.</p>   
+                  </dd>
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Standalone systems</dt> 
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/StandAloneSolarSystem.jfif"></p> 
+                <dl>
+                  <dd>
+                    <a href="#">Stand-alone photovoltaic systems</a> are designed to operate independent of the electric utility grid, 
+                    and are generally designed and sized to supply certain DC and/or AC electrical loads. These types of systems 
+                    may be powered by a <a href="#">photovoltaic array</a> only or may use wind, an engine-generator or utility power 
+                    as an auxiliary power source in what is called a photovoltaic-hybrid system. The simplest type of 
+                    stand-alone photovoltaic system is a direct-coupled system, where the DC output of a photovoltaic 
+                    module or array is directly connected to a DC load. This standalone solar system can be successfully 
+                    utilized for pumping drinking and irrigation water as in these both cases fixed amount 
+                    of water is not required to lift every hour.
+                  </dd>
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Floating solar</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/FloatingSolar.jfif"></p>
+                <dl>
+                  <dd>
+                    <p>Where land may be limited, PV can be deployed as <a href="#">floating solar</a>. Floating solar refers to a solar 
+                    power production installation mounted on a structure that floats on a body of water, typically an artificial basin or a lake.
+                    American, Danish, French, Italian and Japanese nationals were the first to register patents for floating solar. 
+                    In Italy the first registered patent, regarding PV modules on water, goes back to February 2008.</p>
+                    <p>This technology has had a rapid growth on the renewable energy market since 2016 and in 2017 has 
+                    overcome the 200 MW of installed power. The installed power reached 2.1 GW in 2019. The costs for 
+                    a floating system are 20-25% higher than for ground-mounted systems. 453 MWp for installation in 2017 and 
+                    750 MWp for installation in 2018.</p>
+                  </dd>
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>In transport</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/SolarTransport.jfif"></p>
+                <dl>
+                  <dd>
+                    <p>PV has traditionally been used for electric power in space. PV is rarely used to provide motive power in transport
+                    applications, but is being used increasingly to provide auxiliary power in boats and cars. A self-contained 
+                    <a href="#">solar vehicle</a> would have limited power and utility, but a solar-charged <a href="#">electric vehicle</a> 
+                    allows use of solar power for transportation. Solar-powered cars, boats and airplanes have been demonstrated, 
+                    with the most practical and likely of these being <a href="#">solar cars</a>.</p>
+                    <p>The first solar family car was built in 2013 by students in the Netherlands. This vehicle is capable 
+                    of 550 miles on one charge during sunlight. It weighs 850 pounds and has a 1.5kw solar array.
+                    The Swiss <a href="#">solar aircraft</a>, <a href="#">Solar Impulse 2</a>, achieved the <a href="#">longest non-stop 
+                    solo flight in history</a> and completed the first solar-powered<a href="#">aerial circumnavigation</a> of the globe in 2016.</p>
+                  </dd>
+                </dl> 
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Telecommunication and signaling</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/CommunicationSolar.jfif"></p>
+                <dl>
+                  <dd>
+                    Solar PV power is ideally suited for telecommunication applications such as local telephone exchange, radio and TV
+                    broadcasting, microwave and other forms of electronic communication links. This is because, in most
+                    telecommunication application, storage batteries are already in use and the electrical system is basically DC. In
+                    hilly and mountainous terrain, radio and TV signals may not reach as they get blocked or reflected back due to
+                    undulating terrain. At these locations, <a href="#">low 
+                    power transmitters (LPT)</a> are installed to receive and retransmit the signal for local population.
+                  </dd> 
+                </dl>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Spacecraft applications</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p><img src="/static/image/Space1.jfif"></p> 
+                <dl>
+                  <dd>
+                    <a href="#">Solar panels on spacecraft</a> are
+                    usually the sole source of power to run the sensors, active heating and cooling, and communications. A battery
+                    stores this energy for use when the solar panels are in shadow. In some, the power is also used for <a href="#">spacecraft 
+                    propulsion</a>-<a href="#">electric propulsion</a>. Spacecraft were one of the earliest
+                    applications of photovoltaics, starting with the silicon solar cells used on the <a href="#">Vanguard 1</a> satellite, 
+                    launched by the US in 1958. 
+                    The largest solar power system flown in space is the <a
+                    href="#">electrical system of the International Space
+                    Station</a>. To increase the power generated per kilogram, typical spacecraft solar panels use high-cost,
+                    high-efficiency, and close-packed rectangular <a href="#">multi-junction solar cells</a> made of <a href="#"
+                    >gallium arsenide</a> (GaAs) and other semiconductor materials.
+                  </dd> 
+                </dl>
+                </p> 
+                <p> 
+                <h4 style="text-align:center;white-space:pre-wrap;">2.<span class="mw-headline" id="Concentrated_solar_power">Concentrated solar power</span></h4>               
+                  <p>Concentrated solar power (CSP, also known as concentrated solar thermal) systems generate solar power 
+                  by using mirrors or lenses to concentrate a large area of sunlight onto a receiver.
+                  Electricity is generated when the concentrated light is converted to heat (<a href="#">solar thermal energy</a>), 
+                  which drives a heat engine (usually a steam turbine) connected to an electrical power generator or powers a 
+                  <a href="#">thermochemical reaction</a>. CSP had a global total installed capacity of 5,500 MW in 2018, up from 354 MW in 2005. 
+                  Spain accounted for almost half of the world's capacity, at 2,300 MW. The United States follows with 1,740 MW. 
+                  In 2017, CSP represented less than 2% of worldwide installed capacity of solar electricity plants.
+                  However, in recent years the falling prices of CSP plants are making this technology competitive with 
+                  other base-load power plants using fossil and nuclear fuel.</p>
+  
+                  <p>As a thermal energy generating power station, CSP has more in common with thermal power stations such as coal or gas or 
+                  geothermal. A CSP plant stores energy either in the form of sensible heat, or as latent heat (for example, using molten salt), 
+                  which enables these plants to continue to generate electricity whenever it is needed, day or night. This makes CSP a 
+                  <a href="#">dispatchable</a> form of solar. <a href="#">Dispatchable renewable energy</a> is particularly valuable 
+                  in places where there is already a high penetration of photovoltaics (PV), such as California because an evening peak is 
+                  created as <a href="#">PV ramps</a> down at sunset (a phenomenon referred to as <a href="#">duck curve</a>).</p> 
+                <p> 
+                </p> 
+                <h6 style="text-align:center;white-space:pre-wrap;"><b><em>Efficiency</h6></b></em> 
+                  The efficiency of a concentrating solar power system will depend on the technology used to convert the 
+                  solar power to electrical energy. Real-world systems claim a maximum conversion efficiency of 23-35% 
+                  for <a href="#">power tower</a> type systems, operating at temperatures from 250-565 °C, with the higher efficiency 
+                  number assuming a <a href="#">combined cycle turbine</a>. <a href="#">Dish Stirling systems</a>, operating at temperatures of 550-750 °C, 
+                  claim an efficiency of about 30%. Due to variation in sun incidence during the day, the average conversion 
+                  efficiency achieved is not equal to these maximum efficiencies, and the net annual solar-to-electricity 
+                  efficiencies are 7-20% for </a href="#">pilot power tower systems</a>, and 12-25% for demonstration-scale <a href="#">Stirling dish systems</a>.
+                </p>
+                <p>  
+                <h6 style="text-align:center;white-space:pre-wrap;"><b><em>The working proces of CSP</h6></b></em>
+                  <p>All concentrating solar power (CSP) technologies use a mirror configuration to concentrate the sun’s light 
+                  energy onto a receiver and convert it into heat. The heat can then be used to create steam to drive a turbine 
+                  to produce electrical power or used as <a href="#">industrial process heat</a>.</p>
+                  <p>Concentrating solar power plants can integrate thermal energy storage systems to use to generate electricity 
+                  during cloudy periods or for hours after sunset or before sunrise. CSP systems can be also combined with 
+                  <a href="#">combined cycle power plants</a> resulting in hybrid power plants which provide high-value, dispatchable power. 
+                  They can also be integrated into existing thermal-fired power plants that use a power block like CSP; such as coal, 
+                  natural gas, biofuel or geothermal plants during periods of low solar radiation.</p>
+                  <p>There are four types of CSP technologies, with the earliest in use being trough, and the fastest 
+                  growing as of 2017 being tower. For each of these, there are various design variations or different 
+                  configurations, depending on whether thermal energy storage is included, and what methods are used to store solar thermally.</p>
+                </p>
+                <p class="" style="white-space:pre-wrap;"> 
+                  <b><em>Parabolic Trough Systems:</b></em> In a <a href="#">parabolic trough CSP system</a>, the sun’s energy is concentrated by parabolically curved, trough-shaped reflectors onto a receiver pipe – the heat absorber tube – running along about a meter above the curved surface of the mirrors. The temperature of the heat transfer fluid flowing through the pipe, usually thermal oil, is increased from 293ºC to 393ºC, and the heat energy is then used in the <a href="#">thermal power block</a> to generate electricity in a conventional steam generator. A trough solar collector field constructs multiple parabolic trough-shaped mirrors in parallel rows aligned to enable these single-axis trough-shaped mirrors to track the sun from east to west during the day to ensure that the sun is continuously focused on the receiver pipes. As of 2018, 90% of the CSP in commercial operation is trough.
+                </p> 
+                <p class="" style="white-space:pre-wrap;"> 
+                  <b><em>Power Tower Systems: </b></em> <a href="#">Power tower</a> or central receiver systems utilize sun-tracking mirrors called <a href="#">heliostats</a> to focus sunlight onto a receiver at the top of a tower. A heat transfer fluid heated in the receiver up to around 600ºC is used to generate steam, which, in turn, is used in a conventional turbine-generator to produce electricity. <i><a href="#">Khi Solar</a></i> One in South Africa and <i><a href="#">Ivanpah</a></i> in California operate commercially by directly heating water to steam. But <a href="#"><i>Gemasolar</i></a> (2011), <a href="#"><i>Crescent Dunes</a></i> (2013), and <a href="#"><i>Noor III</a></i> (2018) use molten salts because of their <a href="#">superior heat</a> transfer and energy storage capabilities. A great deal of research is investigating various other heat transfer or energy storage materials because of potential to attain higher temperature with resulting efficiency gains leading to lower costs. 
+                </p> 
+                <p class="" style="white-space:pre-wrap;"> 
+                <b><em>Linear Fresnel Systems:</b></em> Similar to the long arrays of a parabolic trough CSP system, a Linear concentrating collector field consists of a large number of collectors in parallel rows. These are typically aligned in a north-south orientation to maximize annual and summer energy collection. The mirrors are laid flat on the ground and reflect the sunlight to the pipe above. Like trough and tower, <a href="#"><i>Fresnel</i></a> can also incorporate storage in a power block, or generate steam for direct use.
+                </p>
+                <p class="" style="white-space:pre-wrap;"> 
+                <b><em>Parabolic Dish Systems:</b></em> A <a href="#"><i>Parabolic dish system</a></i> consists of a parabolic-shaped point focus concentrator in the form of a dish that reflects solar radiation onto a receiver mounted at the focal point. These concentrators are mounted on a structure with a two-axis tracking system to follow the sun. The collected heat is typically utilized directly by a heat engine mounted on the receiver moving with the dish structure. Dish can attain extremely high temperatures, and holds promise for use in solar reactors for making solar fuels which require very high temperatures. 
+                </p>            
+                <p>  
+                <h6 style="text-align:center;white-space:pre-wrap;"><b><em>Environmental effects</h6></b></em>
+                  <p>CSP has a number of environmental effects, particularly on water use, land use and the use of hazardous materials.
+                  Water is generally used for cooling and to clean mirrors. Cleaning agents (hydrochloric acid, sulfuric acid, nitric acid, 
+                  hydrogen fluoride, 1,1,1-trichloroethane, acetone, and others) are also used for semiconductor surface cleaning. 
+                  Some projects are looking into various approaches to reduce the water and cleaning agents use, including the 
+                  use of barriers, non-stick coatings on mirrors, water misting systems, and others. Dead warbler burned in mid-air by solar thermal power plant.</p> 
+                  <p>Insects can be attracted to the bright light caused by concentrated solar technology, 
+                  and as a result birds that hunt them can be killed by being burned if they fly near the point 
+                  where light is being focused. This can also affect raptors who hunt the birds. 
+                  According to rigorous reporting, in over six months, 133 singed birds were counted. 
+                  By focusing no more than four mirrors on any one place in the air during standby, 
+                  at Crescent Dunes Solar Energy Project, in three months, the death rate dropped to zero. 
+                  Other than in the US, no bird deaths have been reported at CSP plants internationally.</p>
+                </p>
+              </p>   
+                <h2><span class="mw-headline" id="Energy_storage_methods">Energy storage methods</span></h2>
+                <hr class="featurette-divider">
+                <p>
+                  <a href="#">Thermal mass</a> systems can store solar energy in the form of heat at domestically useful temperatures for daily 
+                  or <a href="#">interseasonal durations</a>. Thermal storage systems generally use readily available materials with high
+                  <a href="#">specific heat</a> capacities such as water, earth and stone. Well-designed systems can lower 
+                  <a href="#">peak demand</a>, shift time-of-use to <a href="#">off-peak</a> hours
+                  and reduce overall heating and cooling requirements.
+                </p>
+                <p>
+                  Phase change materials such as <a href="#">paraffin wax</a> and
+                  <a href="#"> Glauber's salt</a> are another thermal storage medium. These materials are inexpensive, readily available, and can 
+                  deliver domestically useful temperatures (approximately 64&#160;°C or 147&#160;°F). The "Dover House" 
+                  (in <a href="#">Dover, Massachusetts</a>) was the first to use a <a href="#">Glauber's salt heating system</a>, in 1948. Solar energy can also 
+                  be stored at high temperatures using <a href="#">molten salts</a>. Salts are an effective storage medium because they are 
+                  low-cost, have a high specific heat capacity, and can deliver heat at temperatures compatible with conventional power systems. 
+                  The <a href="#">Solar Two</a> project used this method of energy storage, allowing it to store 1.44 
+                  <a href="#">terajoules</a> (400,000&#160;kWh) in its 68 m³ storage tank with an annual storage efficiency of about 99%.
+                </p>
+                <p> 
+                  Off-grid <a href="#"> PV systems</a> have traditionally used <a href="#">rechargeable batteries</a> to store excess electricity. 
+                  With grid-tied systems, excess electricity can be sent to the <a href="#">transmission grid </a>, while standard grid 
+                  electricity can be used to meet shortfalls. <a href="#">Net metering</a> programs give household
+                  systems credit for any electricity they deliver to the grid. This is handled by 'rolling back' the meter
+                  whenever the home produces more electricity than it consumes. If the net electricity use is below zero,
+                  the utility then rolls over the kilowatt-hour credit to the next month. Other approaches involve the use of
+                  two meters, to measure electricity consumed vs. electricity produced. This is less common due to the
+                  increased installation cost of the second meter. Most standard meters accurately measure in both
+                  directions, making a second meter unnecessary.
+                </p>
+                <p>
+                  <a href="#">Pumped-storage hydroelectricity</a> stores energy in the form of water pumped when energy is available from a lower
+                  elevation reservoir to a higher elevation one. The energy is recovered when demand is high by releasing
+                  the water, with the pump becoming a hydroelectric power generator.
+                </p>
+                <h2><span id="Development.2C_deployment_and_economics">Development, deployment and economics</span></h2>
+                <hr class="featurette-divider">
+                <p>
+                  Beginning with the surge in <a href="/Coal">coal</a> use, which accompanied the <a href="#">Industrial Revolution</a>, energy
+                  consumption has steadily transitioned from wood and biomass to <a href="/Fuel">fossil fuels</a>. The early development of solar 
+                  technologies starting in the 1860s was driven by an expectation that coal would soon become scarce. However, development of 
+                  solar technologies stagnated in the early 20th&#160; century in the face of the increasing availability,
+                  economy, and utility of coal and <a href="/Petroleum">petroleum</a>.
+                </p>
+                <p>
+                  The <a href="#">1973 oil embargo</a> and <a href="#">1979 energy crisis</a>
+                  caused a reorganization of energy policies around the world. It brought renewed attention to developing
+                  solar technologies. Deployment strategies focused on incentive programs
+                  such as the Federal Photovoltaic Utilization Program in the US and the Sunshine Program in Japan. Other
+                  efforts included the formation of research facilities in the US (SERI, now <a href="#">NREL</a>), Japan (<a href="#">NEDO</a>), 
+                  and <a href="#">Germany</a> (<a href="#">Fraunhofer Institute for Solar Energy Systems ISE</a>). 
+                </p>
+                <p>
+                  Commercial solar water heaters began appearing in the United States in the 1890s. These systems saw increasing use
+                  until the 1920s but were gradually replaced by cheaper and more reliable heating fuels. As with
+                  photovoltaics, <a href="#">solar water heating</a> attracted renewed attention as a result of the oil crises in the 1970s, but 
+                  interest subsided in the 1980s due to falling petroleum prices. Development in the solar water heating sector progressed 
+                  steadily throughout the 1990s, and annual growth rates have averaged 37% from 1990-2017. 
+                  Although generally underestimated, solar water heating and cooling is by far the most widely deployed
+                  solar technology with an estimated capacity of 494.3&#160; GW as of 2018. 
+                </p>
+                <p>
+                  The <a href="#">International Energy Agency</a> has said that solar energy can make considerable contributions to solving some 
+                  the most urgent problems the world now faces:
+                </p>
+                <blockquote>
+                  <p>
+                    The development of affordable, inexhaustible, and clean solar energy technologies will have huge
+                    longer-term benefits. It will increase countries' energy security through reliance on an indigenous,
+                    inexhaustible, and mostly import-independent resource, enhance sustainability, reduce pollution, lower
+                    the costs of mitigating climate change, and keep fossil fuel prices lower than otherwise. These
+                    advantages are global. Hence the additional costs of the incentives for early deployment should be
+                    considered learning investments; they must be wisely spent and need to be widely shared.
+                  </p>
+                </blockquote>
+                <p>
+                  In 2011, a report by the <a href="#"> International Energy Agency</a> found that solar energy
+                  technologies such as photovoltaics, solar hot water, and concentrated solar power could provide a third
+                  of the world's energy by 2060 if politicians commit to limiting <a href="#"> climate change</a> and transitioning to
+                  renewable energy. The energy from the Sun could play a key role in de-carbonizing the global
+                  economy alongside improvements in energy efficiency and imposing costs on greenhouse gas emitters. "The strength of solar
+                  is the incredible variety and flexibility of applications, from small scale to big scale".
+                </p>
+                <p>
+                <h2><span class="mw-headline" id="Advantages">Advantages</span></h2> 
+                <hr class="featurette-divider">
+                <p>
+                  The 122&#160; PW of sunlight reaching the Earth's surface is plentiful—almost 10,000 times
+                  more than the 13&#160;TW equivalent of average power consumed in 2005 by humans. This abundance leads to the suggestion that
+                  it will not be long before solar energy will become the world's primary energy source. Additionally, solar electric generation has the
+                  highest power density (global mean of 170&#160;W/m<sup>2</sup>) among renewable energies.
+                </p>
+                <p>
+                  Solar power is pollution-free during use, which enables it to cut down on pollution when it is substituted for other
+                  energy sources. For example, <a href="#">MIT</a> estimated that 52,000 people per year die prematurely in the U.S. 
+                  from coal-fired power plant pollution and all but one of these deaths could be prevented from using Solar power to
+                  replace coal. Production end-wastes and emissions are manageable using existing pollution controls. 
+                  End-of-use recycling technologies are under development and policies are being produced that encourage recycling from producers.
+                </p>
+                <p>
+                  PV installations could ideally operate for 100 years or even more with little maintenance or intervention after their initial set-up,
+                  so after the initial <a href="#">capital cost</a> of building any solar power
+                  plant, <a href="#">operating costs</a> are extremely low compared to
+                  existing power technologies. 
+                </p>
+                <p>
+                  Grid-connected solar electricity can be used locally thus reducing transmission/distribution losses (transmission
+                  losses in the US were approximately 5% in 2014-2018). 
+                </p>
+                <p>
+                  Compared to fossil and nuclear energy sources, very little research money has been invested in the development of
+                  solar cells, so there is considerable room for improvement. Nevertheless, experimental <a href="#">high efficiency
+                  solar cells</a> already have efficiencies of over 40% in case of concentrating photovoltaic cells and efficiencies are rapidly
+                  rising while mass-production costs are rapidly falling. 
+                </p>
+                </p>
+                <h2><span class="mw-headline" id="Limitations">Limitations</span></h2>
+                <hr class="featurette-divider">
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Pollution and Energy in Production</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p>
+                  PV has been a well-known method of generating clean, emission-free electricity. PV systems are often made of PV
+                  modules and inverter (changing DC to AC). PV modules are mainly made of PV cells, which has no fundamental difference
+                  from the material used for making computer chips. The process of producing PV cells is energy-intensive and involves
+                  highly poisonous and environmentally toxic chemicals. There are a few PV manufacturing plants around the world
+                  producing PV modules with energy produced from PV. This counteractive measure considerably reduces the carbon
+                  footprint of the manufacturing process of PV cells. Management of the chemicals used and produced during the
+                  manufacturing process is subject to the factories' local laws and regulations.
+                </p>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Impact on Electricity Network</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p>
+                  For behind-the-meter rooftop photovoltaic systems, the energy flow becomes two-way. When there is more local
+                  generation than consumption, electricity is exported to the grid, allowing for <a href="#">
+                  net metering</a>. However, electricity networks traditionally are not designed to deal with
+                  two-way energy transfer, which may introduce technical issues. An over-voltage issue may come out as the electricity
+                  flows from these PV households back to the network. There are solutions to manage the over-voltage issue, such as
+                  regulating PV inverter power factor, new voltage and energy control equipment at electricity distributor level,
+                  re-conductor the electricity wires, demand side management, etc. There are often limitations and costs related to
+                  these solutions.
+                </p>
+                <ul>
+                  <li>
+                    <dl>
+                      <dt>Implications for Electricity Bill Management and Energy Investment</dt>
+                    </dl>
+                  </li>
+                </ul>
+                <p>
+                  There is no silver bullet in electricity or energy demand and bill management, because customers (sites) have
+                  different specific situations, e.g. different comfort/convenience needs, different electricity tariffs, or different
+                  usage patterns. <a href="#">Electricity tariff</a> may have a few elements, such as daily access and metering charge, energy charge
+                  (based on kWh, MWh) or peak demand charge (e.g. a price for the highest 30min energy consumption in a month). PV is a
+                  promising option for reducing energy charges when electricity prices are reasonably high and continuously increasing,
+                  such as in Australia and Germany. However, for sites with peak demand charge in place, PV may be less attractive if
+                  peak demands mostly occur in the late afternoon to early evening, for example in residential communities. Overall,
+                  energy investment is largely an economic decision and it is better to make investment decisions based on systematic
+                  evaluation of options in operational improvement, energy efficiency, onsite generation and energy storage.
+                </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  <hr class="featurette-divider">
+  <!-- FOOTER -->
+
+  <footer class="container" style="margin-top: 2rem!important; padding-right: 0px; padding-left: 0px;">
+    <p>Energy Science and Engineering · <a href="/Contact"> Contact Us</a> · <a href="/About"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

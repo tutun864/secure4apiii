@@ -1,0 +1,247 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="js/db-con.js"></script>
+
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log(user.email)
+          } else {
+            window.location.href = "index.html";
+            
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../Home/">Energy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bangladesh
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              <a class="dropdown-item" href="../Power_Sector">Power Scetor</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../Power_Generation">Power Generation</a>
+              <div class="dropdown-divider"></div> 
+              <a class="dropdown-item" href="../Power_Transmission">Power Transmission</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../Power_Distribution">Power Distribution</a> 
+            </div> 
+          </li>
+          <a class="nav-link" href="../Renewable">
+            Renewable
+          </a>   
+          <a class="nav-link" href="../NonRenewable">
+            Non-renewable 
+          </a> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Year
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../World_Energy/Naturalgas/">1st year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Coal/">2nd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/oil/">3rd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Biogas/">4th year</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Paper
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../World_Energy/Naturalgas/">Research</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Coal/">Thesis</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> 
+
+
+
+
+<!-- start: secondary page content -->
+<div class="container page-content" style="margin-top: 2rem!important; margin-left: 20px">
+    <div class="bcrumb-wrapper">
+      <div class="bcrumb-wrapper">
+        <i class="fa fa-home" aria-hidden="true">
+          <span class="sr-only">Home</span>
+        </i>
+        <a href="/Energy">Energy</a>
+        <span class="bcrumb-icon">/</span>
+        Non-Renewable Energy Resources
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar affix-top" data-spy="affix" data-offset-top="75" data-offset-bottom="700"
+          style="margin-top: 30px;">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <h2></h2> <!-- Needed for spacing -->
+              <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" />
+                <div class="toctitle" lang="en" dir="ltr">
+                  <h3 id="mw-toc-heading">Contents</h3><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+                </div>
+                <ul>
+                  <li class="toclevel-1 tocsection-1"><a href="#Non-Renewable_Energy_Resources"><span class="toctext">Non-Renewable Energy Resources</span></a></li>
+                    <ul>
+                      <li class="toclevel-2 tocsection-4"><a href="#Naturalgas"><span class="toctext">Natural Gas</span></a></li>
+                      <li class="toclevel-2 tocsection-5"><a href="#Coal"><span class="toctext">Coal</span></a></li>
+                      <li class="toclevel-2 tocsection-6"><a href="#Petroleum"><span class="toctext">Petroleum</span></a></li>
+                    </ul> 
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 main-content pull-right" style="margin-top: 10px;">
+          <h2>Non-Renewable Energy Resources</h2>
+          <hr class="featurette-divider"> 
+          <img src="/static/image/Non2.jfif"> 
+          <h1></h1> 
+          <hr class="featurette-divider">
+          <p>
+            An <a href="#"> energy resource </a> is something that can produce heat, power life, move 
+            objects, or produce electricity. Energy resources are the opportunities an area offers to 
+            generate electricity based on its natural conditions and circumstances. Some of Non-renewable 
+            energy resources are: <a href="/Coal"> coal </a>,  <a href="/Oil"> oil </a>, <a href="/Fuel">Fossil fuel</a>,
+            <a href="/Petroleum">petroleum</a>,<a href="#">natural gas</a> etc. 
+          </p> 
+          <h2><span class="mw-headline" id="Non-Renewable_Energy_Resources">Non-Renewable Energy Resources</span></h2> 
+          <hr class="featurette-divider">
+          <p>
+            The resources which are finite and do not get <a href="#">replenished</a> after their 
+            consumption are called non-renewable energy resources. Non-renewable
+             resources are natural resources that cannot be readily replaced by 
+             natural means at a quick enough pace to keep up with consumption. 
+             An example is carbon-based <a href="#">fossil fuel</a>. The original organic matter, 
+             with the aid of heat and pressure, becomes a fuel such as oil or gas. 
+             Earth minerals and <a href="#">metal ores</a>, fossil fuels (<a href="#">coal</a>, 
+             <a href="#">petroleum</a>, <a href="#">natural gas</a>) 
+             and groundwater in certain <a href="#">aquifers</a> are all considered non-renewable resources, 
+             though individual elements are always conserved(except in nuclear reactions). 
+             Once these resources are used up, they cannot be replaced, which is a major 
+             problem for humanity as we are currently dependent on them to supply most of 
+             our energy needs. There are four major types of non-renewable resources: oil, 
+             natural gas, coal, and nuclear energy. Oil, natural gas, and coal are collectively 
+             called fossil fuels. Fossil fuels were formed within the Earth from dead plants 
+             and animals over millions of years-hence the name “fossil” fuels. They are found 
+             in underground layers of rock and <a href="#">sediment</a>. Pressure and heat worked together to 
+             transform the plant and animal remains into <a href="#">rude oil</a> (also known as petroleum), 
+             coal, and natural gas. The plants and animals that became fossil fuels lived in a 
+             time called <a href="#">Carboniferous Period</a>, around 300 to 360 million years ago. The energy 
+             in the plant and animal remains originally came from the sun; through the process 
+             of photosynthesis, solar energy is stored in plant tissues, which animals then consume, 
+             adding the energy to their own bodies. When fossil fuels are burned, this trapped energy 
+             is released.
+          </p> 
+          <p>
+            Unfortunately, human society is-for the time being-dependent on non-renewable
+            resources as its primary source of energy. Approximately 80 percent of the 
+            total amount of energy used globally each year comes from <a href="/Fuel">fossil fuels</a>. 
+            We depend on fossil fuels because they are energy-rich and relatively cheap 
+            to process. But a major problem with fossil fuels, aside from their being in 
+            limited supply, is that burning them releases carbon dioxide into the atmosphere. 
+            Rising levels of heat-trapping carbon dioxide in the atmosphere is the main 
+            cause of global warming.
+          </p> 
+          <h5><span class="mw-headline" id="Naturalgas">Natural Gas</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="#">Natural Gas</a></i></div> 
+          <p>
+            <a href="#">Natural gas</a> is widely used for cooking and for heating homes. 
+            It consists mostly of <a href="#">methane</a> and is found near oil deposits 
+            below Earth’s surface. Natural gas can be pumped out through 
+            the same wells used for extracting <a href="#">crude oil</a>. 
+          </p>
+          <h5><span class="mw-headline" id="Coal">Coal</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="/Coal">Coal</a></i></div> 
+          <p>
+            <a href="/Coal">Coal</a> is a solid fossil fuel that is used for heating homes and generating power plants. 
+            It is found in <a href="#">fossilized swamps</a> that have been buried beneath layers of <a href="#">sediment</a>. 
+            Since coal is solid, it cannot be extracted in the same manner as crude oil or 
+            natural gas; it must be dug up from the ground. 
+          </p> 
+          <h5><span class="mw-headline" id="Petroleum">Petroleum</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="/Petroleum">Petroleum </a></i></div> 
+          <p>
+            <a href="/Petroleum">Petroleum</a> is often called crude oil, or oil. It is called a <a href="/Fuel">fossil fuel</a> 
+            because it was formed from the remains of tiny sea plants and animals that 
+            died millions of years ago. When the plants and animals died, they sank 
+            to the bottom of the oceans. Here, they were buried by thousands of feet
+             of sand and sediment, which turned into <a href="#">sedimentary rock</a>. As the layers 
+             increased, they pressed harder and harder on the decayed remains at the 
+             bottom. The heat and pressure changed the remains, and eventually, petroleum 
+             was formed. Petroleum deposits are locked in <a href="#">porous rocks</a> almost like water 
+             is trapped in a <a href="#">wet sponge</a>. Then, crude oil comes out of the ground. It can 
+             be as thin as water or as thick as tar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  <hr class="featurette-divider">
+  <!-- FOOTER -->
+
+  <footer class="container" style="margin-top: 2rem!important; padding-right: 0px; padding-left: 0px;">
+    <p>Energy Science and Engineering · <a href="/Contact"> Contact Us</a> · <a href="/About"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

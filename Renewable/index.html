@@ -1,0 +1,282 @@
+
+<!doctype html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Energy Science</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="js/db-con.js"></script>
+
+    <script>
+      window.onload = function(){
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log(user.email)
+          } else {
+            window.location.href = "index.html";
+            
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../Home/">Energy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bangladesh
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              <a class="dropdown-item" href="../Power_Sector">Power Scetor</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../Power_Generation">Power Generation</a>
+              <div class="dropdown-divider"></div> 
+              <a class="dropdown-item" href="../Power_Transmission">Power Transmission</a> 
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../Power_Distribution">Power Distribution</a> 
+            </div> 
+          </li>
+          <a class="nav-link" href="../Renewable">
+            Renewable
+          </a>   
+          <a class="nav-link" href="../NonRenewable">
+            Non-renewable 
+          </a> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Year
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../World_Energy/Naturalgas/">1st year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Coal/">2nd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/oil/">3rd year</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Biogas/">4th year</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Paper
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../World_Energy/Naturalgas/">Research</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../World_Energy/Coal/">Thesis</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> 
+
+
+
+
+    <!-- start: secondary page content -->
+<div class="container page-content" style="margin-top: 2rem!important; margin-left: 20px">
+    <div class="bcrumb-wrapper">
+      <div class="bcrumb-wrapper">
+        <i class="fa fa-home" aria-hidden="true">
+          <span class="sr-only">Home</span>
+        </i>
+        <a href="/Energy">Energy</a>
+        <span class="bcrumb-icon">/</span>
+        Renewable Energy Resources
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar affix-top" data-spy="affix" data-offset-top="75" data-offset-bottom="700"
+          style="margin-top: 30px;">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <h2></h2> <!-- Needed for spacing -->
+              <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" />
+                <div class="toctitle" lang="en" dir="ltr">
+                  <h3 id="mw-toc-heading">Contents</h3><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+                </div>
+                <ul>
+                  <li class="toclevel-1 tocsection-1"><a href="#Renewable_Energy_Resources"><span class="toctext">Renewable Energy Resources</span></a></li>
+                    <ul>
+                      <li class="toclevel-2 tocsection-4"><a href="#Solar"><span class="toctext">Solar</span></a></li>
+                      <li class="toclevel-2 tocsection-5"><a href="#Wind"><span class="toctext">Wind</span></a></li>
+                      <li class="toclevel-2 tocsection-6"><a href="#Hydro_power"><span class="toctext">Hydro power</span></a></li>
+                      <li class="toclevel-2 tocsection-7"><a href="#Geothermal"><span class="toctext">Geothermal</span></a></li>
+                      <li class="toclevel-2 tocsection-8"><a href="#Ocean"><span class="toctext">Ocean</span></a></li>
+                      <li class="toclevel-2 tocsection-9"><a href="#Hydrogen"> <span class="toctext">Hydrogen</span></a></li>
+                      <li class="toclevel-2 tocsection-9"><a href="#Biomass"> <span class="toctext">Biomass</span></a></li>
+                    </ul> 
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 main-content pull-right" style="margin-top: 10px;">
+          <h2>Renewable Energy Resources</h2>
+          <hr class="featurette-divider"> 
+          <img src="/static/image/R2.jfif"> 
+          <h1></h1> 
+          <hr class="featurette-divider">
+          <p>
+            An <a href="#"> energy resource </a> is something that can produce heat, power life, move 
+            objects, or produce electricity. Energy resources are the opportunities an area offers to 
+            generate electricity based on its natural conditions and circumstances. Some of these energy 
+            resources are: <a href="/Coal"> coal </a>,  <a href="/Oil"> oil </a>, wood, or gas. But others, 
+            like renewable resources such as <a href="/Wind"> wind </a>, <a href="/Solar"> solar </a>,
+            <a href="/Hydro"> hydroelectric </a>,  and <a href="/Wave"> wave power </a>, they’re based on 
+            the natural weather patterns and features of an area. 
+          </p> 
+          <h2><span class="mw-headline" id="Renewable_Energy_Resources">Renewable Energy Resources</span></h2> 
+          <hr class="featurette-divider">
+          <p>
+            The resources which are renewed by nature again and again and their supply is not affected by 
+            the rate of their consumption are called renewable resources. The resources are constantly 
+            being <a href="#"> replenished </a>, such as <a href="/Solar"> solar </a>, <a href="/Wind"> wind </a>, 
+            <a href="#"> biomass </a>, <a href="#"> ocean </a> (thermal, tidal, wave) , <a href="/Geothermal"> geothermal </a> etc. 
+            This means that we can use them as much as we want, and we do not have to worry about them running 
+            out. Additionally, renewable energy resources are usually much more environmentally friendly than the 
+            <a href="/NonRenewable"> non-renewable </a> energy resources. Renewable energy often provides energy in four important areas: 
+            electricity generation, air and water heating/cooling, transportation, and rural <a href="#"> (off-grid) </a> energy 
+            services. Renewable energy resources are the possible solution to the depletion of the non-renewable 
+            resources. These are the clean energy resources and are available in unlimited supply. 
+          </p>
+          <p>
+            Currently, less than ten percent of all the energy we use comes from renewable sources. 
+            We are not using the renewable resources everywhere and all the time because many of the 
+            resources are currently expensive to harness, are inefficient, or have other disadvantages. 
+          </p>
+          <h5><span class="mw-headline" id="Solar">Solar</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="/Solar">Solar Energy</a></i></div>
+          <p>
+            The sun radiates (sends out) an enormous amount of energy-called <a href="/Solar"> solar energy </a>. 
+            It radiates more energy in one second than the world has used since time began. 
+            The energy comes from within the sun itself. Solar energy is derived by capturing radiant 
+            energy from sunlight and converting it into heat, electricity, or hot water. <a href="#"> Photovoltaic(PV) </a>  
+            systems can convert direct sunlight into electricity through the use of </a href="#"> solar cells </a>. Solar energy 
+            is an essential source of renewable energy, and its technologies are broadly characterized as 
+            either </a href="#"> passive solar </a> or <a href="#"> active solar </a> depending on how they capture and distribute solar energy 
+            or convert it into solar power. One of the benefits  of solar energy is that sunlight is functionally endless.
+            With the technology to harvest it, there is a limitless supply of solar energy, meaning it could render 
+            fossil fuels obsolete. Although solar energy will save money in the long run, it tends to be a significant  </a href="#"> upfront 
+            cost </a> and is an <a href="#"> unrealistic expenses </a> for most households.
+          </p> 
+          <h5><span class="mw-headline" id="Wind">Wind</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="/Wind">Wind Energy</a></i></div> 
+          <p>
+            <a href="#"> Wind </a> is simply air in motion. It is caused by <a href="#">uneven heating of the earth’s surface</a> by radiant 
+            energy from the sun. Wind power or wind energy is the use of wind to provide the mechanical power through wind turbines 
+            to turn electric generators and traditionally to do other work, like <a href="#"> milling </a> or <a href="#">pumping</a>. 
+            <a href="/Wind"> Wind power </a> is a sustainable and renewable energy, and has a much smaller impact on the environment 
+            compared to burning fossil fuels. Wind energy is a clean energy source, which means that it does not pollute our environment 
+            Although wind turbines produce very little pollution, some cities oppose them since they dominate 
+            skylines and generate noise. Wind turbines also threaten local wildlife like birds, which are sometimes 
+            killed by </a href="#"> striking </a> the arms of the turbine while flying.
+          </p>
+          <h5><span class="mw-headline" id="Hydro_power">Hydro power</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="/Hydro">hydroelectric Power</a></i></div> 
+          <p>
+            <a href="/Hydro"> Hydropower</a> (hydro means water) is energy that comes from the force of moving water. 
+            The fall and flow of water is part of a continuous cycle. Gravity causes the water in rivers and streams to move from 
+            the places of high ground to the places of low ground. The force of moving water can be 
+            very powerful. Hydroelectric power is very versatile and can be generated using 
+            both large scale projects, like the <a href="#"> Hoover Dam </a>, and small scale projects like <a href="#"> underwater 
+            turbines</a> and <a href="#"> low dams on small rivers and streams</a> . Hydroelectric power does not generate 
+            pollution, and therefore is a much more environmentally-friendly energy option for our 
+            environment. Although hydroelectric power does not pollute the air, it </a href="#"> disrupts</a> waterways 
+            and negatively affects the animals that live in them, changing water levels, currents, 
+            and migration paths for many fish and other freshwater ecosystems.
+          </p> 
+          <h5><span class="mw-headline" id="Geothermal">Geothermal</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="/Geothermal">Geothermal </a></i></div> 
+          <p>
+            The word geothermal comes from the Greek words geo (earth) and therme (heat).<a href="/Geothermal"> Geothermal energy </a> is 
+            heat from within the earth. Geothermal energy is generated in the earth’s core, almost 4000 miles 
+            <a href="#">beneath</a> the earth’s surface. People around the world use geothermal energy to heat their homes and 
+            to produce electricity. Geothermal energy is not as common as other types of renewable energy 
+            resources, but it has a significant potential for energy supply. Geothermal energy is naturally <a href="#">replenished</a> and 
+            therefore does  not run a risk of depleting (on a human timescale). Cost plays a major factor when it comes to disadvantages 
+            of geothermal energy. Not only is it costly to build the infrastructure, but another major concern is its 
+            <a href="#">vulnerability</a> to earthquakes in certain regions of the world.
+          </p>
+          <h5><span class="mw-headline" id="Ocean">Ocean</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="#">Ocean </a></i></div>
+          <p>
+            <a href="#">Ocean energy</a> refers to the energy carried by ocean waves, tides, salinity, and ocean temperature differences. 
+            The movement of water in the world’s oceans creates a vast store of kinetic energy. Some of this energy 
+            can be harnessed to generate electricity to power homes, transport and industries. This type 
+             of renewable energy is also <a href="#">abundant</a>; the most populated cities tend to be near the oceans and <a href="#">harbors</a>, 
+             making it easier to <a href="#">harness</a> this energy for the local population. Although it is a very clean source of 
+             energy, large machinery needs to be built nearby to help capture this form of energy, which can cause 
+             <a href="#">disruptions</a> to the ocean floor and the sea life that habitats it. Another factor to consider is weather, 
+             when rough weather occurs it changes the consistency of the waves, thus producing lower energy output when 
+             compared to normal waves without stormy weather. 
+          </p>
+          <h5><span class="mw-headline" id="Hydrogen">Hydrogen</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="#">Chemical element(Hydrogen) </a></i></div>
+          <p>
+            Hydrogen is the chemical element with the symbol H and atomic number 1. Hydrogen has the <a href="#">highest energy 
+            content of any common fuel by weight<a>, but <a href="#">the lowest energy content by volume</a>. It is the lightest element 
+            and a gas at normal temperature and pressure. Hydrogen can be used as a <a href="#">clean burning fuel</a>, which leads to less pollution 
+            and a cleaner environment. It can also be used for fuel cells which are similar to batteries and can 
+            be used for powering an electric motor. Since hydrogen needs energy to be produced, it is inefficient 
+            when it comes to preventing pollution.
+          </p>
+          <h5><span class="mw-headline" id="Biomass">Biomass</span></h5> 
+          <div role="note" class="hatnote navigation-not-searchable">Main articles: <i><a href="#">Biomass Energy </a></i></div>
+          <p>
+            <a href="#">Biomass</a> is any organic matter (anything that was once alive) that can be used as an energy source. 
+            People have used biomass longer than any other energy source. Biomass gets its energy from the sun. 
+            The use of biomass in energy production creates carbon dioxide that is put into the air, but the regeneration 
+            of plants consumes the same amount of carbon dioxide, which is said to create a balanced atmosphere. 
+            Although new plants need carbon dioxide to grow, plants take time to grow. We also do not yet have 
+            widespread technology that can use biomass in lieu of <a href="fuel">fossil fuels</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+  <!-- FOOTER -->
+
+  <footer class="container" style="margin-top: 2rem!important; padding-right: 0px; padding-left: 0px;">
+    <p>Energy Science and Engineering · <a href="/Contact"> Contact Us</a> · <a href="/About"> About</a></p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
